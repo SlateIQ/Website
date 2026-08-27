@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Slate-IQ | Essays — Building in Public</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border:0 solid #e5e7eb}
+html{font-family:Inter,ui-sans-serif,system-ui,sans-serif;line-height:1.5;scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;background:#fff;color:#0B2545}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:root{--green:#00A94F;--green-dark:#007A38;--green-light:#E6F7ED;--green-border:rgba(0,169,79,0.3);--navy:#0B2545;--navy-dark:#081B33;--navy-light:#13345C;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb}
+.container{max-width:80rem;margin:0 auto;padding:0 1.5rem}
+@media(min-width:1024px){.container{padding:0 2rem}}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border-bottom:1px solid var(--gray-100)}
+nav{max-width:80rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-svg{height:32px;width:auto}
+.nav-back{display:flex;align-items:center;gap:.4rem;font-size:.875rem;font-weight:500;color:rgba(11,37,69,.7);transition:color .15s}
+.nav-back:hover{color:var(--green)}
+.nav-back svg{width:1rem;height:1rem;stroke:currentColor;fill:none;stroke-width:2}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+
+.page-hero{background:linear-gradient(to bottom,var(--navy-light),var(--navy));color:#fff;padding:6rem 0 4rem;position:relative;overflow:hidden}
+@media(min-width:1024px){.page-hero{padding:8rem 0 5rem}}
+.page-hero-bg{position:absolute;inset:0;opacity:.08;pointer-events:none}
+.page-hero-bg circle{fill:var(--green)}
+.hero-eyebrow{display:inline-block;background:rgba(0,169,79,.15);color:rgba(230,247,237,1);font-size:.75rem;font-weight:600;letter-spacing:.025em;text-transform:uppercase;padding:.25rem .75rem;border-radius:9999px;margin-bottom:1.25rem;border:1px solid var(--green-border)}
+.page-hero h1{font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem}
+@media(min-width:640px){.page-hero h1{font-size:3rem;line-height:1.1}}
+.page-hero p{font-size:1.0625rem;color:rgba(255,255,255,.75);max-width:38rem;line-height:1.65}
+
+.essays-section{padding:4rem 0 6rem;background:var(--gray-50)}
+.essay-grid{display:grid;gap:1.5rem;margin-top:3rem}
+@media(min-width:640px){.essay-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.essay-grid{grid-template-columns:repeat(3,1fr)}}
+
+.essay-card{background:#fff;border:1px solid var(--gray-100);border-radius:.75rem;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:box-shadow .2s,transform .2s;cursor:pointer}
+.essay-card:hover{box-shadow:0 10px 20px -5px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-top-bar{height:3px;background:var(--green)}
+.card-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+.card-num{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--green);margin-bottom:.6rem}
+.card-title{font-size:1.0625rem;font-weight:700;margin-bottom:.65rem;line-height:1.3}
+.card-summary{font-size:.875rem;color:rgba(11,37,69,.6);line-height:1.6;flex:1}
+.card-footer{padding:1rem 1.5rem;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between}
+.card-takeaway{font-size:.75rem;font-weight:600;color:var(--green)}
+.card-arrow{width:1.125rem;height:1.125rem;stroke:rgba(11,37,69,.3);fill:none;stroke-width:2;transition:stroke .2s,transform .2s}
+.essay-card:hover .card-arrow{stroke:var(--green);transform:translateX(3px)}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:200;overflow-y:auto;padding:1.5rem}
+.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal{background:#fff;border-radius:1rem;max-width:48rem;width:100%;margin:auto;overflow:hidden;box-shadow:0 25px 50px -12px rgba(0,0,0,.35)}
+@keyframes mo{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.modal{animation:mo .25s ease}
+.modal-top-bar{height:4px;background:var(--green)}
+.modal-header{padding:2rem 2rem 1.25rem;border-bottom:1px solid var(--gray-100)}
+.modal-num{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--green);margin-bottom:.5rem}
+.modal-title{font-size:1.5rem;font-weight:800;color:var(--navy);line-height:1.2}
+.modal-close{float:right;margin-top:-2.25rem;background:none;border:1px solid var(--gray-200);border-radius:.375rem;padding:.35rem .75rem;font-size:.8rem;font-weight:600;color:rgba(11,37,69,.5);cursor:pointer;transition:color .15s,border-color .15s}
+.modal-close:hover{color:var(--green);border-color:var(--green)}
+.modal-body{padding:1.75rem 2rem;color:rgba(11,37,69,.75)}
+.modal-body p{font-size:.9375rem;line-height:1.75;margin-bottom:1rem}
+.modal-body p:last-child{margin-bottom:0}
+.modal-body strong{color:var(--navy);font-weight:600}
+.modal-list{margin:.5rem 0 1rem;display:flex;flex-direction:column;gap:.4rem}
+.modal-list li{font-size:.9rem;line-height:1.6;display:flex;align-items:flex-start;gap:.5rem;color:rgba(11,37,69,.7)}
+.modal-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.modal-list.nums{counter-reset:item}
+.modal-list.nums li{counter-increment:item}
+.modal-list.nums li::before{content:counter(item)'.';color:var(--green);font-weight:700;min-width:1.1rem}
+.modal-callout{background:var(--green-light);border-left:3px solid var(--green);border-radius:0 .375rem .375rem 0;padding:.875rem 1.125rem;margin:1.25rem 0 0}
+.callout-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--green-dark);margin-bottom:.3rem}
+.callout-body{font-size:.9rem;color:var(--navy);line-height:1.6}
+.modal-question{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:.5rem;padding:1rem 1.25rem;margin-top:1.1rem}
+.question-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:rgba(11,37,69,.4);margin-bottom:.35rem}
+.question-text{font-size:.9rem;color:rgba(11,37,69,.65);font-style:italic;line-height:1.55}
+.modal-footer{padding:1.25rem 2rem;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.modal-nav{display:flex;gap:.65rem}
+.modal-nav button{font-size:.8125rem;font-weight:600;background:none;border:1px solid var(--gray-200);border-radius:.375rem;padding:.4rem .9rem;color:rgba(11,37,69,.6);cursor:pointer;transition:color .15s,border-color .15s}
+.modal-nav button:hover:not(:disabled){color:var(--green);border-color:var(--green)}
+.modal-nav button:disabled{opacity:.3;cursor:default}
+.btn-primary{display:inline-block;background:var(--green);color:#fff;font-weight:600;font-size:.875rem;padding:.5rem 1.1rem;border-radius:.25rem;transition:background .15s}
+.btn-primary:hover{background:var(--green-dark)}
+
+footer{background:var(--navy-dark);color:rgba(255,255,255,.6);padding:2.5rem 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem;font-size:.875rem}
+@media(min-width:640px){.footer-inner{flex-direction:row}}
+.footer-logo{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a:hover{color:#fff;transition:color .15s}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="badge" viewBox="0 0 300 300">
+      <circle cx="150" cy="150" r="145" fill="#081B33"/>
+      <circle cx="150" cy="150" r="145" fill="none" stroke="#00A94F" stroke-width="6"/>
+      <line x1="75" y1="195" x2="205" y2="115" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+      <circle cx="75" cy="195" r="8" fill="#fff"/>
+      <g transform="translate(220,100) rotate(-14) scale(1.9)">
+        <ellipse cx="0" cy="0" rx="27" ry="16" fill="#00A94F"/>
+        <line x1="-16" y1="0" x2="16" y2="0" stroke="#081B33" stroke-width="2"/>
+        <line x1="-10" y1="-4.5" x2="-10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="-5" y1="-4.5" x2="-5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="0" y1="-4.5" x2="0" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="5" y1="-4.5" x2="5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="10" y1="-4.5" x2="10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <nav>
+    <a href="index.html">
+      <svg class="nav-logo-svg" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="3" width="128" height="40" rx="3" fill="#D7EFDE"/>
+        <text x="64" y="33" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#0B2545" text-anchor="middle" letter-spacing="1">SLATE</text>
+        <rect x="128" y="3" width="56" height="40" rx="3" fill="#00A94F"/>
+        <text x="156" y="33" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">IQ</text>
+      </svg>
+    </a>
+    <div class="nav-right">
+      <a href="slate-iq-evaluations.html" class="nav-back">Evaluations</a>
+      <a href="index.html" class="nav-back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Main Site
+      </a>
+    </div>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 800 400">
+      <circle cx="700" cy="80" r="160" fill="#00A94F"/>
+      <circle cx="30" cy="350" r="180" fill="#00A94F"/>
+    </svg>
+  </div>
+  <div class="container" style="position:relative">
+    <p class="hero-eyebrow">Slate-IQ — Building in Public</p>
+    <h1>The Essays</h1>
+    <p>Seven essays documenting the philosophy, system, and strategy behind Slate-IQ — written as it was being built. Click any card to read the full piece.</p>
+  </div>
+</div>
+
+<section class="essays-section">
+  <div class="container">
+    <div class="essay-grid" id="essay-grid">
+
+      <div class="essay-card" onclick="openModal(0)">
+        <div class="card-top-bar"></div>
+        <div class="card-body">
+          <div class="card-num">Essay 01</div>
+          <div class="card-title">Introduction to Slate-IQ</div>
+          <p class="card-summary">Why a casual DFS player decided to stop relying on feelings and start building a transparent system — wins and losses included.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-takeaway">Build process first</span>
+          <svg class="card-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
+      <div class="essay-card" onclick="openModal(1)">
+        <div class="card-top-bar"></div>
+        <div class="card-body">
+          <div class="card-num">Essay 02</div>
+          <div class="card-title">Why I'm Doing This</div>
+          <p class="card-summary">Most DFS players start with picks and hope the process follows. Slate-IQ takes the opposite approach — and explains why the gap in the community matters.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-takeaway">Measure decisions, not bankroll</span>
+          <svg class="card-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
+      <div class="essay-card" onclick="openModal(2)">
+        <div class="card-top-bar"></div>
+        <div class="card-body">
+          <div class="card-num">Essay 03</div>
+          <div class="card-title">What I Am Building</div>
+          <p class="card-summary">A breakdown of the five-component system: core portfolio, data collection, player evaluation, lineup construction, and post-slate review.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-takeaway">No process = no strategy</span>
+          <svg class="card-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
+      <div class="essay-card" onclick="openModal(3)">
+        <div class="card-top-bar"></div>
+        <div class="card-body">
+          <div class="card-num">Essay 04</div>
+          <div class="card-title">My Weekly Process</div>
+          <p class="card-summary">Lineup construction is the last step, not the first. A day-by-day breakdown of the full DFS week — from Monday review through Sunday lock.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-takeaway">Trust the week's work</span>
+          <svg class="card-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
+      <div class="essay-card" onclick="openModal(4)">
+        <div class="card-top-bar"></div>
+        <div class="card-body">
+          <div class="card-num">Essay 05</div>
+          <div class="card-title">What Makes Slate-IQ Different</div>
+          <p class="card-summary">There are dozens of DFS sites. The difference isn't intelligence — it's transparency. Every lineup, every loss, every mistake documented publicly.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-takeaway">Authenticity over perfection</span>
+          <svg class="card-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
+      <div class="essay-card" onclick="openModal(5)">
+        <div class="card-top-bar"></div>
+        <div class="card-body">
+          <div class="card-num">Essay 06</div>
+          <div class="card-title">Bankroll Management</div>
+          <p class="card-summary">Most DFS players don't have a lineup problem — they have a bankroll problem. Starting with $500 and a strict 2.5–5% weekly exposure rule.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-takeaway">Protect before you grow</span>
+          <svg class="card-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
+      <div class="essay-card" onclick="openModal(6)">
+        <div class="card-top-bar"></div>
+        <div class="card-body">
+          <div class="card-num">Essay 07</div>
+          <div class="card-title">Content Strategy</div>
+          <p class="card-summary">Three pieces of content every NFL week. A platform built to teach how to think about DFS — not what to think.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-takeaway">Consistency compounds</span>
+          <svg class="card-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-top-bar"></div>
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">Close ✕</button>
+      <div class="modal-num" id="m-num"></div>
+      <div class="modal-title" id="m-title"></div>
+    </div>
+    <div class="modal-body" id="m-body"></div>
+    <div class="modal-footer">
+      <div class="modal-nav">
+        <button id="btn-prev" onclick="navigate(-1)">&#8592; Prev</button>
+        <button id="btn-next" onclick="navigate(1)">Next &#8594;</button>
+      </div>
+      <a href="index.html" class="btn-primary">Visit Slate-IQ</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg width="26" height="26" viewBox="0 0 300 300"><use href="#badge"/></svg>
+        Slate-IQ
+      </div>
+      <div class="footer-links">
+        <a href="https://twitter.com/DFS_SlateIQ" target="_blank">@DFS_SlateIQ</a>
+        <a href="https://instagram.com/slate_iq" target="_blank">@slate_iq</a>
+        <a href="https://www.slate-iq.com" target="_blank">slate-iq.com</a>
+      </div>
+      <p>© 2026 Slate-IQ. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const essays=[{num:"Essay 01",title:"Introduction to Slate-IQ",body:`<p>I created Slate-IQ because I want to learn how to make smarter decisions in DFS.</p><p>I'm not a professional DFS player. I'm not here to sell guaranteed winners or promise life-changing bankrolls. I'm here to build a system in public, document the results, and hopefully help others improve along the way.</p><p>Like many players, I've spent many Sundays consuming DFS content for tips and projections — and by Sunday evening, wondering why one lineup succeeded while another failed. Too often, the answer was <strong>"I had a feeling."</strong> Over time, I realized that feelings don't scale. Systems do.</p><p>Over the NFL season, you'll see everything:</p><ul class="modal-list"><li>Bankroll updates</li><li>Lineups before lock</li><li>Wins and losses</li><li>My mistakes</li><li>The evolution of my models</li></ul><p><strong>Transparency matters.</strong> One of my biggest frustrations with DFS content today is that many creators only share their successes. That's not how learning works. If a lineup fails, we'll talk about why. If a strategy works, we'll document it. If I make a mistake, you'll hear about it.</p><p>DFS is a strategy game. Just like investing, engineering, or accounting, quality data leads to smart decisions. The challenge is building a repeatable process that removes emotion from the equation.</p><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">The best DFS players aren't necessarily the smartest. They're often the most disciplined.</p></div><div class="modal-question"><div class="question-label">Discussion Question</div><p class="question-text">What was the biggest lesson you've learned from playing DFS?</p></div>`},{num:"Essay 02",title:"Why I'm Doing This",body:`<p>I ask myself: <strong>"Why start another DFS website?"</strong> The answer is equally simple: I wanted to learn.</p><p>I believe many DFS players approach the game backward. They start with picks and hope the process takes care of itself. I'm taking the opposite approach. I want to understand why certain lineups succeed, how ownership impacts results, whether bankroll management matters as much as we think, and if a repeatable system can outperform intuition over time.</p><p>Slate-IQ is my attempt to answer those questions publicly. Think of it as an <strong>analytical journal</strong>. Every week, I'll collect data, build lineups, track results, and ask a simple question: "Did the process improve?" — not "Did I win?"</p><p>Winning is important, but short-term results can be misleading. A good process can lose in the short term, and a bad process can occasionally win. Numbers don't lie, but variance certainly tries.</p><p>Ultimately, my goals are:</p><ul class="modal-list nums"><li>Build a smarter DFS process</li><li>Grow my bankroll responsibly</li><li>Build a community of analytical players</li><li>Create tools that help others</li></ul><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Quality data leads to smart decisions. Emotion usually leads to regret.</p></div><div class="modal-question"><div class="question-label">Discussion Question</div><p class="question-text">Why do you play DFS: entertainment, competition, strategy, or profit?</p></div>`},{num:"Essay 03",title:"What I Am Building",body:`<p>Slate-IQ isn't a pick service. It's my documentation of a system to help make better daily fantasy lineups on DraftKings — a repeatable framework for making better DFS decisions.</p><p>The system currently consists of five components:</p><ul class="modal-list nums"><li>Core Portfolio</li><li>Data Collection</li><li>Player Evaluation</li><li>Lineup Construction</li><li>Post-Slate Review</li></ul><p><strong>Core Portfolio</strong> — players I believe are consistent performers over the past three years with stable coaching and team environments. These form the value foundation of every lineup.</p><p><strong>Player Evaluation</strong> uses a consistent framework: Pace, Usage, Opportunity, Matchup, and Projected Ownership.</p><p><strong>Lineup Construction</strong> — one cash lineup, four GPP lineups, limited weekly exposure, and strict bankroll management. No chasing losses. No doubling down after a bad week.</p><p>Over time, Slate-IQ will evolve into a complete ecosystem including Excel templates, projection tools, ownership models, bankroll dashboards, and educational resources — all in real time.</p><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Systems scale. Guesswork doesn't.</p></div><div class="modal-question"><div class="question-label">Discussion Question</div><p class="question-text">What is the single most important factor in your lineup-building process?</p></div>`},{num:"Essay 04",title:"My Weekly Process",body:`<p>One of the biggest misconceptions about DFS is that successful players spend Sunday morning building lineups. In reality, <strong>lineup construction is the final step</strong> in a much larger process.</p><p>My DFS week begins on Monday. By Tuesday, I'm reviewing the previous slate and asking three questions: What worked? What didn't? What should change next week?</p><ul class="modal-list"><li><strong>Monday</strong> — Review results, update bankroll, document lessons learned</li><li><strong>Tuesday</strong> — Review game logs, analyze winning lineups, identify trends</li><li><strong>Wednesday</strong> — Collect projections, review Vegas lines, begin building player pool</li><li><strong>Thursday</strong> — Evaluate ownership projections, identify leverage opportunities</li><li><strong>Friday</strong> — Narrow player pool, build preliminary lineups</li><li><strong>Saturday</strong> — Validate assumptions, monitor injuries and news</li><li><strong>Sunday</strong> — Finalize lineups, publish before lock, resist emotional swaps</li></ul><p>That last point may be the hardest. Every DFS player has experienced the "five minutes before lock" panic. I've learned that if I spend six days building a process, I shouldn't let six seconds of emotion override it.</p><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">A good process won't eliminate losing weeks, but it will reduce bad decisions.</p></div><div class="modal-question"><div class="question-label">Discussion Question</div><p class="question-text">Which part of your weekly DFS process needs the most improvement?</p></div>`},{num:"Essay 05",title:"What Makes Slate-IQ Different",body:`<p>Let's address the obvious: <strong>"Why should anyone pay attention to Slate-IQ?"</strong> After all, there are dozens of DFS websites, podcasts, and YouTube channels competing for attention.</p><p>The answer isn't that I'm smarter than everyone else. It's <strong>transparency.</strong> Most DFS content focuses on results. Slate-IQ focuses on the process.</p><p>You'll see every lineup before lock, every bankroll update, every winning week, every losing week, and every lesson learned. There won't be any "I almost played this guy" tweets after a player scores 35 fantasy points.</p><p>I'm also approaching DFS through a <strong>financial lens</strong>: Bankroll is capital. Lineups are investments. Results are data points. This mindset doesn't guarantee success, but it does encourage discipline — and discipline is often the difference between a player who lasts one season and one who plays for years.</p><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Trust isn't built through winning. It's built through transparency.</p></div><div class="modal-question"><div class="question-label">Discussion Question</div><p class="question-text">What frustrates you most about DFS content today?</p></div>`},{num:"Essay 06",title:"Bankroll Management",body:`<p>Let's talk about the least exciting — and arguably most important — part of DFS: <strong>bankroll management.</strong></p><p>Most DFS players don't have a lineup problem. They have a bankroll problem. It's difficult to build long-term success when you're risking 20% of your bankroll every Sunday.</p><p>My starting bankroll for Slate-IQ is <strong>$500</strong>. My rules are simple:</p><ul class="modal-list"><li>Weekly exposure: 2.5%–5%</li><li>Diversify contests</li><li>Never chase losses</li><li>Increase stakes only after sustained growth</li></ul><p>If my bankroll is $500, my maximum weekly exposure is $25. Could I play more? Absolutely. Should I? Probably not. DFS is a game of variance — even the best players experience losing streaks. That's why I view bankroll as <strong>working capital</strong>. If a business spends all of its cash reserves after one bad month, it won't survive long.</p><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">You can't grow a bankroll if you don't protect it first.</p></div><div class="modal-question"><div class="question-label">Discussion Question</div><p class="question-text">What percentage of your bankroll do you typically play each week?</p></div>`},{num:"Essay 07",title:"Content Strategy",body:`<p>If you're going to build a community, <strong>consistency matters.</strong> That's why I've spent almost as much time thinking about content as I have thinking about DFS.</p><p>Every NFL week, you can expect three pieces of content:</p><ul class="modal-list nums"><li><strong>Slate Breakdown</strong> — Key games to target, Vegas insights, core plays, potential fades</li><li><strong>Pre-Lock Lineups</strong> — One cash lineup, four GPP lineups, rationale behind every major decision</li><li><strong>Post-Slate Review</strong> — Results analysis, bankroll update, lessons learned, process improvements</li></ul><p>Notice what's missing? Victory laps. If a lineup performs well, we'll celebrate briefly and move on. If it performs poorly, we'll spend more time understanding why.</p><p>Ultimately, <strong>Slate-IQ is an educational platform disguised as a DFS website.</strong> If you leave each week having learned something new, then we're accomplishing our mission.</p><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Consistency compounds — whether it's content creation or bankroll growth.</p></div><div class="modal-question"><div class="question-label">Discussion Question</div><p class="question-text">What type of DFS content do you find most valuable?</p></div>`}];
+let current=0;
+function openModal(i){current=i;renderModal();document.getElementById('overlay').classList.add('open');document.body.style.overflow='hidden';document.getElementById('overlay').scrollTop=0}
+function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow=''}
+function handleOverlayClick(e){if(e.target===document.getElementById('overlay'))closeModal()}
+function navigate(dir){current=Math.max(0,Math.min(essays.length-1,current+dir));renderModal();document.getElementById('overlay').scrollTop=0}
+function renderModal(){const e=essays[current];document.getElementById('m-num').textContent=e.num;document.getElementById('m-title').textContent=e.title;document.getElementById('m-body').innerHTML=e.body;document.getElementById('btn-prev').disabled=current===0;document.getElementById('btn-next').disabled=current===essays.length-1}
+document.addEventListener('keydown',e=>{if(document.getElementById('overlay').classList.contains('open')){if(e.key==='Escape')closeModal();if(e.key==='ArrowLeft')navigate(-1);if(e.key==='ArrowRight')navigate(1)}});
+</script>
+</body>
+</html>

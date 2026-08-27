@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Slate-IQ | Player Evaluations 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border:0 solid #e5e7eb}
+html{font-family:Inter,ui-sans-serif,system-ui,sans-serif;line-height:1.5;scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;background:#fff;color:#0B2545}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:root{
+  --green:#00A94F;--green-dark:#007A38;--green-light:#E6F7ED;--green-border:rgba(0,169,79,0.3);
+  --navy:#0B2545;--navy-dark:#081B33;--navy-light:#13345C;
+  --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;
+  --blue:#3B82F6;--blue-light:rgba(59,130,246,0.12);
+  --gold:#D97706;--gold-light:rgba(217,119,6,0.12);
+  --purple:#7C3AED;--purple-light:rgba(124,58,237,0.12);
+  --red:#DC2626;--red-light:rgba(220,38,38,0.1);
+}
+.container{max-width:80rem;margin:0 auto;padding:0 1.5rem}
+@media(min-width:1024px){.container{padding:0 2rem}}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border-bottom:1px solid var(--gray-100)}
+nav{max-width:80rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-svg{height:32px;width:auto}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+.nav-back{display:flex;align-items:center;gap:.4rem;font-size:.875rem;font-weight:500;color:rgba(11,37,69,.7);transition:color .15s}
+.nav-back:hover{color:var(--green)}
+.nav-back svg{width:1rem;height:1rem;stroke:currentColor;fill:none;stroke-width:2}
+.page-hero{background:linear-gradient(to bottom,var(--navy-light),var(--navy));color:#fff;padding:6rem 0 4rem;position:relative;overflow:hidden}
+@media(min-width:1024px){.page-hero{padding:8rem 0 5rem}}
+.page-hero-bg{position:absolute;inset:0;opacity:.08;pointer-events:none}
+.hero-eyebrow{display:inline-block;background:rgba(0,169,79,.15);color:rgba(230,247,237,1);font-size:.75rem;font-weight:600;letter-spacing:.025em;text-transform:uppercase;padding:.25rem .75rem;border-radius:9999px;margin-bottom:1.25rem;border:1px solid var(--green-border)}
+.page-hero h1{font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem}
+@media(min-width:640px){.page-hero h1{font-size:3rem}}
+.page-hero p{font-size:1.0625rem;color:rgba(255,255,255,.75);max-width:38rem;line-height:1.65}
+.disclaimer-band{background:rgba(0,169,79,.07);border-bottom:1px solid var(--green-border)}
+.disclaimer-inner{display:flex;align-items:flex-start;gap:.75rem;padding:1rem 1.5rem;max-width:80rem;margin:0 auto}
+@media(min-width:1024px){.disclaimer-inner{padding:1rem 2rem}}
+.disclaimer-icon{flex-shrink:0;width:1.25rem;height:1.25rem;stroke:var(--green);fill:none;stroke-width:2;margin-top:.1rem}
+.disclaimer-text{font-size:.875rem;color:var(--navy);line-height:1.55}
+.disclaimer-text strong{color:var(--green-dark);font-weight:600}
+.filters-bar{background:#fff;border-bottom:1px solid var(--gray-100);padding:.875rem 0;position:sticky;top:4rem;z-index:40}
+.filters-inner{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.filter-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);margin-right:.25rem}
+.filter-btn{font-size:.8125rem;font-weight:600;background:none;border:1px solid var(--gray-200);border-radius:.375rem;padding:.35rem .875rem;color:rgba(11,37,69,.6);cursor:pointer;transition:all .15s}
+.filter-btn:hover,.filter-btn.active{background:var(--green-light);color:var(--green-dark);border-color:var(--green-border)}
+.filter-sep{width:1px;height:1.25rem;background:var(--gray-200);margin:0 .25rem}
+.evals-section{padding:2.5rem 0 6rem;background:var(--gray-50)}
+.section-group{margin-bottom:3rem}
+.group-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.group-badge{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .9rem;border-radius:9999px}
+.group-badge-core{background:var(--green-light);color:var(--green-dark);border:1px solid var(--green-border)}
+.group-badge-watch{background:var(--gold-light);color:var(--gold);border:1px solid rgba(217,119,6,0.25)}
+.group-badge-featured{background:var(--blue-light);color:var(--blue);border:1px solid rgba(59,130,246,0.25)}
+.group-title{font-size:1.125rem;font-weight:700;color:var(--navy)}
+.group-count{font-size:.8125rem;color:rgba(11,37,69,.4);font-weight:500}
+.group-line{flex:1;height:1px;background:var(--gray-200)}
+.eval-grid{display:grid;gap:1.25rem}
+@media(min-width:640px){.eval-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.eval-grid{grid-template-columns:repeat(4,1fr)}}
+.eval-card{background:#fff;border:1px solid var(--gray-100);border-radius:.75rem;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:box-shadow .2s,transform .2s;cursor:pointer}
+.eval-card:hover{box-shadow:0 8px 16px -4px rgba(0,0,0,.1);transform:translateY(-2px)}
+.pos-bar{height:3px}
+.pos-bar-qb{background:var(--green)}
+.pos-bar-rb{background:var(--blue)}
+.pos-bar-wr{background:var(--gold)}
+.pos-bar-te{background:var(--purple)}
+.pos-bar-dst{background:var(--red)}
+.eval-card-body{padding:1.25rem;flex:1;display:flex;flex-direction:column}
+.eval-card-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem}
+.pos-badge{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:.2rem .55rem;border-radius:.25rem}
+.pos-badge-qb{background:var(--green-light);color:var(--green-dark)}
+.pos-badge-rb{background:var(--blue-light);color:var(--blue)}
+.pos-badge-wr{background:var(--gold-light);color:var(--gold)}
+.pos-badge-te{background:var(--purple-light);color:var(--purple)}
+.pos-badge-dst{background:var(--red-light);color:var(--red)}
+.rec-badge{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.2rem .55rem;border-radius:.25rem}
+.rec-core{background:var(--green-light);color:var(--green-dark)}
+.rec-strong{background:var(--blue-light);color:var(--blue)}
+.rec-watch{background:var(--gold-light);color:var(--gold)}
+.rec-value{background:rgba(156,163,175,.15);color:rgba(11,37,69,.5)}
+.eval-name{font-size:1rem;font-weight:800;margin-bottom:.15rem;line-height:1.2}
+.eval-team{font-size:.75rem;color:rgba(11,37,69,.45);font-weight:500;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.05em}
+.eval-summary{font-size:.8125rem;color:rgba(11,37,69,.65);line-height:1.55;flex:1;margin-bottom:.85rem}
+.eval-mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.375rem;margin-bottom:.85rem}
+.mini-stat{background:var(--gray-50);border-radius:.375rem;padding:.45rem .35rem;text-align:center}
+.mini-stat-val{font-size:.875rem;font-weight:700;color:var(--navy)}
+.mini-stat-key{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(11,37,69,.4);margin-top:.1rem}
+.eval-card-footer{padding:.75rem 1.25rem;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between}
+.eval-salary{font-size:.75rem;font-weight:600;color:rgba(11,37,69,.45)}
+.eval-salary span{color:var(--green);font-weight:700}
+.eval-arrow{width:1rem;height:1rem;stroke:rgba(11,37,69,.25);fill:none;stroke-width:2;transition:all .2s}
+.eval-card:hover .eval-arrow{stroke:var(--green);transform:translateX(3px)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:200;overflow-y:auto;padding:1.5rem}
+.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal{background:#fff;border-radius:1rem;max-width:52rem;width:100%;margin:auto;overflow:hidden;box-shadow:0 25px 50px -12px rgba(0,0,0,.35)}
+@keyframes mo{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.modal{animation:mo .25s ease}
+.modal-top-bar{height:4px}
+.modal-header{padding:2rem 2rem 1.25rem;border-bottom:1px solid var(--gray-100)}
+.modal-badges{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;margin-bottom:.85rem}
+.modal-close{margin-left:auto;background:none;border:1px solid var(--gray-200);border-radius:.375rem;padding:.35rem .75rem;font-size:.8rem;font-weight:600;color:rgba(11,37,69,.5);cursor:pointer;transition:all .15s}
+.modal-close:hover{color:var(--green);border-color:var(--green)}
+.modal-name{font-size:1.75rem;font-weight:800;line-height:1.15;margin-bottom:.3rem}
+.modal-team-line{font-size:.8125rem;color:rgba(11,37,69,.45);font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.modal-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gray-100)}
+.modal-stat-cell{padding:.875rem;text-align:center;border-right:1px solid var(--gray-100)}
+.modal-stat-cell:last-child{border-right:none}
+.modal-stat-val{font-size:1.0625rem;font-weight:700;color:var(--green)}
+.modal-stat-key{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);margin-top:.2rem}
+.modal-body{padding:1.75rem 2rem}
+.modal-section{margin-bottom:1.5rem}
+.modal-section:last-child{margin-bottom:0}
+.ms-heading{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--green);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
+.ms-heading::after{content:'';flex:1;height:1px;background:var(--gray-100)}
+.ms-body{font-size:.9375rem;color:rgba(11,37,69,.7);line-height:1.7}
+.ms-body strong{color:var(--navy);font-weight:600}
+.str-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:.65rem}
+.str-item,.con-item{font-size:.8125rem;color:rgba(11,37,69,.65);line-height:1.5;display:flex;align-items:flex-start;gap:.4rem}
+.str-item::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.con-item::before{content:'△';color:var(--gold);flex-shrink:0}
+.outlook-grid{display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-top:.65rem}
+.outlook-box{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:.5rem;padding:.875rem 1rem}
+.outlook-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.35rem}
+.outlook-label.cash{color:var(--green-dark)}
+.outlook-label.gpp{color:var(--gold)}
+.outlook-body{font-size:.8125rem;color:rgba(11,37,69,.65);line-height:1.6}
+.modal-callout{background:var(--green-light);border-left:3px solid var(--green);border-radius:0 .375rem .375rem 0;padding:.875rem 1.125rem;margin-top:1.25rem}
+.callout-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--green-dark);margin-bottom:.3rem}
+.callout-body{font-size:.875rem;color:var(--navy);line-height:1.6}
+.modal-question{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:.5rem;padding:.875rem 1.125rem;margin-top:1rem}
+.q-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:rgba(11,37,69,.4);margin-bottom:.35rem}
+.q-text{font-size:.875rem;color:rgba(11,37,69,.65);font-style:italic;line-height:1.55}
+.modal-footer{padding:1.25rem 2rem;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.modal-salary{font-size:.875rem;color:rgba(11,37,69,.5);font-weight:600}
+.modal-salary span{color:var(--green);font-weight:700;font-size:1rem}
+.btn-primary{display:inline-block;background:var(--green);color:#fff;font-weight:600;font-size:.875rem;padding:.5rem 1.1rem;border-radius:.25rem;transition:background .15s}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-outline{display:inline-block;background:transparent;color:rgba(11,37,69,.6);font-weight:600;font-size:.875rem;padding:.5rem 1.1rem;border-radius:.25rem;border:1px solid var(--gray-200);transition:all .15s}
+.btn-outline:hover{color:var(--green);border-color:var(--green-border)}
+.modal-table{width:100%;border-collapse:collapse;font-size:.8125rem;margin-top:.65rem}
+.modal-table th{text-align:left;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);padding:.4rem .65rem;border-bottom:1px solid var(--gray-100)}
+.modal-table td{padding:.55rem .65rem;border-bottom:1px solid var(--gray-50);color:rgba(11,37,69,.65)}
+.modal-table td:first-child{font-weight:600;color:var(--navy)}
+.modal-table td.hi{color:var(--green);font-weight:700}
+.modal-table tr:last-child td{border-bottom:none}
+footer{background:var(--navy-dark);color:rgba(255,255,255,.6);padding:2.5rem 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem;font-size:.875rem}
+@media(min-width:640px){.footer-inner{flex-direction:row}}
+.footer-logo{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a:hover{color:#fff;transition:color .15s}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="badge" viewBox="0 0 300 300">
+      <circle cx="150" cy="150" r="145" fill="#081B33"/>
+      <circle cx="150" cy="150" r="145" fill="none" stroke="#00A94F" stroke-width="6"/>
+      <line x1="75" y1="195" x2="205" y2="115" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+      <circle cx="75" cy="195" r="8" fill="#fff"/>
+      <g transform="translate(220,100) rotate(-14) scale(1.9)">
+        <ellipse cx="0" cy="0" rx="27" ry="16" fill="#00A94F"/>
+        <line x1="-16" y1="0" x2="16" y2="0" stroke="#081B33" stroke-width="2"/>
+        <line x1="-10" y1="-4.5" x2="-10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="-5" y1="-4.5" x2="-5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="0" y1="-4.5" x2="0" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="5" y1="-4.5" x2="5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="10" y1="-4.5" x2="10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <nav>
+    <a href="index.html">
+      <svg class="nav-logo-svg" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="3" width="128" height="40" rx="3" fill="#D7EFDE"/>
+        <text x="64" y="33" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#0B2545" text-anchor="middle" letter-spacing="1">SLATE</text>
+        <rect x="128" y="3" width="56" height="40" rx="3" fill="#00A94F"/>
+        <text x="156" y="33" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">IQ</text>
+      </svg>
+    </a>
+    <div class="nav-right">
+      <a href="slate-iq-essays.html" class="nav-back">Essays</a>
+      <a href="index.html" class="nav-back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Main Site
+      </a>
+    </div>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 800 400">
+      <circle cx="700" cy="80" r="160" fill="#00A94F"/>
+      <circle cx="30" cy="350" r="180" fill="#00A94F"/>
+    </svg>
+  </div>
+  <div class="container" style="position:relative">
+    <p class="hero-eyebrow">2026 NFL Season</p>
+    <h1>Player Evaluations</h1>
+    <p>Data-driven DraftKings evaluations organized by Slate-IQ tier. Core Players form the foundation of weekly lineups. Watch List players offer upside with key variables to monitor.</p>
+  </div>
+</div>
+
+<div class="disclaimer-band">
+  <div class="disclaimer-inner">
+    <svg class="disclaimer-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <p class="disclaimer-text"><strong>Important Note:</strong> These player evaluations are based on 2025 NFL performance. These will be re-evaluated towards the beginning of preseason, factoring in Vegas lines, updated injury reports, and training camp developments before the 2026 season kicks off.</p>
+  </div>
+</div>
+
+<div class="filters-bar">
+  <div class="container">
+    <div class="filters-inner">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-btn active" onclick="filterCards('all',this)">All</button>
+      <button class="filter-btn" onclick="filterCards('core',this)">Core Players</button>
+      <button class="filter-btn" onclick="filterCards('watch',this)">Watch List</button>
+      <div class="filter-sep"></div>
+      <button class="filter-btn" onclick="filterCards('QB',this)">QB</button>
+      <button class="filter-btn" onclick="filterCards('RB',this)">RB</button>
+      <button class="filter-btn" onclick="filterCards('WR',this)">WR</button>
+      <button class="filter-btn" onclick="filterCards('TE',this)">TE</button>
+      <button class="filter-btn" onclick="filterCards('DST',this)">D/ST</button>
+    </div>
+  </div>
+</div>
+
+<section class="evals-section">
+  <div class="container">
+
+    <!-- CORE PLAYERS -->
+    <div class="section-group" id="core-group">
+      <div class="group-header">
+        <span class="group-badge group-badge-core">⭐ Core Players</span>
+        <span class="group-count">14 Players</span>
+        <div class="group-line"></div>
+      </div>
+      <div class="eval-grid">
+        <div class="eval-card" data-pos="QB" data-tier="core" onclick="openModal('burrow')">
+          <div class="pos-bar pos-bar-qb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Joe Burrow</div><div class="eval-team">Cincinnati Bengals</div>
+            <p class="eval-summary">Elite when healthy — 2024 league-leader. But 3 major injuries in 6 seasons, including turf toe surgery ending 2025 after just 8 games. Durability is the entire swing factor.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">20.4</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">8</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$6,300</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$6,300</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="QB" data-tier="core" onclick="openModal('hurts')">
+          <div class="pos-bar pos-bar-qb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-value">Value Play</span></div>
+            <div class="eval-name">Jalen Hurts</div><div class="eval-team">Philadelphia Eagles</div>
+            <p class="eval-summary">Elite rushing floor but 6th OC in 6 seasons. Rushing volume hit a 5-year low in 2025. Real upside if Mannion's scheme bounces back the ground game.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">19.1</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">16</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$7,300</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$7,300</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="RB" data-tier="core" onclick="openModal('brown')">
+          <div class="pos-bar pos-bar-rb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Chase Brown</div><div class="eval-team">Cincinnati Bengals</div>
+            <p class="eval-summary">Breakout 2025: 1,019 rush yards + franchise-record 69 catches. Stayed productive through Burrow's injury absence. Reports of more under-center runs in 2026 add ceiling.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">12.4</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">17</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$7,100</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$7,100</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="RB" data-tier="core" onclick="openModal('placeholder')">
+          <div class="pos-bar pos-bar-rb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Jonathan Taylor</div><div class="eval-team">Indianapolis Colts</div>
+            <p class="eval-summary">Core Player designation based on 3-year consistency, stable coaching environment, and elite volume as the unquestioned Colts lead back. Full write-up coming soon.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary" style="color:rgba(11,37,69,.35)">Full Eval Coming Soon</div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="RB" data-tier="core" onclick="openModal('placeholder')">
+          <div class="pos-bar pos-bar-rb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Kyren Williams</div><div class="eval-team">Los Angeles Rams</div>
+            <p class="eval-summary">Core Player designation based on clear lead-back role in McVay's high-scoring offense with Stafford (reigning MVP) at QB. Full write-up coming soon.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary" style="color:rgba(11,37,69,.35)">Full Eval Coming Soon</div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="RB" data-tier="core" onclick="openModal('placeholder')">
+          <div class="pos-bar pos-bar-rb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Alvin Kamara</div><div class="eval-team">New Orleans Saints</div>
+            <p class="eval-summary">Core Player designation based on elite receiving role and consistent three-down usage in New Orleans' pass-friendly scheme. Full write-up coming soon.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary" style="color:rgba(11,37,69,.35)">Full Eval Coming Soon</div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="WR" data-tier="core" onclick="openModal('chase')">
+          <div class="pos-bar pos-bar-wr"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Ja'Marr Chase</div><div class="eval-team">Cincinnati Bengals</div>
+            <p class="eval-summary">125 catches, 1,412 yards but TDs crashed from 17 to 8 — closely tied to Burrow's injury absence. Volume stayed elite. Massive TD bounce-back candidate with healthy QB.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">11.8</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">16</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$8,100</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$8,100</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="WR" data-tier="core" onclick="openModal('jefferson')">
+          <div class="pos-bar pos-bar-wr"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Justin Jefferson</div><div class="eval-team">Minnesota Vikings</div>
+            <p class="eval-summary">Career-worst 2025 entirely due to QB carousel — still posted 1,048 yards despite worst passing environment of his career. Kyler Murray signing is the clear 2026 catalyst.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">6.9</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">17</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$7,400</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$7,400</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="WR" data-tier="core" onclick="openModal('placeholder')">
+          <div class="pos-bar pos-bar-wr"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">A.J. Brown</div><div class="eval-team">New England Patriots</div>
+            <p class="eval-summary">Traded from Philadelphia to New England. Core Player designation based on elite WR1 profile and target-share history. New-team context factored into full eval coming soon.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary" style="color:rgba(11,37,69,.35)">Full Eval Coming Soon</div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="WR" data-tier="core" onclick="openModal('nacua')">
+          <div class="pos-bar pos-bar-wr"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Puka Nacua</div><div class="eval-team">Los Angeles Rams</div>
+            <p class="eval-summary">Led NFL in catches (129), 1,820 yards, overall fantasy WR1. League-leading 36.1% target share. Same QB (Stafford, reigning MVP) and McVay scheme entering 2026.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">15.5</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">16</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$8,600</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$8,600</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="TE" data-tier="core" onclick="openModal('goedert')">
+          <div class="pos-bar pos-bar-te"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-te">TE</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Dallas Goedert</div><div class="eval-team">Philadelphia Eagles</div>
+            <p class="eval-summary">Career-best 2025: 60 catches, 11 TDs. A.J. Brown traded away — Goedert becomes Eagles' undisputed top target. Strong red zone equity. New contract extension signed.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">8.3</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">15</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$4,600</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$4,600</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="TE" data-tier="core" onclick="openModal('hockenson')">
+          <div class="pos-bar pos-bar-te"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-te">TE</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">T.J. Hockenson</div><div class="eval-team">Minnesota Vikings</div>
+            <p class="eval-summary">Down 2025 due to worst QB play in the league. Kyler Murray signing is the catalyst. But entering age-29 season with shoulder history and Jauan Jennings adding target competition.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">4.1</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">15</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$3,400</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$3,400</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="DST" data-tier="core" onclick="openModal('texansdst')">
+          <div class="pos-bar pos-bar-dst"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-dst">D/ST</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Houston Texans</div><div class="eval-team">D/ST</div>
+            <p class="eval-summary">DST2 finish in 2025. Led NFL in takeaways/game. 2nd in points allowed, 1st in yards allowed. Two straight top-5 fantasy seasons. Complete, elite unit returning largely intact.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">~9.5</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">DST2</div><div class="mini-stat-key">2025 Rank</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$3,800</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$3,800</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="DST" data-tier="core" onclick="openModal('placeholder')">
+          <div class="pos-bar pos-bar-dst"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-dst">D/ST</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Philadelphia Eagles</div><div class="eval-team">D/ST</div>
+            <p class="eval-summary">Super Bowl champions. Core Player designation based on elite defensive performance and organizational continuity under Sirianni entering Year 6. Full write-up coming soon.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">SB Champs</div><div class="mini-stat-key">2025</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary" style="color:rgba(11,37,69,.35)">Full Eval Coming Soon</div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JAXSON DART FEATURED -->
+    <div class="section-group" id="dart-group">
+      <div class="group-header">
+        <span class="group-badge group-badge-featured">🔍 Featured Write-Up</span>
+        <span class="group-count">Full evaluation available</span>
+        <div class="group-line"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;max-width:32rem">
+        <div class="eval-card" data-pos="QB" data-tier="featured" onclick="openModal('dart')">
+          <div class="pos-bar pos-bar-qb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-strong">Strong Play</span></div>
+            <div class="eval-name">Jaxson Dart</div><div class="eval-team">New York Giants · Age 23 · 2nd Year</div>
+            <p class="eval-summary">24 TDs in 12 rookie starts despite losing Nabers and Skattebo. New HC Harbaugh has proven blueprint for dual-threat QBs. Real QB1 upside with healthy cast.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">17.4</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">9</div><div class="mini-stat-key">Rush TDs</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">QB14</div><div class="mini-stat-key">2025 Rank</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$6,400</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WATCH LIST -->
+    <div class="section-group" id="watch-group">
+      <div class="group-header">
+        <span class="group-badge group-badge-watch">👀 Watch List</span>
+        <span class="group-count">15 Players</span>
+        <div class="group-line"></div>
+      </div>
+      <div class="eval-grid">
+        <div class="eval-card" data-pos="QB" data-tier="watch" onclick="openModal('stroud')">
+          <div class="pos-bar pos-bar-qb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">C.J. Stroud</div><div class="eval-team">Houston Texans</div>
+            <p class="eval-summary">2nd straight step back since rookie year. Concussion cost him 3 starts. New OC Nick Caley from Rams. Better weapons on paper — needs to show it on field.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">17.0</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">14</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$6,000</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$6,000</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="QB" data-tier="watch" onclick="openModal('love')">
+          <div class="pos-bar pos-bar-qb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Jordan Love</div><div class="eval-team">Green Bay Packers</div>
+            <p class="eval-summary">Elite efficiency in 2025 — CPOE better than Josh Allen — but raw stats didn't fully reflect it. Losing Romeo Doubs is the swing factor. Real breakout upside if WR corps holds.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">17.9</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">15</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$6,700</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$6,700</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="QB" data-tier="watch" onclick="openModal('goff')">
+          <div class="pos-bar pos-bar-qb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Jared Goff</div><div class="eval-team">Detroit Lions</div>
+            <p class="eval-summary">4 straight 4,000+ yard seasons through OC churn. 34 TDs and career-low 8 INTs in 2025. On his 4th OC in 6 Detroit seasons (Petzing) — but the production has been bulletproof.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">18.8</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">17</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$7,600</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$7,600</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="RB" data-tier="watch" onclick="openModal('barkley')">
+          <div class="pos-bar pos-bar-rb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Saquon Barkley</div><div class="eval-team">Philadelphia Eagles</div>
+            <p class="eval-summary">Historic 2024, real step back in 2025 — finished RB14 as touches dropped. Still behind elite OL. First-time OC (Mannion) adds uncertainty. Need workload to trend back up.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">11.9</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">15</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$7,000</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$7,000</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="RB" data-tier="watch" onclick="openModal('placeholder')">
+          <div class="pos-bar pos-bar-rb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Jahmyr Gibbs</div><div class="eval-team">Detroit Lions</div>
+            <p class="eval-summary">Growing three-down role after Montgomery trade to Houston. Elite receiving ability. Petzing's new system may suit a dual-threat back well. Full write-up coming soon.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary" style="color:rgba(11,37,69,.35)">Full Eval Coming Soon</div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="RB" data-tier="watch" onclick="openModal('placeholder')">
+          <div class="pos-bar pos-bar-rb"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Breece Hall</div><div class="eval-team">New York Jets</div>
+            <p class="eval-summary">Elite lead-back athleticism and role. QB situation in New York remains the primary variable capping his ceiling. Full write-up coming soon.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary" style="color:rgba(11,37,69,.35)">Full Eval Coming Soon</div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="WR" data-tier="watch" onclick="openModal('placeholder')">
+          <div class="pos-bar pos-bar-wr"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Nico Collins</div><div class="eval-team">Houston Texans</div>
+            <p class="eval-summary">WR1 role in Houston's evolving offense. Collins' health and Stroud's bounce-back are the two biggest variables determining his 2026 value. Full write-up coming soon.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary" style="color:rgba(11,37,69,.35)">Full Eval Coming Soon</div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="WR" data-tier="watch" onclick="openModal('lamb')">
+          <div class="pos-bar pos-bar-wr"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-strong">Strong Play</span></div>
+            <div class="eval-name">CeeDee Lamb</div><div class="eval-team">Dallas Cowboys</div>
+            <p class="eval-summary">Down 2025 from ankle injury + Pickens emerging as co-alpha. Per-target efficiency actually improved. Talent and coaching continuity (Schottenheimer since 2023) still elite.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">9.0</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">14</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$6,600</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$6,600</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="WR" data-tier="watch" onclick="openModal('placeholder')">
+          <div class="pos-bar pos-bar-wr"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Amon-Ra St. Brown</div><div class="eval-team">Detroit Lions</div>
+            <p class="eval-summary">Elite slot role and Goff's consistent passing volume. New OC Petzing and Jameson Williams' continued development are the key variables. Full write-up coming soon.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary" style="color:rgba(11,37,69,.35)">Full Eval Coming Soon</div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="TE" data-tier="watch" onclick="openModal('laporta')">
+          <div class="pos-bar pos-bar-te"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-te">TE</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Sam LaPorta</div><div class="eval-team">Detroit Lions</div>
+            <p class="eval-summary">Season-ending back injury after 9 games — 2nd straight down year. But new OC Petzing's Arizona system directly fueled Trey McBride's record-breaking breakout. Buy-low candidate.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">7.4</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">9</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$3,600</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$3,600</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="TE" data-tier="watch" onclick="openModal('mcbride')">
+          <div class="pos-bar pos-bar-te"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-te">TE</span><span class="rec-badge rec-core">Core Play</span></div>
+            <div class="eval-name">Trey McBride</div><div class="eval-team">Arizona Cardinals</div>
+            <p class="eval-summary">Set all-time TE reception record (126 catches). Led all TEs in red-zone targets (33). One question: can Arizona's near-historic pass rate repeat with Murray returning from injury?</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">11.2</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">17</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$5,100</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$5,100</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="TE" data-tier="watch" onclick="openModal('bowers')">
+          <div class="pos-bar pos-bar-te"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-te">TE</span><span class="rec-badge rec-strong">Strong Play</span></div>
+            <div class="eval-name">Brock Bowers</div><div class="eval-team">Las Vegas Raiders</div>
+            <p class="eval-summary">Played through PCL injury in 2025, still 64 catches, 7 TDs in 12 games. New HC Kubiak (Super Bowl-winning OC) built system around Bowers as the first-read focal point.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">9.2</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">12</div><div class="mini-stat-key">2025 GMS</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$5,700</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$5,700</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="DST" data-tier="watch" onclick="openModal('packersdst')">
+          <div class="pos-bar pos-bar-dst"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-dst">D/ST</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Green Bay Packers</div><div class="eval-team">D/ST</div>
+            <p class="eval-summary">Micah Parsons (12.5 sacks in 14 games) led Packers to NFC No. 2 seed before ACL tear in Wk 15. Could miss half of 2026. His health is the single biggest D/ST swing factor.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">ACL</div><div class="mini-stat-key">Parsons Status</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$3,500</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$3,500</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="DST" data-tier="watch" onclick="openModal('placeholder')">
+          <div class="pos-bar pos-bar-dst"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-dst">D/ST</span><span class="rec-badge rec-watch">Watch List</span></div>
+            <div class="eval-name">Dallas Cowboys</div><div class="eval-team">D/ST</div>
+            <p class="eval-summary">Significant roster reshaping after trading Micah Parsons to Green Bay. Watch List designation while evaluating the remaining unit's identity heading into 2026.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">2025 Rank</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary" style="color:rgba(11,37,69,.35)">Full Eval Coming Soon</div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+
+        <div class="eval-card" data-pos="DST" data-tier="watch" onclick="openModal('broncosdst')">
+          <div class="pos-bar pos-bar-dst"></div>
+          <div class="eval-card-body">
+            <div class="eval-card-meta"><span class="pos-badge pos-badge-dst">D/ST</span><span class="rec-badge rec-strong">Strong Play</span></div>
+            <div class="eval-name">Denver Broncos</div><div class="eval-team">D/ST</div>
+            <p class="eval-summary">Back-to-back NFL sack leaders (58 in 2025, near all-time record). 4th in points allowed. Real Core Play upside if below-average takeaway rate normalizes upward in 2026.</p>
+            <div class="eval-mini-stats">
+              <div class="mini-stat"><div class="mini-stat-val">—</div><div class="mini-stat-key">DK PPG</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">58</div><div class="mini-stat-key">2025 Sacks</div></div>
+              <div class="mini-stat"><div class="mini-stat-val">$3,600</div><div class="mini-stat-key">Est. Sal.</div></div>
+            </div>
+          </div>
+          <div class="eval-card-footer"><div class="eval-salary">Est. Salary <span>$3,600</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- MODAL -->
+<div class="modal-overlay" id="overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-top-bar" id="m-bar"></div>
+    <div class="modal-header">
+      <div class="modal-badges" id="m-badges"></div>
+      <div class="modal-name" id="m-name"></div>
+      <div class="modal-team-line" id="m-team"></div>
+    </div>
+    <div class="modal-stats-bar" id="m-stats"></div>
+    <div class="modal-body" id="m-body"></div>
+    <div class="modal-footer">
+      <div class="modal-salary" id="m-salary"></div>
+      <div style="display:flex;gap:.65rem">
+        <a href="index.html" class="btn-outline">Main Site</a>
+        <a href="https://twitter.com/DFS_SlateIQ" class="btn-primary" target="_blank" rel="noopener">Follow @DFS_SlateIQ</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo"><svg width="26" height="26" viewBox="0 0 300 300"><use href="#badge"/></svg>Slate-IQ</div>
+      <div class="footer-links">
+        <a href="https://twitter.com/DFS_SlateIQ" target="_blank">@DFS_SlateIQ</a>
+        <a href="https://instagram.com/slate_iq" target="_blank">@slate_iq</a>
+        <a href="https://www.slate-iq.com" target="_blank">slate-iq.com</a>
+      </div>
+      <p>© 2026 Slate-IQ. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+const D={
+  placeholder:{bar:'pos-bar-qb',pos:'QB',rec:'Coming Soon',recClass:'rec-value',name:'Full Evaluation Coming Soon',team:'Write-up in progress',stats:[{v:'—',k:'DK PPG'},{v:'—',k:'Games'},{v:'—',k:'Stats'},{v:'—',k:'Salary'}],salary:'Full evaluation coming soon.',body:'<div class="modal-section"><div class="ms-heading">Coming Soon</div><p class="ms-body">This evaluation is currently being written and will be published before the 2026 NFL season. Follow <strong>@DFS_SlateIQ</strong> on Twitter and Instagram for updates as each evaluation drops.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Every evaluation in this series is built on the same Slate-IQ framework: pace, usage, opportunity, matchup, and projected ownership — in that order, every week.</p></div>'},
+  dart:{bar:'pos-bar-qb',pos:'QB',rec:'Strong Play',recClass:'rec-strong',name:'Jaxson Dart',team:'New York Giants · HC: John Harbaugh (Yr 1) · OC: Matt Nagy (Yr 1)',stats:[{v:'17.4',k:'DK PPG'},{v:'QB14',k:'2025 Finish'},{v:'9',k:'Rush TDs'},{v:'$6,400',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$6,400</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Jaxson Dart delivered one of the most productive rookie QB seasons in recent memory — <strong>24 total touchdowns in just 12 starts</strong> — despite losing his top receiver and lead back to season-ending injuries. He now inherits John Harbaugh, who developed Lamar Jackson into an MVP-caliber dual-threat passer — a directly relevant blueprint for Dart\'s skill set.</p></div><div class="modal-section"><div class="ms-heading">2025 Peer Comparison</div><table class="modal-table"><thead><tr><th>Player</th><th>Games</th><th>DK PPG</th><th>Context</th></tr></thead><tbody><tr><td class="hi">Jaxson Dart</td><td>14 (12 starts)</td><td class="hi">~17.4</td><td>Rookie; lost top 2 weapons</td></tr><tr><td>Lamar Jackson</td><td>13</td><td>~16-17</td><td>Harbaugh\'s system in Baltimore</td></tr><tr><td>Jalen Hurts</td><td>16</td><td>~19.1</td><td>Established dual-threat QB</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">9 rush TDs as rookie — 3rd-most ever by a rookie QB</div><div class="con-item">Zero continuity with brand-new staff (Harbaugh, Nagy)</div><div class="str-item">Productive despite losing top two weapons all season</div><div class="con-item">Only one NFL season of data to project from</div><div class="str-item">HC Harbaugh has proven blueprint for dual-threat QBs</div><div class="con-item">86 carries as a rookie raises durability question</div><div class="str-item">Full cast (Nabers, Skattebo, Likely) expected healthy</div><div class="con-item">Still on a rebuilding roster beyond skill positions</div></div></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">Rushing floor gives him a real baseline even in a tough matchup. Wait a few weeks to see how Harbaugh deploys him before treating him as automatic.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">Real ceiling given rushing production and skill-position upgrades. Moderate early-season ownership could create tournament leverage if Harbaugh\'s offense clicks.</p></div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">9 rushing TDs as a rookie — 3rd-most in NFL history for a rookie QB — while playing most of the season without his top receiver and lead back. That combination is the clearest sign his 2026 ceiling, with a healthy cast, is significantly higher.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When a young dual-threat QB gets paired with a coach known for developing that exact skill set, how much of a boost do you build into your early-season projection versus waiting for actual game tape?</p></div>'},
+  burrow:{bar:'pos-bar-qb',pos:'QB',rec:'Watch List',recClass:'rec-watch',name:'Joe Burrow',team:'Cincinnati Bengals · HC: Zac Taylor (Yr 8) · OC: Dan Pitcher (Yr 3)',stats:[{v:'20.4',k:'DK PPG'},{v:'8',k:'2025 Games'},{v:'Top-3',k:'When Healthy'},{v:'$6,300',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$6,300</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Elite when healthy — career 68.5% completion rate, top-3 fantasy QB in every full season. But <strong>3 significant injuries in 6 seasons</strong> including turf toe surgery ending 2025 after 8 games. Rare coaching continuity (Taylor + Pitcher since 2020) and elite WR duo (Chase + Higgins) are the positives.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Best pure passing efficiency in the league</div><div class="con-item">3 major injury-shortened seasons in 6 years</div><div class="str-item">Rare coaching continuity — same staff since 2020</div><div class="con-item">Zero rushing floor — all value depends on passing health</div><div class="str-item">Elite WR duo: Ja\'Marr Chase and Tee Higgins</div><div class="con-item">Offensive line issues have contributed to each injury</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">In seasons with 16+ games played, Burrow has finished as a top-3 fantasy QB. The ceiling is clear. The health pattern is equally clear. Both facts must live in the same projection.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">How many weeks into a season does a historically injury-prone QB need to stay healthy before you treat him as a reliable weekly starter?</p></div>'},
+  hurts:{bar:'pos-bar-qb',pos:'QB',rec:'Value Play',recClass:'rec-value',name:'Jalen Hurts',team:'Philadelphia Eagles · HC: Nick Sirianni (Yr 6) · OC: Sean Mannion (Yr 1)',stats:[{v:'19.1',k:'DK PPG'},{v:'6th OC',k:'in 6 Seasons'},{v:'5-Yr Low',k:'Rush Volume'},{v:'$7,300',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$7,300</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Elite rushing floor when the scheme supports it — but his <strong>rushing volume hit a 5-year low in 2025</strong>, and he\'s now on his 6th offensive coordinator in 6 seasons. The central question for 2026: does Sean Mannion\'s scheme restore the designed QB runs and tush push that made Hurts a top-3 fantasy QB in 2022-23?</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Proven elite rushing floor when scheme supports it</div><div class="con-item">6th OC in 6 seasons — zero continuity at playcaller</div><div class="str-item">Outstanding durability for a dual-threat QB</div><div class="con-item">Rushing volume at a 5-year low in 2025</div><div class="str-item">Super Bowl MVP — proven big-game performer</div><div class="con-item">Lost A.J. Brown; overhauled, unproven receiving corps</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Hurts\' fantasy value is directly tied to his rushing production. When he runs like 2022-23, he\'s a top-3 QB. When he doesn\'t, he\'s a borderline QB1. The 2026 question is which version shows up under Mannion.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">How many weeks of early-season data do you need before you\'re comfortable projecting a QB\'s rushing volume under a brand-new offensive coordinator?</p></div>'},
+  stroud:{bar:'pos-bar-qb',pos:'QB',rec:'Watch List',recClass:'rec-watch',name:'C.J. Stroud',team:'Houston Texans · HC: DeMeco Ryans (Yr 4) · OC: Nick Caley (Yr 1)',stats:[{v:'17.0',k:'DK PPG'},{v:'14',k:'2025 Games'},{v:'2nd Year',k:'Step Back'},{v:'$6,000',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$6,000</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Two straight step-backs since a spectacular rookie year. A concussion cost him 3 starts in 2025, and career-low counting stats (3,041 yards, 19 TDs) led the Texans to fire OC Bobby Slowik and bring in Nick Caley from the Rams. <strong>Better weapons on paper</strong> — Nico Collins, Christian Kirk, Tank Dell returning — but none of it is proven yet.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Elite rookie-season track record (2023: 4,108 yards, 23 TD)</div><div class="con-item">Two straight statistical step-backs since his rookie year</div><div class="str-item">Upgraded OL and stronger receiving cast for 2026</div><div class="con-item">Zero rushing floor caps his weekly ceiling vs. dual-threats</div><div class="str-item">New OC Caley brings fresh scheme ideas after stagnation</div><div class="con-item">2025 concussion worth tracking heading into 2026</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Stroud\'s 2023 rookie season was elite. His 2024-25 regression is equally real. Which version of the data you weight more heavily is the entire projection question heading into 2026.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When a young QB follows a spectacular rookie year with two straight step-backs, do you project toward his ceiling or his recent floor?</p></div>'},
+  love:{bar:'pos-bar-qb',pos:'QB',rec:'Watch List',recClass:'rec-watch',name:'Jordan Love',team:'Green Bay Packers · HC: Matt LaFleur (Yr 8) · OC: Adam Stenavich (Yr 5)',stats:[{v:'17.9',k:'DK PPG'},{v:'15',k:'2025 Games'},{v:'Top-3 CPOE',k:'Efficiency'},{v:'$6,700',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$6,700</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Love\'s underlying 2025 efficiency was elite — his completion percentage over expectation <strong>topped Josh Allen\'s</strong>, ranking 3rd in the league in down-to-down efficiency. Raw fantasy production didn\'t fully reflect it, and losing Romeo Doubs to free agency creates a real target-share void. Real coaching continuity (LaFleur + Stenavich in their 8th and 5th seasons) is the foundation.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Top-3 efficiency season by advanced metrics in 2025</div><div class="con-item">Loss of Romeo Doubs removes a proven contributor</div><div class="str-item">Rare coaching continuity (LaFleur Yr 8, Stenavich Yr 5)</div><div class="con-item">Limited rushing floor caps weekly ceiling vs. dual-threats</div><div class="str-item">Career-low bad-throw rate — real developmental growth</div><div class="con-item">Raw stats have consistently underperformed efficiency metrics</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Love\'s efficiency data suggests untapped upside the box score doesn\'t show. The question for 2026: does a better receiving corps finally let those metrics translate into fantasy production?</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">How much weight do you give advanced efficiency metrics like CPOE when projecting a QB whose box-score stats consistently underperform those metrics?</p></div>'},
+  goff:{bar:'pos-bar-qb',pos:'QB',rec:'Watch List',recClass:'rec-watch',name:'Jared Goff',team:'Detroit Lions · HC: Dan Campbell (Yr 6) · OC: Drew Petzing (Yr 1)',stats:[{v:'18.8',k:'DK PPG'},{v:'34 TDs',k:'2025 Season'},{v:'4th OC',k:'in 6 Yrs'},{v:'$7,600',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$7,600</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body"><strong>4 straight seasons of 4,000+ yards and 29+ touchdowns</strong>, despite churning through OCs every year. Career-low 8 interceptions in 2025. Now on OC No. 4 in 6 Detroit seasons (Drew Petzing, hired from Arizona). His statistical consistency through every coaching transition is the defining fact of his recent career.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">4 straight elite statistical seasons regardless of OC</div><div class="con-item">4th OC in 6 Detroit seasons — persistent coaching churn</div><div class="str-item">Elite receiving corps returning (St. Brown, Williams, Gibbs)</div><div class="con-item">Offensive line in transition after losing 2 starters</div><div class="str-item">Career-low INTs in 2025 — real developmental growth</div><div class="con-item">Zero rushing floor — all value driven by passing efficiency</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Goff\'s consistency through 4 different OCs in Detroit is either elite talent overriding scheme instability, or proof that Campbell\'s overall program design matters more than any single coordinator. Either way, the production has been real — and real enough to project forward.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When a QB posts elite numbers through repeated OC changes, how much weight do you put on the new coordinator as a variable vs. the player himself?</p></div>'},
+  brown:{bar:'pos-bar-rb',pos:'RB',rec:'Core Play',recClass:'rec-core',name:'Chase Brown',team:'Cincinnati Bengals · HC: Zac Taylor (Yr 8) · OC: Dan Pitcher (Yr 3)',stats:[{v:'12.4',k:'DK PPG'},{v:'1,456',k:'Scrimmage Yds'},{v:'11 TDs',k:'Total TDs'},{v:'$7,100',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$7,100</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Chase Brown\'s breakout: <strong>1,019 rushing yards + 69 receptions</strong> (Bengals franchise record for a RB). One of only 5 backs in the NFL last season with 1,000+ rush yards AND 400+ receiving yards. Stayed productive even during Burrow\'s injury absence. Reports of more under-center runs in 2026 could further elevate his ceiling.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Genuine three-down breakout — 1,000 rush + 400 receiving yds</div><div class="con-item">TD production (6 rush TDs) lagged overall yardage volume</div><div class="str-item">Franchise-record receptions for Bengals RB in a single season</div><div class="con-item">Burrow health remains the swing factor for the whole offense</div><div class="str-item">Productive even with backup Flacco at QB</div><div class="con-item">Under-center run usage ranked 31st in 2025 — may improve</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Only 5 backs in the NFL had 1,000+ rush yards AND 400+ receiving yards in 2025. Chase Brown was one of them — in his first full season as the lead back. That combination at 26 is a real signal for sustained production.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">How much extra value do you assign to an RB who demonstrates he can produce even when his team\'s starting QB misses significant time?</p></div>'},
+  barkley:{bar:'pos-bar-rb',pos:'RB',rec:'Watch List',recClass:'rec-watch',name:'Saquon Barkley',team:'Philadelphia Eagles · HC: Nick Sirianni (Yr 6) · OC: Sean Mannion (Yr 1)',stats:[{v:'11.9',k:'DK PPG'},{v:'RB14',k:'2025 Finish'},{v:'15',k:'2025 Games'},{v:'$7,000',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$7,000</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Historic 2024, but real step back in 2025 — finished RB14 as touches dropped significantly from his career-best pace. Still behind one of the league\'s best offensive lines. But <strong>a first-time OC (Mannion) and Hurts\' rushing role competing for goal-line snaps</strong> add real uncertainty to his workload ceiling heading into 2026.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Elite OL — among league\'s best run-blocking units</div><div class="con-item">Significant touch decline from his 2024 peak</div><div class="str-item">No major injury drove the 2025 decline</div><div class="con-item">First-time OC adds real scheme uncertainty</div><div class="str-item">Proven explosive talent with historic 2024 on record</div><div class="con-item">Hurts\' rushing role competes for goal-line opportunities</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Barkley\'s 2025 decline was about touches, not talent. The question for 2026 is whether the workload bounces back — and that depends on how Mannion\'s new scheme uses him vs. Hurts in short-yardage situations.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When an elite RB\'s touches drop significantly despite no major injury, how many weeks of 2026 data do you need before you trust the volume is back?</p></div>'},
+  chase:{bar:'pos-bar-wr',pos:'WR',rec:'Core Play',recClass:'rec-core',name:"Ja'Marr Chase",team:'Cincinnati Bengals · HC: Zac Taylor (Yr 8) · OC: Dan Pitcher (Yr 3)',stats:[{v:'11.8',k:'DK PPG'},{v:'125 Rec',k:'2025 Season'},{v:'8 TDs',k:'vs 17 in 2024'},{v:'$8,100',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$8,100</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Volume stayed elite in 2025 — 125 catches, 182 targets, nearly identical to his record-setting 2024 pace. But touchdowns fell from <strong>17 to 8</strong>, closely tied to Joe Burrow\'s injury-shortened season. With a healthy Burrow, that TD regression represents major upside for 2026.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Elite stable target share (182 targets in 2025)</div><div class="con-item">TD count nearly halved (17 to 8) from 2024 to 2025</div><div class="str-item">Same elite coaching staff for entire career</div><div class="con-item">Value closely tied to Burrow\'s health — real risk pattern</div><div class="str-item">Proven record-setting ceiling (2024: 127-1,708-17)</div><div class="con-item">Missed one game to suspension — bears monitoring</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Chase\'s 2025 volume (125 catches, 182 targets) was nearly identical to his 2024 league-leading pace. The drop from 2024 to 2025 was almost entirely about Burrow\'s health and resulting TD regression. Normalize both, and the upside is clear.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When a WR\'s volume stays elite but touchdowns drop sharply tied to their QB\'s injury, how much of a bounce-back do you build into the following season?</p></div>'},
+  jefferson:{bar:'pos-bar-wr',pos:'WR',rec:'Core Play',recClass:'rec-core',name:'Justin Jefferson',team:"Minnesota Vikings · HC: Kevin O'Connell (Yr 5) · OC: Wes Phillips (Yr 5)",stats:[{v:'6.9',k:'DK PPG'},{v:'1,048',k:'Rec Yards'},{v:'Career Low',k:'2025 PPG'},{v:'$7,400',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$7,400</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Career-worst 2025, but the driver was <strong>almost entirely external</strong> — a Vikings QB carousel of McCarthy, Wentz, and Brosmer, among the worst situations in the league. Jefferson still posted 1,048 yards despite that environment. The Kyler Murray signing is the clear 2026 catalyst.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Retained elite target share even in career-worst season</div><div class="con-item">Coming off statistically worst season as a pro</div><div class="str-item">Same coaching staff his entire career — rare continuity</div><div class="con-item">Murray\'s new-offense transition creates early uncertainty</div><div class="str-item">Clear, trackable catalyst: Kyler Murray QB upgrade</div><div class="con-item">Offensive line has had its own struggles</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Jefferson posted 1,048 receiving yards despite one of the worst QB situations in the league. His talent never went anywhere — his support system did. A real QB upgrade reverses that equation.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When an elite WR\'s production tanks almost entirely due to QB play, how many early-season games do you watch before fully buying back in after a QB upgrade?</p></div>'},
+  nacua:{bar:'pos-bar-wr',pos:'WR',rec:'Core Play',recClass:'rec-core',name:'Puka Nacua',team:'Los Angeles Rams · HC: Sean McVay (Yr 10) · OC: Nate Scheelhaase (Yr 1)',stats:[{v:'15.5',k:'DK PPG'},{v:'WR1',k:'2025 Fantasy'},{v:'129 Rec',k:'Led NFL'},{v:'$8,600',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$8,600</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Led the NFL in receptions in 2025 (129), posted a career-high 1,820 yards, and finished as the overall fantasy WR1. <strong>League-leading 36.1% target share</strong> on his routes. Same QB (Stafford, reigning NFL MVP) and McVay\'s offense — which he calls himself regardless of OC title — continue in 2026.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Led NFL in catches; finished as overall WR1 in 2025</div><div class="con-item">Real injury history (2024 PCL sprain cost him 6 games)</div><div class="str-item">Elite, league-leading 36.1% target share on routes</div><div class="con-item">Red zone role secondary to Davante Adams, capping TD upside</div><div class="str-item">Same QB and scheme for entire career (McVay calls plays)</div><div class="con-item">New OC title (Scheelhaase) even though McVay still playcalls</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Nacua\'s 36.1% target share on routes was the highest in the league — and it came with a brand-new WR2 (Adams) many predicted would cut into his volume. Instead, his production went up. That\'s the data point that matters most.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When a receiver\'s volume increases after a team adds a second big-name weapon, how much does that change your confidence in his target share holding long-term?</p></div>'},
+  lamb:{bar:'pos-bar-wr',pos:'WR',rec:'Strong Play',recClass:'rec-strong',name:'CeeDee Lamb',team:'Dallas Cowboys · HC: Brian Schottenheimer (Yr 2) · OC: Klayton Adams (Yr 1)',stats:[{v:'9.0',k:'DK PPG'},{v:'14',k:'2025 Games'},{v:'3 TDs',k:'Career Low'},{v:'$6,600',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$6,600</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Down 2025 from ankle injury plus George Pickens emerging as a co-alpha receiver. Career-low 3 TDs. But his <strong>per-target efficiency actually improved</strong>, suggesting the decline was about volume and touchdown luck rather than talent. Real coaching continuity: Schottenheimer has called plays for this offense since 2023.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Proven WR1 ceiling (2023: 135-1,749-12)</div><div class="con-item">Now a genuine 1A/1B room with Pickens — target share split</div><div class="str-item">Per-target efficiency improved in 2025 despite lower volume</div><div class="con-item">Career-low 3 TDs — timing of bounce-back uncertain</div><div class="str-item">Schottenheimer calling plays for this offense since 2023</div><div class="con-item">Ankle + concussion injury pattern across 2024-25</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Lamb\'s efficiency (yards per target/reception) improved in 2025 even as volume and TDs fell. That\'s a talent signal, not a decline signal. The 2026 question is whether Dallas leans back toward him or continues developing Pickens as a true co-alpha.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When a WR\'s efficiency improves but volume drops due to a new co-alpha, how do you project the target split going forward?</p></div>'},
+  goedert:{bar:'pos-bar-te',pos:'TE',rec:'Core Play',recClass:'rec-core',name:'Dallas Goedert',team:'Philadelphia Eagles · HC: Nick Sirianni (Yr 6) · OC: Sean Mannion (Yr 1)',stats:[{v:'8.3',k:'DK PPG'},{v:'11 TDs',k:'Career High'},{v:'TE3',k:'2025 Finish'},{v:'$4,600',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$4,600</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Career-best 2025: 60 catches and 11 touchdowns despite missing 2 games. A.J. Brown was traded away, making Goedert the <strong>Eagles\' undisputed top receiving target</strong> in 2026. Strong red zone equity (11 TDs reflects real goal-line trust) with no direct TE competition threatening his role.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Career-best season at age 30 (60 catches, 11 TDs)</div><div class="con-item">Recurring injury pattern — under 15 games each of last 3 years</div><div class="str-item">No significant TE competition after Eli Stowers drafted</div><div class="con-item">New OC (Mannion) first time calling plays</div><div class="str-item">Strong red zone trust and touchdown equity</div><div class="con-item">11 TDs may be difficult to fully replicate at 31</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Goedert posted his best season at 30 — with a new WR2 in the room and an overworked target share. A.J. Brown\'s departure now makes him the clear focal point. The red zone role, in particular, should only grow.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">How much of Goedert\'s 11-TD season do you project as repeatable vs. career-year variance, especially entering his age-31 season?</p></div>'},
+  hockenson:{bar:'pos-bar-te',pos:'TE',rec:'Watch List',recClass:'rec-watch',name:'T.J. Hockenson',team:"Minnesota Vikings · HC: Kevin O'Connell (Yr 5) · OC: Wes Phillips (Yr 5)",stats:[{v:'4.1',k:'DK PPG'},{v:'51 Rec',k:'2025 Season'},{v:'3 TDs',k:'2025'},{v:'$3,400',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$3,400</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Down 2025 driven almost entirely by the worst QB situation in the league (McCarthy/Wentz/Brosmer). Shoulder injury cost him final 2 games. <strong>Kyler Murray signing is the catalyst</strong> — same as for Jefferson. But at nearly 29, entering with ACL history and Jauan Jennings adding to target competition, this is a cautious Watch List designation.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Same coaching staff since 2022 — rare continuity</div><div class="con-item">Entering age-29 season on last year of contract</div><div class="str-item">Real potential QB upgrade (Kyler Murray) for 2026</div><div class="con-item">Career-low yards per reception may signal athletic decline</div><div class="str-item">Proven TE1-caliber ceiling in healthy seasons</div><div class="con-item">Shoulder injury + 2022 ACL create durability questions</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Hockenson\'s 2025 decline mirrors Jefferson\'s in cause — bad QB play — but not in profile. Jefferson is 27 and at peak; Hockenson is turning 29 with an ACL in his history. The QB upgrade helps, but the risk profile is different.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When an aging TE\'s decline stems from poor QB play, how much of the expected bounce-back do you assign to the QB upgrade vs. caution around age-related decline?</p></div>'},
+  laporta:{bar:'pos-bar-te',pos:'TE',rec:'Watch List',recClass:'rec-watch',name:'Sam LaPorta',team:'Detroit Lions · HC: Dan Campbell (Yr 6) · OC: Drew Petzing (Yr 1)',stats:[{v:'7.4',k:'DK PPG'},{v:'9',k:'2025 Games'},{v:'Buy Low',k:'Candidate'},{v:'$3,600',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$3,600</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Season-ending back injury after 9 games — second straight disappointing year. But new OC Drew Petzing\'s system in Arizona <strong>directly produced Trey McBride\'s record-setting breakout</strong>, and LaPorta is the established tight end in Detroit. A legitimate buy-low candidate with real scheme-fit upside if fully healthy.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Proven TE1 ceiling (finished TE1 overall as a rookie)</div><div class="con-item">Season-ending back injury in 2025 — 2nd straight down year</div><div class="str-item">New OC Petzing\'s system directly elevated McBride to TE1</div><div class="con-item">Real target competition (St. Brown, Williams, Gibbs all active)</div><div class="str-item">Elite QB (Goff) in Detroit — quality of opportunity is high</div><div class="con-item">Buy-low value assumes full health — not yet confirmed</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Petzing\'s Arizona system fed the tight end at one of the league\'s highest rates and directly produced Trey McBride\'s all-time reception record. LaPorta is the incumbent TE in Detroit. The scheme fit is the most tangible positive signal in his 2026 outlook.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When projecting a buy-low TE with injury history, how many weeks of confirmed health do you need before escalating him on the target board?</p></div>'},
+  mcbride:{bar:'pos-bar-te',pos:'TE',rec:'Core Play',recClass:'rec-core',name:'Trey McBride',team:'Arizona Cardinals · HC: Jonathan Gannon (Yr 4) · OC: Mike LaFleur (Yr 1)',stats:[{v:'11.2',k:'DK PPG'},{v:'126 Rec',k:'NFL Record'},{v:'TE1',k:'2025 Finish'},{v:'$5,100',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$5,100</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Set the all-time single-season TE reception record in 2025 (126 catches) and finished as the clear overall TE1. Led all TEs with <strong>33 red-zone targets</strong>. The key question for 2026: Arizona threw at a near-historic rate largely because Jacoby Brissett took over for the injured Kyler Murray — can that pass rate repeat?</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">All-time single-season TE reception record (126 catches)</div><div class="con-item">Near-historic 2025 pass rate may not fully repeat</div><div class="str-item">Led all TEs in red-zone targets (33) in 2025</div><div class="con-item">New OC (Mike LaFleur) first season with this team</div><div class="str-item">Elite durability (17 games in each of last 2 seasons)</div><div class="con-item">New first-round RB and Marvin Harrison Jr. growth compete</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">McBride\'s 2025 target share was elite by any measure. Even if Arizona\'s pass rate moderates in 2026, his position at the top of a heavily TE-friendly target distribution earns a Core Play designation regardless.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">How much of a pass-rate regression do you build in for a team whose near-historic rate was driven largely by a backup QB situation that has since changed?</p></div>'},
+  bowers:{bar:'pos-bar-te',pos:'TE',rec:'Strong Play',recClass:'rec-strong',name:'Brock Bowers',team:'Las Vegas Raiders · HC: Klint Kubiak (Yr 1) · OC: Andrew Janocko (Yr 1)',stats:[{v:'9.2',k:'DK PPG'},{v:'7 TDs',k:'in 12 Games'},{v:'64 Rec',k:'2025'},{v:'$5,700',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$5,700</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Played through a PCL sprain and bone bruise for most of 2025, still produced 64 catches and 7 TDs in 12 games. New HC Klint Kubiak (Super Bowl-winning OC in Seattle) has <strong>explicitly cited Bowers as his first-read focal-point target</strong> — no proven complementary receiver on the Raiders\' roster to compete with him.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Rewrote rookie TE record books in 2024 (112 catches)</div><div class="con-item">Persistent knee injury (PCL, bone bruise) limited 2025</div><div class="str-item">New HC has elite offensive track record + explicit Bowers focus</div><div class="con-item">3rd coaching regime in 3 NFL seasons — ongoing churn</div><div class="str-item">No proven receiving competition on Raiders\' roster</div><div class="con-item">QB situation in Las Vegas remains an open question</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Bowers produced 7 TDs and 64 catches in 12 injury-limited games on a 3-14 team. Fully healthy, in Kubiak\'s system, with an explicit first-read designation — the upside argument writes itself.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">How much do you discount a TE\'s projection when their team has an open QB competition, even when the TE\'s talent and scheme fit are both elite?</p></div>'},
+  texansdst:{bar:'pos-bar-dst',pos:'D/ST',rec:'Core Play',recClass:'rec-core',name:'Houston Texans D/ST',team:'HC: DeMeco Ryans (Yr 4) · Two straight top-5 fantasy finishes',stats:[{v:'~9.5',k:'DK PPG'},{v:'DST2',k:'2025 Finish'},{v:'#1',k:'Takeaways/Gm'},{v:'$3,800',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$3,800</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Genuinely elite across the board in 2025: <strong>2nd in points allowed, 1st in yards allowed, 4th in sacks per game, 1st in takeaways per game</strong>. Two straight top-5 fantasy seasons. DeMeco Ryans enters Year 4 with the defensive core returning largely intact — one of the safest D/ST profiles in this entire series.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Led NFL in takeaways and yards allowed in 2025</div><div class="con-item">Texans offense has struggled, occasionally creating tough scripts</div><div class="str-item">Elite pass rush (Anderson + Hunter) — two-way threat</div><div class="con-item">High salary expectation may limit leverage on certain slates</div><div class="str-item">4th season of stability under Ryans\' defensive-minded HC</div><div class="con-item">Potential regression if takeaway rate doesn\'t hold</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">Top-5 in both 2024 and 2025. Led the league in takeaways per game. That\'s not a one-year sample — it\'s a program. DeMeco Ryans is building one of the best defenses in football, and the data backs it up.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When a D/ST posts back-to-back top-5 seasons, how much regression do you build into your week-to-week projection vs. using their season-long floor as the baseline?</p></div>'},
+  packersdst:{bar:'pos-bar-dst',pos:'D/ST',rec:'Watch List',recClass:'rec-watch',name:'Green Bay Packers D/ST',team:'HC: Matt LaFleur (Yr 8) · DC: Jonathan Gannon (Yr 1)',stats:[{v:'—',k:'DK PPG'},{v:'12.5',k:'Parsons Sacks'},{v:'ACL',k:'Parsons Status'},{v:'$3,500',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$3,500</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Micah Parsons was dominant before his Week 15 ACL tear (12.5 sacks, 2 forced fumbles, All-Pro), and the Packers were the NFC No. 2 seed before losing him. <strong>New reporting suggests Parsons could miss at least half of 2026</strong>. That single player\'s health is the biggest swing factor at the D/ST position in this entire series.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Trevon Diggs adds a ball-hawking corner to the secondary</div><div class="con-item">Parsons may miss half of 2026 — pass rush built around him</div><div class="str-item">Underlying roster was NFC No. 2 seed quality with Parsons</div><div class="con-item">New DC (Gannon) replacing Hafley who left for Miami</div><div class="str-item">Jordan Love\'s floor supports reasonable game scripts</div><div class="con-item">Two layers of uncertainty: Parsons health + new DC scheme</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">With Parsons: NFC No. 2 seed. Without him: fell to No. 7 and lost in the Wild Card. His health IS the projection for this entire unit. There\'s no more player-dependent D/ST story in this series.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When a D/ST\'s pass-rush identity is built around one elite edge rusher returning from a torn ACL, how do you set a season-long projection before knowing his Week 1 status?</p></div>'},
+  broncosdst:{bar:'pos-bar-dst',pos:'D/ST',rec:'Strong Play',recClass:'rec-strong',name:'Denver Broncos D/ST',team:'HC: Sean Payton (Yr 5) · Back-to-back NFL sack leaders',stats:[{v:'—',k:'DK PPG'},{v:'58',k:'2025 Sacks'},{v:'4th',k:'Points Allowed'},{v:'$3,600',k:'Est. Salary'}],salary:'Est. DK Week 1 Salary: <span>$3,600</span>',body:'<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Back-to-back NFL sack leaders: <strong>58 sacks in 2025</strong>, just shy of the all-time single-season record, plus 4th in points allowed. The one real soft spot: a below-average takeaway rate despite all that pressure — a genuine statistical oddity that could normalize in either direction in 2026.</p></div><div class="modal-section"><div class="ms-heading">Strengths &amp; Concerns</div><div class="str-grid"><div class="str-item">Back-to-back NFL sack leader — clearest repeatable strength</div><div class="con-item">Below-average takeaway rate despite elite pass pressure</div><div class="str-item">Led NFL in defensive TDs in 2024 — real bonus-score history</div><div class="con-item">Takeaway rate could regress upward OR continue underperforming</div><div class="str-item">Sean Payton\'s 5th season — real continuity at HC level</div><div class="con-item">Lost Parsons (traded to GB) from their sack-leader identity</div></div></div><div class="modal-callout"><div class="callout-label">Numbers Don\'t Lie</div><p class="callout-body">58 sacks with a below-average takeaway rate. That\'s the most interesting statistical tension in the D/ST pool. If those numbers converge in 2026, this becomes a Core Play. The pass-rush foundation is real either way.</p></div><div class="modal-question"><div class="q-label">Discussion Question</div><p class="q-text">When a defense leads the league in sacks for back-to-back seasons but underperforms in takeaways, do you project regression toward the mean in turnovers — up or down?</p></div>'}
+};
+
+function openModal(id){
+  const p=D[id];if(!p)return;
+  document.getElementById('m-bar').className='modal-top-bar '+p.bar;
+  document.getElementById('m-badges').innerHTML='<span class="pos-badge pos-badge-'+p.pos.toLowerCase()+'">'+p.pos+'</span><span class="rec-badge '+p.recClass+'">'+p.rec+'</span><button class="modal-close" onclick="closeModal()">Close \u2715</button>';
+  document.getElementById('m-name').textContent=p.name;
+  document.getElementById('m-team').textContent=p.team;
+  document.getElementById('m-stats').innerHTML=p.stats.map(s=>'<div class="modal-stat-cell"><div class="modal-stat-val">'+s.v+'</div><div class="modal-stat-key">'+s.k+'</div></div>').join('');
+  document.getElementById('m-body').innerHTML=p.body;
+  document.getElementById('m-salary').innerHTML=p.salary;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('overlay').scrollTop=0;
+}
+function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow=''}
+function handleOverlayClick(e){if(e.target===document.getElementById('overlay'))closeModal()}
+function filterCards(f,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const pos=['QB','RB','WR','TE','DST'];
+  document.querySelectorAll('.eval-card').forEach(c=>{
+    const cp=c.dataset.pos,ct=c.dataset.tier;
+    let show=false;
+    if(f==='all') show=true;
+    else if(pos.includes(f)) show=(cp===f);
+    else if(f==='core') show=(ct==='core'||ct==='featured');
+    else if(f==='watch') show=(ct==='watch');
+    c.style.display=show?'':'none';
+  });
+  const cg=document.getElementById('core-group');
+  const dg=document.getElementById('dart-group');
+  const wg=document.getElementById('watch-group');
+  if(cg) cg.style.display=(f==='watch')?'none':'';
+  if(dg) dg.style.display=(f==='watch')?'none':(f==='all'||f==='core'||f==='QB')?'':'none';
+  if(wg) wg.style.display=(f==='core')?'none':'';
+}
+document.addEventListener('keydown',e=>{if(document.getElementById('overlay').classList.contains('open')&&e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>

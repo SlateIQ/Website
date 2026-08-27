@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Slate-IQ | Analytical DFS Projections</title>
+<meta name="description" content="Slate-IQ builds data-driven DFS systems for the casual user. Weekly NFL slate analysis, lineup construction, bankroll management, and full transparency — documented in public."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & BASE ── */
+*,*::before,*::after{box-sizing:border-box;border:0 solid #e5e7eb;margin:0;padding:0}
+html{line-height:1.5;font-family:Inter,ui-sans-serif,system-ui,sans-serif;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;line-height:inherit;-webkit-font-smoothing:antialiased;background:#fff;color:#0B2545}
+img,svg,video{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{cursor:pointer;font:inherit;background:none;border:none}
+
+/* ── PALETTE ── */
+:root{
+  --green:#00A94F;
+  --green-dark:#007A38;
+  --green-light:#E6F7ED;
+  --green-mid:rgba(0,169,79,0.2);
+  --green-border:rgba(0,169,79,0.3);
+  --navy:#0B2545;
+  --navy-dark:#081B33;
+  --navy-light:#13345C;
+  --white:#ffffff;
+  --gray-50:#f9fafb;
+  --gray-100:#f3f4f6;
+  --gray-200:#e5e7eb;
+}
+
+/* ── LAYOUT ── */
+.container{max-width:80rem;margin:0 auto;padding:0 1.5rem}
+@media(min-width:1024px){.container{padding:0 2rem}}
+.section-header{text-align:center;max-width:42rem;margin:0 auto 3.5rem}
+
+/* ── NAV ── */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border-bottom:1px solid var(--gray-100)}
+nav{max-width:80rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.125rem;color:var(--navy)}
+.nav-logo-svg{height:32px;width:auto}
+.nav-links{display:none;align-items:center;gap:2rem;font-size:.875rem;font-weight:500;color:rgba(11,37,69,.8)}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-links a{transition:color .15s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta-wrap{display:none}
+@media(min-width:768px){.nav-cta-wrap{display:block}}
+.btn-primary{display:inline-block;background:var(--green);color:#fff;font-weight:600;font-size:.875rem;padding:.625rem 1.25rem;border-radius:.25rem;transition:background .15s}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-secondary{display:inline-block;background:transparent;color:var(--white);font-weight:600;font-size:.875rem;padding:.625rem 1.25rem;border-radius:.25rem;border:2px solid rgba(255,255,255,.4);transition:border-color .15s,color .15s}
+.btn-secondary:hover{border-color:#fff;color:#fff}
+.btn-outline{display:inline-block;background:transparent;color:var(--navy);font-weight:600;font-size:.875rem;padding:.625rem 1.25rem;border-radius:.25rem;border:2px solid var(--gray-200);transition:border-color .15s}
+.btn-outline:hover{border-color:var(--green);color:var(--green)}
+.mobile-menu-btn{padding:.5rem;color:var(--navy)}
+@media(min-width:768px){.mobile-menu-btn{display:none}}
+#mobile-menu{display:none;border-top:1px solid var(--gray-100);background:#fff}
+#mobile-menu.open{display:block}
+#mobile-menu ul{padding:1rem 1.5rem;display:flex;flex-direction:column;gap:1rem;font-size:.875rem;font-weight:500;color:rgba(11,37,69,.8)}
+#mobile-menu a{display:block}
+
+/* ── HERO ── */
+.hero{position:relative;padding:8rem 0 5rem;background:linear-gradient(to bottom,var(--navy-light),var(--navy));color:#fff;overflow:hidden}
+@media(min-width:1024px){.hero{padding:11rem 0 7rem}}
+.hero-bg{position:absolute;inset:0;opacity:.1;pointer-events:none}
+.hero-bg circle{fill:var(--green)}
+.hero-grid{display:grid;gap:3rem;align-items:center}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1fr 1fr}}
+.hero-eyebrow{display:inline-block;background:rgba(0,169,79,.15);color:rgba(230,247,237,1);font-size:.75rem;font-weight:600;letter-spacing:.025em;text-transform:uppercase;padding:.25rem .75rem;border-radius:9999px;margin-bottom:1.5rem;border:1px solid var(--green-border)}
+h1{font-size:2.25rem;font-weight:800;line-height:1.25;margin-bottom:1.5rem}
+@media(min-width:640px){h1{font-size:3rem;line-height:1}}
+@media(min-width:1024px){h1{font-size:3.75rem}}
+.hero-sub{font-size:1.125rem;color:rgba(255,255,255,.8);margin-bottom:2rem;max-width:36rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem}
+
+/* hero dashboard card */
+.hero-card{background:#fff;border-radius:1rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);padding:1.5rem;color:var(--navy);max-width:28rem;margin:0 auto}
+.hero-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.hero-card-label{font-size:.875rem;font-weight:600;color:rgba(11,37,69,.6)}
+.hero-card-badge{font-size:.75rem;font-weight:500;background:var(--green-light);color:var(--green-dark);padding:.25rem .5rem;border-radius:.25rem}
+.hero-card-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.stat-box{background:var(--gray-50);border-radius:.5rem;padding:1rem}
+.stat-box-label{font-size:.75rem;color:rgba(11,37,69,.5);margin-bottom:.25rem}
+.stat-box-val{font-size:1.5rem;font-weight:700;color:var(--green-dark)}
+.stat-box-val.dark{color:var(--navy)}
+.hero-card-bar-wrap{background:var(--gray-50);border-radius:.5rem;padding:1rem}
+.hero-card-bar-label{font-size:.75rem;color:rgba(11,37,69,.5);margin-bottom:.5rem}
+.bar-track{background:var(--gray-200);border-radius:9999px;height:.5rem}
+.bar-fill{background:var(--green);border-radius:9999px;height:.5rem}
+.hero-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.hero-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:.5rem;padding:.75rem;text-align:center}
+.hero-stat-num{font-size:1.25rem;font-weight:700;color:var(--green)}
+.hero-stat-num.wh{color:#fff}
+.hero-stat-label{font-size:.7rem;color:rgba(255,255,255,.5);margin-top:.2rem;text-transform:uppercase;letter-spacing:.04em}
+
+/* ── SECTIONS ── */
+.section-white{padding:5rem 0}
+@media(min-width:1024px){.section-white{padding:7rem 0}}
+.section-gray{padding:5rem 0;background:var(--gray-50)}
+@media(min-width:1024px){.section-gray{padding:7rem 0}}
+.section-navy{padding:5rem 0;background:var(--navy);color:#fff}
+@media(min-width:1024px){.section-navy{padding:7rem 0}}
+
+h2{font-size:1.875rem;font-weight:800;color:var(--navy);margin-bottom:1rem}
+@media(min-width:640px){h2{font-size:2.25rem}}
+.section-navy h2{color:#fff}
+.section-sub{font-size:1.125rem;color:rgba(11,37,69,.7);line-height:1.6}
+.section-navy .section-sub{color:rgba(255,255,255,.7)}
+
+/* ── WHO WE SERVE cards ── */
+.who-grid{display:grid;gap:1.5rem}
+@media(min-width:640px){.who-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.who-grid{grid-template-columns:repeat(4,1fr)}}
+.who-card{background:#fff;border:1px solid var(--gray-100);border-radius:.75rem;padding:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.who-icon{width:3rem;height:3rem;background:var(--green-light);border-radius:.5rem;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--green)}
+.who-icon svg{width:1.75rem;height:1.75rem;stroke:var(--green);fill:none}
+.who-card h3{font-size:1.125rem;font-weight:700;margin-bottom:.25rem}
+.who-card p{font-size:.875rem;color:rgba(11,37,69,.6)}
+
+/* ── PHILOSOPHY / PROCESS cards ── */
+.process-grid{display:grid;gap:1.5rem}
+@media(min-width:640px){.process-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.process-grid{grid-template-columns:repeat(4,1fr)}}
+.process-card{background:var(--gray-50);border-radius:.75rem;padding:1.5rem}
+.process-num{font-size:.75rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.process-card h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.process-card p{font-size:.875rem;color:rgba(11,37,69,.6);line-height:1.6}
+
+/* ── WEEKLY SYSTEM ── */
+.system-grid{display:grid;gap:4rem;align-items:start}
+@media(min-width:1024px){.system-grid{grid-template-columns:1fr 1fr}}
+.step-list{display:flex;flex-direction:column;gap:0}
+.step-item{display:flex;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--gray-100)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:.75rem;font-weight:700;color:var(--green);min-width:2rem;padding-top:.15rem;text-transform:uppercase;letter-spacing:.08em}
+.step-title{font-size:.9375rem;font-weight:600;margin-bottom:.2rem}
+.step-body{font-size:.875rem;color:rgba(11,37,69,.6);line-height:1.55}
+.model-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:.75rem;padding:1.5rem}
+.model-card-white{background:#fff;border:1px solid var(--gray-100);border-radius:.75rem;padding:1.5rem;box-shadow:0 4px 6px -1px rgba(0,0,0,.07)}
+.model-section-label{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:.85rem}
+.model-row{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.model-row-white{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--gray-100)}
+.model-row:last-of-type,.model-row-white:last-of-type{border-bottom:none}
+.model-key{font-size:.875rem;color:rgba(255,255,255,.7)}
+.model-key-dark{font-size:.875rem;color:rgba(11,37,69,.6)}
+.pill-green{font-size:.7rem;background:rgba(0,169,79,.15);color:var(--green);padding:.2rem .65rem;border-radius:.25rem;font-weight:600}
+.pill-gold{font-size:.7rem;background:rgba(240,165,0,.15);color:#B87B00;padding:.2rem .65rem;border-radius:.25rem;font-weight:600}
+.pill-gray{font-size:.7rem;color:rgba(255,255,255,.4);font-family:monospace}
+.pill-gray-dark{font-size:.7rem;color:rgba(11,37,69,.35);font-family:monospace}
+.model-divider{height:1px;background:rgba(255,255,255,.08);margin:.85rem 0}
+.model-divider-dark{height:1px;background:var(--gray-100);margin:.85rem 0}
+.output-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
+
+/* ── DIFFERENTIATION ── */
+.diff-grid{display:grid;gap:1.5rem}
+@media(min-width:640px){.diff-grid{grid-template-columns:repeat(2,1fr)}}
+.diff-card{background:#fff;border:1px solid var(--gray-100);border-radius:.75rem;padding:1.75rem;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:box-shadow .2s}
+.diff-card:hover{box-shadow:0 10px 15px -3px rgba(0,0,0,.08)}
+.diff-icon{width:2.5rem;height:2.5rem;background:var(--green-light);border-radius:.375rem;display:flex;align-items:center;justify-content:center;margin-bottom:.85rem}
+.diff-icon svg{width:1.25rem;height:1.25rem;stroke:var(--green);fill:none;stroke-width:1.75}
+.diff-card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+.diff-card p{font-size:.875rem;color:rgba(11,37,69,.6);line-height:1.6}
+
+/* ── ROADMAP ── */
+.roadmap-grid{display:grid;gap:2rem}
+@media(min-width:1024px){.roadmap-grid{grid-template-columns:repeat(3,1fr)}}
+.roadmap-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:.75rem;padding:1.75rem}
+.roadmap-phase-label{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem}
+.roadmap-card h3{font-size:1.0625rem;font-weight:700;margin-bottom:.85rem;color:#fff}
+.roadmap-list{display:flex;flex-direction:column;gap:.4rem}
+.roadmap-list li{font-size:.875rem;color:rgba(255,255,255,.6);display:flex;align-items:flex-start;gap:.5rem}
+.roadmap-list li::before{content:'—';color:var(--green);flex-shrink:0}
+.phase-dot-row{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+.phase-dot{width:.75rem;height:.75rem;border-radius:50%;border:2px solid rgba(255,255,255,.25);background:transparent;flex-shrink:0}
+.phase-dot.active{background:var(--green);border-color:var(--green)}
+
+/* ── SOCIAL STRIP ── */
+.social-strip{background:var(--navy-dark);padding:1.25rem 0;border-top:1px solid rgba(255,255,255,.08)}
+.social-strip-inner{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+.social-link{display:flex;align-items:center;gap:.45rem;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .15s}
+.social-link:hover{color:#fff}
+.social-link svg{width:1rem;height:1rem;fill:currentColor;flex-shrink:0}
+.social-link svg.ol{fill:none;stroke:currentColor;stroke-width:1.8}
+.social-divider{width:1px;height:1.25rem;background:rgba(255,255,255,.15)}
+
+/* ── NAV PILLS ── */
+.nav-pill{font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--green-light);color:var(--green-dark);padding:.3rem .75rem;border-radius:.25rem}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--navy);color:#fff;padding:5rem 0}
+@media(min-width:1024px){.cta-band{padding:7rem 0}}
+.cta-inner{max-width:42rem;margin:0 auto;text-align:center}
+.cta-inner h2{color:#fff;margin-bottom:1rem}
+.cta-inner p{color:rgba(255,255,255,.7);font-size:1.0625rem;margin-bottom:2rem}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-domain{font-size:.8125rem;color:rgba(255,255,255,.35);margin-top:1.5rem}
+.cta-domain a{color:var(--green)}
+
+/* ── CHECK ── */
+.check{color:var(--green);font-weight:700;flex-shrink:0}
+
+/* ── FOOTER ── */
+footer{background:var(--navy-dark);color:rgba(255,255,255,.6);padding:2.5rem 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem;font-size:.875rem}
+@media(min-width:640px){.footer-inner{flex-direction:row}}
+.footer-logo{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.footer-logo svg{width:28px;height:28px}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{transition:color .15s}
+.footer-links a:hover{color:#fff}
+
+/* badge SVG shared */
+.badge-svg{display:block}
+</style>
+</head>
+<body>
+
+<!-- shared SVG symbols -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="badge" viewBox="0 0 300 300">
+      <circle cx="150" cy="150" r="145" fill="#081B33"/>
+      <circle cx="150" cy="150" r="145" fill="none" stroke="#00A94F" stroke-width="6"/>
+      <line x1="75" y1="195" x2="205" y2="115" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+      <circle cx="75" cy="195" r="8" fill="#fff"/>
+      <g transform="translate(220,100) rotate(-14) scale(1.9)">
+        <ellipse cx="0" cy="0" rx="27" ry="16" fill="#00A94F"/>
+        <line x1="-16" y1="0" x2="16" y2="0" stroke="#081B33" stroke-width="2"/>
+        <line x1="-10" y1="-4.5" x2="-10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="-5" y1="-4.5" x2="-5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="0" y1="-4.5" x2="0" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="5" y1="-4.5" x2="5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="10" y1="-4.5" x2="10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+      </g>
+    </symbol>
+    <symbol id="logo-nav" viewBox="0 0 220 52">
+      <rect x="0" y="6" width="130" height="40" rx="3" fill="#D7EFDE"/>
+      <text x="65" y="36" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="800" fill="#0B2545" text-anchor="middle" letter-spacing="1">SLATE</text>
+      <rect x="130" y="6" width="58" height="40" rx="3" fill="#00A94F"/>
+      <text x="159" y="36" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#fff" text-anchor="middle">IQ</text>
+      <line x1="2" y1="46" x2="178" y2="10" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".0"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<header>
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <svg class="nav-logo-svg" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="3" width="128" height="40" rx="3" fill="#D7EFDE"/>
+        <text x="64" y="33" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#0B2545" text-anchor="middle" letter-spacing="1">SLATE</text>
+        <rect x="128" y="3" width="56" height="40" rx="3" fill="#00A94F"/>
+        <text x="156" y="33" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">IQ</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#system">The System</a></li>
+      <li><a href="slate-iq-evaluations.html">Evaluations</a></li>
+      <li><a href="slate-iq-essays.html">Essays</a></li>
+      <li><a href="#approach">Approach</a></li>
+    </ul>
+    <div class="nav-cta-wrap">
+      <a href="#follow" class="btn-primary">Follow Along</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobile-menu-button" aria-label="Open menu">
+      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display:none"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </nav>
+  <div id="mobile-menu">
+    <ul>
+      <li><a href="#system">The System</a></li>
+      <li><a href="slate-iq-evaluations.html">Player Evaluations</a></li>
+      <li><a href="slate-iq-essays.html">Essays</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#follow" class="btn-primary" style="display:block;text-align:center">Follow Along</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 800 600">
+      <circle cx="700" cy="100" r="180" fill="#00A94F"/>
+      <circle cx="50" cy="500" r="220" fill="#00A94F"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <p class="hero-eyebrow">NFL DFS Strategy Platform</p>
+        <h1>Building a Data-Driven DFS System for the Casual User</h1>
+        <p class="hero-sub">No picks. No gut feelings. Just process, discipline, and long-term bankroll growth — built transparently, one slate at a time.</p>
+        <div class="hero-actions">
+          <a href="#system" class="btn-primary" style="font-size:1rem;padding:.75rem 1.5rem">See the System</a>
+          <a href="slate-iq-evaluations.html" class="btn-secondary" style="font-size:1rem;padding:.75rem 1.5rem">Player Evaluations</a>
+          <a href="slate-iq-essays.html" class="btn-secondary" style="font-size:1rem;padding:.75rem 1.5rem">Read the Essays</a>
+        </div>
+        <div class="hero-stats-row" style="margin-top:2rem">
+          <div class="hero-stat"><div class="hero-stat-num wh">100%</div><div class="hero-stat-label">Transparent</div></div>
+          <div class="hero-stat"><div class="hero-stat-num" style="color:var(--green)">5</div><div class="hero-stat-label">Lineups / Week</div></div>
+          <div class="hero-stat"><div class="hero-stat-num wh">0</div><div class="hero-stat-label">Gut Decisions</div></div>
+        </div>
+      </div>
+      <div aria-hidden="true">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <span class="hero-card-label">Weekly Slate Snapshot</span>
+            <span class="hero-card-badge">Week 1 Preview</span>
+          </div>
+          <div class="hero-card-stats">
+            <div class="stat-box">
+              <p class="stat-box-label">DK PPG Target</p>
+              <p class="stat-box-val">22.5</p>
+            </div>
+            <div class="stat-box">
+              <p class="stat-box-label">Exposure</p>
+              <p class="stat-box-val dark">2.5%</p>
+            </div>
+          </div>
+          <div class="hero-card-stats">
+            <div class="stat-box">
+              <p class="stat-box-label">Cash Lineups</p>
+              <p class="stat-box-val dark" style="font-size:1.25rem">1 Built</p>
+            </div>
+            <div class="stat-box">
+              <p class="stat-box-label">GPP Lineups</p>
+              <p class="stat-box-val dark" style="font-size:1.25rem">4 Built</p>
+            </div>
+          </div>
+          <div class="hero-card-bar-wrap" style="margin-top:1rem">
+            <p class="hero-card-bar-label">Process Completion — Week 1</p>
+            <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL STRIP -->
+<div class="social-strip">
+  <div class="social-strip-inner container">
+    <a href="https://twitter.com/DFS_SlateIQ" class="social-link" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.254 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      @DFS_SlateIQ
+    </a>
+    <div class="social-divider"></div>
+    <a href="https://instagram.com/slate_iq" class="social-link" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      @slate_iq
+    </a>
+    <div class="social-divider"></div>
+    <a href="https://www.slate-iq.com" class="social-link" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" class="ol"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      www.slate-iq.com
+    </a>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="section-white" id="philosophy">
+  <div class="container">
+    <div class="section-header">
+      <h2>Built on Three Beliefs</h2>
+      <p class="section-sub">The DFS space is full of opinions. Slate-IQ is built on something different — a structured conviction that process beats intuition, every time.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-icon">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm6-8v8m0 0a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2v4z"/></svg>
+        </div>
+        <h3>Consistency Over Big Wins</h3>
+        <p>Chasing ceilings destroys bankrolls. Slate-IQ is engineered for sustainable, compounding growth — not lottery ticket swings.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <h3>Process Over Intuition</h3>
+        <p>Every lineup decision flows from a structured evaluation model. Pace, usage, minutes, matchup — in that order, every week, no exceptions.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h3>Discipline Over Volume</h3>
+        <p>2.5–5% weekly bankroll exposure. Defined contest diversification. A CPA-style approach applied to DFS, not a casino mindset.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3>Built for Casual Players</h3>
+        <p>Not targeting high-volume sharks. Slate-IQ is for beginners, analytical thinkers, and spreadsheet enthusiasts who believe numbers don't lie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SYSTEM -->
+<section class="section-navy" id="system">
+  <div class="container">
+    <div class="section-header">
+      <h2>How Slate-IQ Works</h2>
+      <p class="section-sub">A five-step weekly workflow that transforms raw slate data into structured lineup decisions — documented in full, every single week.</p>
+    </div>
+    <div class="system-grid">
+      <div class="step-list">
+        <div class="step-item" style="border-color:rgba(255,255,255,.08)">
+          <div class="step-num">01</div>
+          <div><div class="step-title" style="color:#fff">Data Collection</div><p class="step-body" style="color:rgba(255,255,255,.6)">Pull game logs, Vegas odds, and player projections for the full week's slate. No noise, just signal.</p></div>
+        </div>
+        <div class="step-item" style="border-color:rgba(255,255,255,.08)">
+          <div class="step-num">02</div>
+          <div><div class="step-title" style="color:#fff">Model Execution</div><p class="step-body" style="color:rgba(255,255,255,.6)">Apply Slate-IQ scoring. Rank by Pace → Usage → Minutes → Matchup. Identify core plays and leverage spots.</p></div>
+        </div>
+        <div class="step-item" style="border-color:rgba(255,255,255,.08)">
+          <div class="step-num">03</div>
+          <div><div class="step-title" style="color:#fff">Ownership Analysis</div><p class="step-body" style="color:rgba(255,255,255,.6)">Project field exposure. Find differentiation opportunities where value exceeds public consensus.</p></div>
+        </div>
+        <div class="step-item" style="border-color:rgba(255,255,255,.08)">
+          <div class="step-num">04</div>
+          <div><div class="step-title" style="color:#fff">Lineup Construction</div><p class="step-body" style="color:rgba(255,255,255,.6)">1 cash lineup (high-floor) + 4 GPP lineups (correlation + leverage + ceiling). Every pick documented.</p></div>
+        </div>
+        <div class="step-item" style="border-color:rgba(255,255,255,.08);border-bottom:none">
+          <div class="step-num">05</div>
+          <div><div class="step-title" style="color:#fff">Full Transparency Cycle</div><p class="step-body" style="color:rgba(255,255,255,.6)">Lineups published pre-lock. Post-slate: full performance review, error analysis, model adjustments.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="model-card">
+          <div class="model-section-label">Evaluation Model — Priority Order</div>
+          <div class="model-row"><span class="model-key">Pace</span><span class="pill-green">Priority 1</span></div>
+          <div class="model-row"><span class="model-key">Usage</span><span class="pill-green">Priority 2</span></div>
+          <div class="model-row"><span class="model-key">Minutes</span><span class="pill-green">Priority 3</span></div>
+          <div class="model-row" style="border-bottom:none"><span class="model-key">Matchup</span><span class="pill-green">Priority 4</span></div>
+          <div class="model-divider"></div>
+          <div class="model-section-label">Data Inputs</div>
+          <div class="model-row"><span class="model-key">Historical game logs</span><span class="pill-gray">RAW</span></div>
+          <div class="model-row"><span class="model-key">Vegas odds &amp; lines</span><span class="pill-gray">MARKET</span></div>
+          <div class="model-row" style="border-bottom:none"><span class="model-key">Player projections</span><span class="pill-gray">MODELED</span></div>
+          <div class="model-divider"></div>
+          <div class="model-section-label">Weekly Output</div>
+          <div class="output-row">
+            <span class="pill-green" style="padding:.3rem .75rem">1× Cash Lineup</span>
+            <span class="pill-gold" style="padding:.3rem .75rem">4× GPP Lineups</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH / DIFFERENTIATORS -->
+<section class="section-gray" id="approach">
+  <div class="container">
+    <div class="section-header">
+      <h2>Not a Pick Service</h2>
+      <p class="section-sub">The DFS content market is saturated with opinions and unverifiable results. Slate-IQ is a decision-making framework — built in public, reviewed every week.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Full Transparency</h3>
+        <p>Every lineup published before lock. Every result reviewed after. Bankroll tracked publicly. No selective memory, no hidden record.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><svg viewBox="0 0 24 24"><polyline stroke-linecap="round" stroke-linejoin="round" points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Analytical Framework</h3>
+        <p>Structured, repeatable process applied the same way every single week. Data in, decisions out. No emotional overrides.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><svg viewBox="0 0 24 24"><rect stroke-linecap="round" stroke-linejoin="round" x="2" y="3" width="20" height="14" rx="2"/><line stroke-linecap="round" x1="8" y1="21" x2="16" y2="21"/><line stroke-linecap="round" x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Educational System</h3>
+        <p>Learn how to think analytically about DFS slates — not just copy lineups. A framework you can own and apply independently.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><svg viewBox="0 0 24 24"><line stroke-linecap="round" x1="12" y1="20" x2="12" y2="10"/><line stroke-linecap="round" x1="18" y1="20" x2="18" y2="4"/><line stroke-linecap="round" x1="6" y1="20" x2="6" y2="16"/></svg></div>
+        <h3>Bankroll Management First</h3>
+        <p>2.5–5% weekly exposure. Cash + GPP diversification. Slow, consistent growth as the primary objective — not headline wins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section-navy" id="roadmap">
+  <div class="container">
+    <div class="section-header">
+      <h2>The Build — In Public</h2>
+      <p class="section-sub">Slate-IQ is being constructed in real time. Every adjustment, every learning, every phase — documented and shared as it happens.</p>
+    </div>
+    <div class="roadmap-grid">
+      <div class="roadmap-card" style="border-color:var(--green-border)">
+        <div class="phase-dot-row"><div class="phase-dot active"></div><span class="roadmap-phase-label">Phase 1 — Now</span></div>
+        <h3>Foundation</h3>
+        <ul class="roadmap-list">
+          <li>NFL DFS focus</li>
+          <li>Build audience and system</li>
+          <li>Weekly YouTube breakdowns</li>
+          <li>Pre-lock + post-slate reviews</li>
+          <li>Twitter and Instagram content</li>
+        </ul>
+      </div>
+      <div class="roadmap-card">
+        <div class="phase-dot-row"><div class="phase-dot"></div><span class="roadmap-phase-label">Phase 2</span></div>
+        <h3>Advanced Modeling</h3>
+        <ul class="roadmap-list">
+          <li>Ownership projections</li>
+          <li>Player correlation stacks</li>
+          <li>Excel template distribution</li>
+          <li>Full site dashboard launch</li>
+        </ul>
+      </div>
+      <div class="roadmap-card">
+        <div class="phase-dot-row"><div class="phase-dot"></div><span class="roadmap-phase-label">Phase 3</span></div>
+        <h3>Scale &amp; Expand</h3>
+        <ul class="roadmap-list">
+          <li>NBA DFS expansion</li>
+          <li>Paid templates and memberships</li>
+          <li>Automation and scaling tools</li>
+          <li>Strategic partnerships</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="follow">
+  <div class="container">
+    <div class="cta-inner">
+      <p class="hero-eyebrow" style="display:inline-block;margin-bottom:1.25rem">Follow the Journey</p>
+      <h2>Follow the System. Learn the Process.</h2>
+      <p>Slate-IQ is a real-time build of a DFS system focused on discipline, data, and long-term growth. Every lineup, every result, every adjustment — documented.</p>
+      <div class="cta-actions">
+        <a href="https://twitter.com/DFS_SlateIQ" class="btn-primary" style="font-size:1rem;padding:.75rem 1.5rem" target="_blank" rel="noopener">Follow on X / Twitter</a>
+        <a href="slate-iq-evaluations.html" class="btn-secondary" style="font-size:1rem;padding:.75rem 1.5rem">Player Evaluations</a>
+        <a href="slate-iq-essays.html" class="btn-secondary" style="font-size:1rem;padding:.75rem 1.5rem">Read the Essays</a>
+      </div>
+      <p class="cta-domain">Full platform launching at <a href="https://www.slate-iq.com">www.slate-iq.com</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg class="badge-svg" width="28" height="28" viewBox="0 0 300 300"><use href="#badge"/></svg>
+        Slate-IQ
+      </div>
+      <div class="footer-links">
+        <a href="https://twitter.com/DFS_SlateIQ" target="_blank">@DFS_SlateIQ</a>
+        <a href="https://instagram.com/slate_iq" target="_blank">@slate_iq</a>
+        <a href="https://www.slate-iq.com" target="_blank">slate-iq.com</a>
+      </div>
+      <p>© 2026 Slate-IQ. Analytical DFS Projections.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const btn = document.getElementById('mobile-menu-button');
+const menu = document.getElementById('mobile-menu');
+const iconOpen = document.getElementById('icon-open');
+const iconClose = document.getElementById('icon-close');
+btn.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  iconOpen.style.display = open ? 'none' : '';
+  iconClose.style.display = open ? '' : 'none';
+});
+document.querySelectorAll('#mobile-menu a').forEach(a => {
+  a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    iconOpen.style.display = '';
+    iconClose.style.display = 'none';
+  });
+});
+</script>
+</body>
+</html>
