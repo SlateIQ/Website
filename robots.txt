@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://slate-iq.com/sitemap.xml
