@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Slate-IQ | Introduction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border:0 solid #e5e7eb}
+html{font-family:Inter,ui-sans-serif,system-ui,sans-serif;line-height:1.5;scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;background:#fff;color:#0B2545}
+a{color:inherit;text-decoration:none}
+:root{
+  --green:#00A94F;--green-dark:#007A38;--green-light:#E6F7ED;--green-border:rgba(0,169,79,0.3);
+  --navy:#0B2545;--navy-dark:#081B33;--navy-light:#13345C;
+  --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;
+}
+.container{max-width:56rem;margin:0 auto;padding:0 1.5rem}
+@media(min-width:1024px){.container{padding:0 2rem}}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border-bottom:1px solid var(--gray-100)}
+nav{max-width:80rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-svg{height:32px;width:auto}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+.nav-back{display:flex;align-items:center;gap:.4rem;font-size:.875rem;font-weight:500;color:rgba(11,37,69,.7);transition:color .15s}
+.nav-back:hover{color:var(--green)}
+.nav-back svg{width:1rem;height:1rem;stroke:currentColor;fill:none;stroke-width:2}
+.page-hero{background:linear-gradient(to bottom,var(--navy-light),var(--navy));color:#fff;padding:5rem 0 3.5rem;position:relative;overflow:hidden}
+@media(min-width:1024px){.page-hero{padding:6.5rem 0 4rem}}
+.page-hero-bg{position:absolute;inset:0;opacity:.08;pointer-events:none}
+.hero-eyebrow{display:inline-block;background:rgba(0,169,79,.15);color:rgba(230,247,237,1);font-size:.75rem;font-weight:600;letter-spacing:.025em;text-transform:uppercase;padding:.25rem .75rem;border-radius:9999px;margin-bottom:1.25rem;border:1px solid var(--green-border)}
+.page-hero h1{font-size:2rem;font-weight:800;line-height:1.2;margin-bottom:1rem}
+@media(min-width:640px){.page-hero h1{font-size:2.75rem}}
+.page-hero p{font-size:1.0625rem;color:rgba(255,255,255,.75);max-width:38rem;line-height:1.65}
+.video-section{padding:3rem 0 1rem}
+.video-wrap{position:relative;width:100%;padding-top:56.25%;background:var(--navy-dark);border-radius:.75rem;overflow:hidden;box-shadow:0 12px 32px -8px rgba(11,37,69,.25)}
+.video-wrap video,.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#000}
+.summary-section{padding:2.5rem 0 5rem}
+.summary-card{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:.75rem;padding:2rem}
+@media(min-width:640px){.summary-card{padding:2.5rem}}
+.summary-label{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:.85rem}
+.summary-card h2{font-size:1.375rem;font-weight:800;color:var(--navy);margin-bottom:1rem}
+.summary-card p{font-size:.9375rem;color:rgba(11,37,69,.72);line-height:1.75;margin-bottom:1.1rem}
+.summary-card p:last-child{margin-bottom:0}
+.pillars{display:grid;gap:.65rem;grid-template-columns:1fr;margin:1.5rem 0}
+@media(min-width:640px){.pillars{grid-template-columns:repeat(5,1fr)}}
+.pillar{background:#fff;border:1px solid var(--gray-100);border-radius:.5rem;padding:.85rem .75rem;text-align:center}
+.pillar-num{font-size:.7rem;font-weight:700;color:var(--green);margin-bottom:.3rem}
+.pillar-label{font-size:.8125rem;font-weight:600;color:var(--navy);line-height:1.3}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.btn-primary{display:inline-block;background:var(--green);color:#fff;font-weight:600;font-size:.875rem;padding:.65rem 1.25rem;border-radius:.375rem;transition:background .15s}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-outline{display:inline-block;background:transparent;color:rgba(11,37,69,.65);font-weight:600;font-size:.875rem;padding:.65rem 1.25rem;border-radius:.375rem;border:1px solid var(--gray-200);transition:all .15s}
+.btn-outline:hover{color:var(--green);border-color:var(--green-border)}
+footer{background:var(--navy-dark);color:rgba(255,255,255,.6);padding:2.5rem 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem;font-size:.875rem;max-width:80rem;margin:0 auto;padding:0 1.5rem}
+@media(min-width:640px){.footer-inner{flex-direction:row}}
+.footer-logo{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a:hover{color:#fff;transition:color .15s}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="badge" viewBox="0 0 300 300">
+      <circle cx="150" cy="150" r="145" fill="#081B33"/>
+      <circle cx="150" cy="150" r="145" fill="none" stroke="#00A94F" stroke-width="6"/>
+      <line x1="75" y1="195" x2="205" y2="115" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+      <circle cx="75" cy="195" r="8" fill="#fff"/>
+      <g transform="translate(220,100) rotate(-14) scale(1.9)">
+        <ellipse cx="0" cy="0" rx="27" ry="16" fill="#00A94F"/>
+        <line x1="-16" y1="0" x2="16" y2="0" stroke="#081B33" stroke-width="2"/>
+        <line x1="-10" y1="-4.5" x2="-10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="-5" y1="-4.5" x2="-5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="0" y1="-4.5" x2="0" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="5" y1="-4.5" x2="5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="10" y1="-4.5" x2="10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <nav>
+    <a href="index.html">
+      <svg class="nav-logo-svg" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="3" width="128" height="40" rx="3" fill="#D7EFDE"/>
+        <text x="64" y="33" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#0B2545" text-anchor="middle" letter-spacing="1">SLATE</text>
+        <rect x="128" y="3" width="56" height="40" rx="3" fill="#00A94F"/>
+        <text x="156" y="33" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">IQ</text>
+      </svg>
+    </a>
+    <div class="nav-right">
+      <a href="slate-iq-essays.html" class="nav-back">Essays</a>
+      <a href="index.html" class="nav-back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Main Site
+      </a>
+    </div>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 800 400">
+      <circle cx="700" cy="80" r="160" fill="#00A94F"/>
+      <circle cx="30" cy="350" r="180" fill="#00A94F"/>
+    </svg>
+  </div>
+  <div class="container" style="position:relative">
+    <p class="hero-eyebrow">Meet Slate-IQ</p>
+    <h1>Introduction</h1>
+    <p>A quick video from Sam on why Slate-IQ exists, how the model works, and what to expect every week of the season.</p>
+  </div>
+</div>
+
+<div class="video-section">
+  <div class="container">
+    <div class="video-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/U5V-d8Jnfrk" title="Slate-IQ Introduction" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="summary-section">
+  <div class="container">
+    <div class="summary-card">
+      <p class="summary-label">What Sam Covers</p>
+      <h2>Numbers don't lie. Feelings don't scale — systems do.</h2>
+      <p>Welcome to Slate-IQ, a solution to take information — projections, ownership, salaries, Vegas lines, injury reports — into a repeatable process for turning data into a decision. This is NOT a professional DFS site selling guarantees; this is analytical by nature, and Slate-IQ is an attempt to build a transparent, data-driven system and track it out loud, wins and losses included.</p>
+      <p>The model runs on five parts: a core portfolio of trusted players, data collection, player evaluation, lineup construction, and a post-slate review every week — the part that matters most, because that's how the model actually improves instead of just guessing again next week.</p>
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-num">01</div><div class="pillar-label">Core Portfolio</div></div>
+        <div class="pillar"><div class="pillar-num">02</div><div class="pillar-label">Data Collection</div></div>
+        <div class="pillar"><div class="pillar-num">03</div><div class="pillar-label">Player Evaluation</div></div>
+        <div class="pillar"><div class="pillar-num">04</div><div class="pillar-label">Lineup Construction</div></div>
+        <div class="pillar"><div class="pillar-num">05</div><div class="pillar-label">Post-Slate Review</div></div>
+      </div>
+      <p>Bankroll like capital: starting at $500, 2.5–5% in play per week, and no chasing losses. And a good score alone isn't the goal — a player projected for 25 points at 5% ownership is a very different decision than the same score at 40% ownership, so opportunity, efficiency, and expected field exposure all factor into the call.</p>
+      <p>Every week, Slate-IQ publishes three things: a <strong>core plays list</strong> ranked by projected points and value, <strong>pre-lock lineups</strong> — one cash build and three GPP builds, with the reasoning behind each — and a <strong>post-slate review</strong> of what hit, what didn't, and where the bankroll stands. At its core this is meant to be educational: if you walk away each week having learned something, not just gotten a pick, that's the goal.</p>
+      <div class="cta-row">
+        <a href="index.html" class="btn-primary">Explore the Site</a>
+        <a href="https://twitter.com/DFS_SlateIQ" class="btn-outline" target="_blank" rel="noopener">Follow @DFS_SlateIQ</a>
+        <a href="https://instagram.com/slate_iq" class="btn-outline" target="_blank" rel="noopener">Follow @slate_iq</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><svg width="26" height="26" viewBox="0 0 300 300"><use href="#badge"/></svg>Slate-IQ</div>
+    <div class="footer-links">
+      <a href="https://twitter.com/DFS_SlateIQ" target="_blank">@DFS_SlateIQ</a>
+      <a href="https://instagram.com/slate_iq" target="_blank">@slate_iq</a>
+      <a href="https://www.slate-iq.com" target="_blank">slate-iq.com</a>
+    </div>
+    <p>© 2026 Slate-IQ. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
