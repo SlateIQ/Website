@@ -70,6 +70,7 @@ button{cursor:pointer;font:inherit;background:none;border:none}
 
 /* ── NAV ── */
 header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border-bottom:1px solid var(--gray-100)}
+#hero,#system,#approach,#follow{scroll-margin-top:4.5rem}
 nav{max-width:80rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.125rem;color:var(--navy)}
 .nav-logo-svg{height:32px;width:auto}
@@ -714,6 +715,16 @@ document.querySelectorAll('#mobile-menu a').forEach(a => {
     iconOpen.style.display = '';
     iconClose.style.display = 'none';
   });
+});
+
+// Direct/shared links with a #hash (e.g. slate-iq.com/#approach) don't auto-scroll
+// on load in Chromium when html/body have overflow-x:hidden (needed elsewhere to
+// prevent mobile horizontal overflow) — so do it manually once everything has laid out.
+window.addEventListener('load', () => {
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target) target.scrollIntoView();
+  }
 });
 </script>
 </body>
