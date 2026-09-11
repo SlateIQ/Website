@@ -6,7 +6,9 @@
 <title>Slate-IQ | Player Evaluations</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border:0 solid #e5e7eb}
 html{font-family:Inter,ui-sans-serif,system-ui,sans-serif;line-height:1.5;scroll-behavior:smooth}
@@ -47,7 +49,7 @@ nav{max-width:80rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;alig
 .filters-bar{background:#fff;border-bottom:1px solid var(--gray-100);padding:.875rem 0;position:sticky;top:4rem;z-index:40}
 .filters-inner{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
 .filter-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);margin-right:.25rem}
-.filter-btn{font-size:.8125rem;font-weight:600;background:none;border:1px solid var(--gray-200);border-radius:.375rem;padding:.35rem .875rem;color:rgba(11,37,69,.6);cursor:pointer;transition:all .15s}
+.filter-btn{font-size:.8125rem;font-weight:600;background:none;border:1px solid var(--gray-200);border-radius:.375rem;padding:.35rem .875rem;color:rgba(11,37,69,.75);cursor:pointer;transition:all .15s}
 .filter-btn:hover,.filter-btn.active{background:var(--green-light);color:var(--green-dark);border-color:var(--green-border)}
 .filter-sep{width:1px;height:1.25rem;background:var(--gray-200);margin:0 .25rem}
 .evals-section{padding:2.5rem 0 6rem;background:var(--gray-50)}
@@ -141,7 +143,7 @@ nav{max-width:80rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;alig
 .modal-salary span{color:var(--green);font-weight:700;font-size:1rem}
 .btn-primary{display:inline-block;background:var(--green);color:#fff;font-weight:600;font-size:.875rem;padding:.5rem 1.1rem;border-radius:.25rem;transition:background .15s}
 .btn-primary:hover{background:var(--green-dark)}
-.btn-outline{display:inline-block;background:transparent;color:rgba(11,37,69,.6);font-weight:600;font-size:.875rem;padding:.5rem 1.1rem;border-radius:.25rem;border:1px solid var(--gray-200);transition:all .15s}
+.btn-outline{display:inline-block;background:transparent;color:rgba(11,37,69,.75);font-weight:600;font-size:.875rem;padding:.5rem 1.1rem;border-radius:.25rem;border:1px solid var(--gray-200);transition:all .15s}
 .btn-outline:hover{color:var(--green);border-color:var(--green-border)}
 .modal-table{width:100%;border-collapse:collapse;font-size:.8125rem;margin-top:.65rem}
 .modal-table th{text-align:left;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);padding:.4rem .65rem;border-bottom:1px solid var(--gray-100)}
