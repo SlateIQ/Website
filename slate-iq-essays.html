@@ -351,6 +351,7 @@ function handleOverlayClick(e){if(e.target===document.getElementById('overlay'))
 function navigate(dir){current=Math.max(0,Math.min(essays.length-1,current+dir));renderModal();document.getElementById('overlay').scrollTop=0}
 function renderModal(){const e=essays[current];document.getElementById('m-num').textContent=e.num;document.getElementById('m-title').textContent=e.title;document.getElementById('m-body').innerHTML=e.body;document.getElementById('btn-prev').disabled=current===0;document.getElementById('btn-next').disabled=current===essays.length-1}
 document.addEventListener('keydown',e=>{if(document.getElementById('overlay').classList.contains('open')){if(e.key==='Escape')closeModal();if(e.key==='ArrowLeft')navigate(-1);if(e.key==='ArrowRight')navigate(1)}});
+(function(){var params=new URLSearchParams(location.search);var n=parseInt(params.get('essay'),10);if(!isNaN(n)&&n>=1&&n<=essays.length){openModal(n-1);}})();
 </script>
 </body>
 </html>
