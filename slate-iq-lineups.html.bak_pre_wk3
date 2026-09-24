@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Slate-IQ | Week 2 Lineups</title>
+<meta name="description" content="Slate-IQ's Week 2 DraftKings NFL lineups — Cash, Balanced, two GPP builds, and a new fifth Hybrid build, with full player-by-player reasoning and confidence grades on every pick."/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Slate-IQ"/>
+<meta property="og:title" content="Slate-IQ | Week 2 Lineups"/>
+<meta property="og:description" content="Slate-IQ's Week 2 DraftKings NFL lineups — Cash, Balanced, two GPP builds, and a new fifth Hybrid build, with full player-by-player reasoning and confidence grades on every pick."/>
+<meta property="og:url" content="https://slate-iq.com/slate-iq-lineups.html"/>
+<meta property="og:image" content="https://slate-iq.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@DFS_SlateIQ"/>
+<meta name="twitter:title" content="Slate-IQ | Week 2 Lineups"/>
+<meta name="twitter:description" content="Slate-IQ's Week 2 DraftKings NFL lineups — Cash, Balanced, two GPP builds, and a new fifth Hybrid build, with full player-by-player reasoning and confidence grades on every pick."/>
+<meta name="twitter:image" content="https://slate-iq.com/og-image.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border:0 solid #e5e7eb}
+html{font-family:Inter,ui-sans-serif,system-ui,sans-serif;line-height:1.5;scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;background:#fff;color:#0B2545}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:root{--green:#00A94F;--green-dark:#007A38;--green-light:#E6F7ED;--green-border:rgba(0,169,79,0.3);--gold:#B7791F;--gold-light:#FDF3DD;--blue:#2563EB;--blue-light:#EFF6FF;--purple:#7C3AED;--purple-light:#F5F3FF;--navy:#0B2545;--navy-dark:#081B33;--navy-light:#13345C;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb}
+.container{max-width:80rem;margin:0 auto;padding:0 1.5rem}
+@media(min-width:1024px){.container{padding:0 2rem}}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border-bottom:1px solid var(--gray-100)}
+nav{max-width:80rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-svg{height:32px;width:auto}
+.nav-back{display:flex;align-items:center;gap:.4rem;font-size:.875rem;font-weight:500;color:rgba(11,37,69,.7);transition:color .15s}
+.nav-back:hover{color:var(--green)}
+.nav-back svg{width:1rem;height:1rem;stroke:currentColor;fill:none;stroke-width:2}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+
+.page-hero{background:linear-gradient(to bottom,var(--navy-light),var(--navy));color:#fff;padding:6rem 0 4rem;position:relative;overflow:hidden}
+@media(min-width:1024px){.page-hero{padding:8rem 0 5rem}}
+.page-hero-bg{position:absolute;inset:0;opacity:.08;pointer-events:none}
+.page-hero-bg circle{fill:var(--green)}
+.hero-eyebrow{display:inline-block;background:rgba(0,169,79,.15);color:rgba(230,247,237,1);font-size:.75rem;font-weight:600;letter-spacing:.025em;text-transform:uppercase;padding:.25rem .75rem;border-radius:9999px;margin-bottom:1.25rem;border:1px solid var(--green-border)}
+.page-hero h1{font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem}
+@media(min-width:640px){.page-hero h1{font-size:3rem;line-height:1.1}}
+.page-hero p{font-size:1.0625rem;color:rgba(255,255,255,.75);max-width:38rem;line-height:1.65}
+
+/* jump nav */
+.jumpnav-wrap{position:sticky;top:4rem;z-index:40;background:#fff;border-bottom:1px solid var(--gray-100);overflow-x:auto}
+.jumpnav{display:flex;gap:.6rem;padding:.85rem 1.5rem;max-width:80rem;margin:0 auto;white-space:nowrap}
+@media(min-width:1024px){.jumpnav{padding:.85rem 2rem}}
+.jumpnav a{font-size:.8125rem;font-weight:600;color:rgba(11,37,69,.75);background:var(--gray-50);border:1px solid var(--gray-100);border-radius:9999px;padding:.4rem .95rem;transition:color .15s,border-color .15s,background .15s}
+.jumpnav a:hover{color:var(--green-dark);border-color:var(--green-border);background:var(--green-light)}
+
+.lineup-section{padding:4rem 0;border-top:1px solid var(--gray-100);scroll-margin-top:8rem}
+.lineup-section:nth-child(even){background:var(--gray-50)}
+.lineup-tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .7rem;border-radius:9999px;margin-bottom:1rem}
+.tag-cash{background:var(--green-light);color:var(--green-dark)}
+.tag-gpp{background:var(--gold-light);color:var(--gold)}
+.tag-balanced{background:var(--blue-light);color:var(--blue)}
+.tag-hybrid{background:var(--purple-light);color:var(--purple)}
+.lineup-section h2{font-size:1.75rem;font-weight:800;color:var(--navy);line-height:1.25;margin-bottom:.75rem;max-width:42rem}
+.lineup-excerpt{font-size:1.0625rem;color:rgba(11,37,69,.65);max-width:42rem;line-height:1.6;margin-bottom:1.75rem}
+
+.lineup-stats-row{display:flex;flex-wrap:wrap;gap:.85rem;margin-bottom:2rem}
+.lineup-stat-pill{background:#fff;border:1px solid var(--gray-100);border-radius:.5rem;padding:.6rem 1.1rem;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.lineup-stat-pill .v{font-size:1.15rem;font-weight:700;color:var(--green-dark);display:block}
+.lineup-stat-pill .l{font-size:.65rem;color:rgba(11,37,69,.5);text-transform:uppercase;letter-spacing:.05em}
+
+.article-body{max-width:42rem}
+.article-body h3{font-size:1.1875rem;font-weight:700;color:var(--navy);margin:2rem 0 .85rem}
+.article-body h3:first-child{margin-top:0}
+.article-body p{font-size:.9375rem;line-height:1.75;color:rgba(11,37,69,.75);margin-bottom:1rem}
+.article-body p:last-child{margin-bottom:0}
+.article-body strong{color:var(--navy);font-weight:600}
+.article-body em{font-style:italic;color:rgba(11,37,69,.55);font-size:.85rem}
+
+.roster-wrap{max-width:56rem;overflow-x:auto;margin:1.25rem 0 2rem;border:1px solid var(--gray-100);border-radius:.6rem}
+.roster-table{width:100%;border-collapse:collapse;font-size:.8125rem;background:#fff}
+.roster-table th{text-align:left;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(11,37,69,.45);padding:.6rem .75rem;background:var(--gray-50);border-bottom:1px solid var(--gray-100);white-space:nowrap}
+.roster-table td{padding:.6rem .75rem;border-bottom:1px solid var(--gray-50);color:rgba(11,37,69,.75);white-space:nowrap}
+.roster-table tr:last-child td{border-bottom:none}
+.roster-table td.pos{font-weight:700;color:var(--green-dark);font-size:.7rem}
+.roster-table td.grade{font-weight:700;color:rgba(11,37,69,.55);font-size:.75rem}
+.article-body ul.dfs-list{margin:.25rem 0 1.25rem}
+.article-body ul.dfs-list li{font-size:.9375rem;line-height:1.7;color:rgba(11,37,69,.75);margin-bottom:.5rem;padding-left:1.1rem;position:relative}
+.article-body ul.dfs-list li::before{content:"\2022";color:var(--green);font-weight:700;position:absolute;left:0}
+.roster-table td.name{font-weight:600;color:var(--navy)}
+.roster-table tr.total td{font-weight:700;color:var(--navy);background:var(--gray-50)}
+.signal-CORE{color:var(--green-dark);font-weight:700}
+.signal-VALUE{color:var(--gold);font-weight:700}
+.signal-WATCH{color:rgba(11,37,69,.5);font-weight:700}
+
+.translation-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0 1.5rem}
+.translation-pill{font-size:.8rem;background:#fff;border:1px solid var(--gray-100);border-radius:.4rem;padding:.5rem .75rem;line-height:1.4}
+.translation-pill b{display:block;font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.15rem}
+.translation-pill.core b{color:var(--green-dark)}
+.translation-pill.value b{color:var(--gold)}
+.translation-pill.watch b{color:rgba(11,37,69,.45)}
+
+.factcheck{max-width:42rem;background:#fff;border:1px solid var(--gray-100);border-radius:.6rem;padding:1.25rem 1.5rem;margin-top:2rem}
+.factcheck-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(11,37,69,.4);margin-bottom:.75rem}
+.factcheck li{font-size:.8125rem;line-height:1.6;display:flex;align-items:flex-start;gap:.5rem;color:rgba(11,37,69,.65);margin-bottom:.5rem}
+.factcheck li:last-child{margin-bottom:0}
+.factcheck li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+
+footer{background:var(--navy-dark);color:rgba(255,255,255,.6);padding:2.5rem 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem;font-size:.875rem}
+@media(min-width:640px){.footer-inner{flex-direction:row}}
+.footer-logo{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a:hover{color:#fff;transition:color .15s}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="badge" viewBox="0 0 300 300">
+      <circle cx="150" cy="150" r="145" fill="#081B33"/>
+      <circle cx="150" cy="150" r="145" fill="none" stroke="#00A94F" stroke-width="6"/>
+      <line x1="75" y1="195" x2="205" y2="115" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+      <circle cx="75" cy="195" r="8" fill="#fff"/>
+      <g transform="translate(220,100) rotate(-14) scale(1.9)">
+        <ellipse cx="0" cy="0" rx="27" ry="16" fill="#00A94F"/>
+        <line x1="-16" y1="0" x2="16" y2="0" stroke="#081B33" stroke-width="2"/>
+        <line x1="-10" y1="-4.5" x2="-10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="-5" y1="-4.5" x2="-5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="0" y1="-4.5" x2="0" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="5" y1="-4.5" x2="5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="10" y1="-4.5" x2="10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <nav>
+    <a href="index.html">
+      <svg class="nav-logo-svg" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="3" width="128" height="40" rx="3" fill="#D7EFDE"/>
+        <text x="64" y="33" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#0B2545" text-anchor="middle" letter-spacing="1">SLATE</text>
+        <rect x="128" y="3" width="56" height="40" rx="3" fill="#00A94F"/>
+        <text x="156" y="33" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">IQ</text>
+      </svg>
+    </a>
+    <div class="nav-right">
+      <a href="slate-iq-intro.html" class="nav-back">Introduction</a>
+      <a href="slate-iq-evaluations.html" class="nav-back">Evaluations</a>
+      <a href="slate-iq-essays.html" class="nav-back">Essays</a>
+      <a href="index.html" class="nav-back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Main Site
+      </a>
+    </div>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 800 400">
+      <circle cx="700" cy="80" r="160" fill="#00A94F"/>
+      <circle cx="30" cy="350" r="180" fill="#00A94F"/>
+    </svg>
+  </div>
+  <div class="container" style="position:relative">
+    <p class="hero-eyebrow">Slate-IQ — Week 2, Sun 9/20 1PM Slate</p>
+    <h1>This Week's Lineups</h1>
+    <p>Five builds this week — Cash, Balanced, two GPP builds, and a new standalone Hybrid build — full player-by-player reasoning, the complete roster, and the model's own confidence grade on every pick.</p>
+  </div>
+</div>
+
+<div class="jumpnav-wrap">
+  <div class="jumpnav">
+    <a href="#cash">Week 2 · Cash</a>
+    <a href="#balanced">Balanced</a>
+    <a href="#gpp1">GPP #1 · Panthers-Falcons &amp; Bengals-Texans</a>
+    <a href="#gpp2">GPP #2 · Bears-Vikings Bring-Back</a>
+    <a href="#hybrid">Hybrid Build</a>
+  </div>
+</div>
+
+<!-- ============ CASH ============ -->
+<section class="lineup-section" id="cash">
+  <div class="container">
+    <span class="lineup-tag tag-cash">Cash Game Build</span>
+    <h2>Week 2 Cash Lineup for DraftKings Sun 9/20 1 PM Slate</h2>
+    <p class="lineup-excerpt">A near-maxed-out, all-CORE build — 8 of 9 roster spots grade out as CORE plays, with Kayshon Boutte's $4,000 price tag the single best value on the entire WR board.</p>
+    <div class="lineup-stats-row">
+      <div class="lineup-stat-pill"><span class="v">$49,000</span><span class="l">Salary Used</span></div>
+      <div class="lineup-stat-pill"><span class="v">178.03</span><span class="l">Proj. Total</span></div>
+      <div class="lineup-stat-pill"><span class="v">8 / 9</span><span class="l">CORE-Grade Spots</span></div>
+    </div>
+    <div class="article-body">
+      <h3>Definition</h3>
+      <p><strong>Cash is the highest-floor, most optimal build, and the one official cash lineup Slate-IQ enters every week.</strong> It gets 4 of the week's 15 $1 entries, all placed into 50/50s and Double-Ups, where roughly half the field cashes and everyone who does gets paid the same. The build skews heavily toward the model's highest-confidence tier (75–85% core): one primary QB, high-floor RBs and WRs, a safe TE, and a strong DST — no stacking, no ownership consideration, just the most efficient roster available. It's also the fixed benchmark every other lineup gets measured against each week.</p>
+      <h3>Why This Lineup, Why Now</h3>
+      <p>This week's Cash build is about as clean as the model produces: 8 of the 9 roster spots grade out as Grade A/CORE, and the one exception (Dalton Schultz at TE) is still a Signal VALUE play, not a WATCH-tier question mark. There's no roster spot here that requires a leap of faith — every player is either the model's top or near-top option at their position on pure production, efficiency, or both.</p>
+      <p>The headline is Kayshon Boutte at $4,000. He projects for 28.55 points — 1st among all 39 active WRs in both raw points and value this week, ahead of players priced nearly double his salary — which is the single biggest edge on this week's board and the main reason $1,000 of cap space is still sitting unused even after rostering three $7,000+ pieces (Bijan Robinson, Derrick Henry, Chris Olave).</p>
+      <h3>The Lineup, Player by Player</h3>
+      <p><strong>QB — Trevor Lawrence ($5,800, JAX vs. DEN)</strong><br>Grade A, CORE signal, projected for 22.15 points — 2nd among 25 active QBs in raw points and 1st in value. Jacksonville is favored by 2.5 at home in a 44.5-point game, for a 21.0 implied team total — a positive script without needing to lean on garbage-time volume, and the cheapest of the week's true CORE-tier QBs.</p>
+      <p><strong>RB — Bijan Robinson ($8,200, ATL vs. CAR)</strong><br>Grade A, CORE signal, projected for 25.16 points — 1st among 35 active RBs in raw points, 3rd in value. The most expensive player in the lineup and worth every dollar of it — no real competition for touches in Atlanta's backfield, in a game Atlanta is favored to control, for a 21.0 implied team total.</p>
+      <p><strong>RB — Derrick Henry ($7,200, BAL vs. NO)</strong><br>Grade A, CORE signal, projected for 23.10 points — 2nd among RBs in raw points, 1st in value. Baltimore's 8.5-point favorite role gives him the clearest touchdown equity of any back on the slate — the best cash-and-ceiling profile at either RB spot, for a 28.0 implied team total, the highest on this roster.</p>
+      <p><strong>WR — Chris Olave ($7,200, NO vs. BAL)</strong><br>Grade A, CORE signal, projected for 20.88 points — 2nd among 39 active WRs in raw points, 5th in value. New Orleans' clear WR1 in what should be a high-volume role as a sizable underdog (19.5 implied total) — a big underdog script tends to mean more targets, not fewer, for a team's top receiver.</p>
+      <p><strong>WR — Christian Watson ($6,200, GB vs. NYJ)</strong><br>Grade A, CORE signal, projected for 19.08 points — 3rd among WRs in raw points and value alike. Green Bay is favored by 3.5 at home, for a 24.0 implied team total — a stable, positive-script role without needing anything unusual to happen.</p>
+      <p><strong>WR — Kayshon Boutte ($4,000, HOU vs. CIN)</strong><br>Grade A, CORE signal, projected for 28.55 points — 1st among all 39 active WRs in both raw points and value, at the cheapest salary of any player in this lineup. This is the build's defining edge: a $4,000 price tag attached to the single best point total at the position on the entire board, for a 24.75 implied team total.</p>
+      <p><strong>TE — Dallas Goedert ($4,800, PHI vs. TEN)</strong><br>Grade A, CORE signal, projected for 15.39 points — 2nd among 27 active TEs in raw points and value. Philadelphia is favored by 7, the largest spread on either side of its own matchup — a strong game-script signal for a receiving TE, for a 23.25 implied team total.</p>
+      <p><strong>FLEX — Dalton Schultz ($3,200, HOU vs. CIN)</strong><br>Grade B, VALUE signal, projected for 14.35 points — 3rd among TEs in raw points, 1st in value. The one non-CORE spot on the roster, and still a clean, defensible hold — cheapest piece in the lineup, and the second Houston player alongside Boutte in the same CIN@HOU game (24.75 implied total).</p>
+      <p><strong>DST — Jacksonville Jaguars ($2,400, JAX vs. DEN)</strong><br>Grade A, CORE signal, projected for 9.38 points — 1st among 26 active DSTs in both raw points and value. Jacksonville's own game environment (44.5 total, 2.5-point favorite, 21.0 implied total) supports the pick independent of Lawrence being rostered above it — this isn't a forced same-team pairing, both grade out as the position's best options on their own merits.</p>
+      <h3>The Full Roster</h3>
+      <div class="roster-wrap">
+        <table class="roster-table">
+          <thead><tr><th>Pos</th><th>Player</th><th>Salary</th><th>Matchup</th><th>Vegas (Total/Spread)</th><th>Implied Total</th><th>Proj. DK</th><th>Value ($/1K)</th><th>Grade</th><th>Signal</th></tr></thead>
+          <tbody>
+            <tr><td class="pos">QB</td><td class="name">Trevor Lawrence</td><td>$5,800</td><td>JAX vs. DEN</td><td>44.5 / +2.5</td><td>21.0</td><td>22.15</td><td>3.82</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">RB</td><td class="name">Bijan Robinson</td><td>$8,200</td><td>ATL vs. CAR</td><td>43.5 / +1.5</td><td>21.0</td><td>25.16</td><td>3.07</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">RB</td><td class="name">Derrick Henry</td><td>$7,200</td><td>BAL vs. NO</td><td>47.5 / -8.5</td><td>28.0</td><td>23.10</td><td>3.21</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Chris Olave</td><td>$7,200</td><td>NO vs. BAL</td><td>47.5 / +8.5</td><td>19.5</td><td>20.88</td><td>2.90</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Christian Watson</td><td>$6,200</td><td>GB vs. NYJ</td><td>44.5 / -3.5</td><td>24.0</td><td>19.08</td><td>3.08</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Kayshon Boutte</td><td>$4,000</td><td>HOU vs. CIN</td><td>46.5 / -3.0</td><td>24.75</td><td>28.55</td><td>7.14</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">TE</td><td class="name">Dallas Goedert</td><td>$4,800</td><td>PHI vs. TEN</td><td>39.5 / -7.0</td><td>23.25</td><td>15.39</td><td>3.21</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">FLEX</td><td class="name">Dalton Schultz</td><td>$3,200</td><td>HOU vs. CIN</td><td>46.5 / -3.0</td><td>24.75</td><td>14.35</td><td>4.49</td><td class="grade">B</td><td class="signal-VALUE">VALUE</td></tr>
+            <tr><td class="pos">DST</td><td class="name">Jaguars</td><td>$2,400</td><td>JAX vs. DEN</td><td>44.5 / +2.5</td><td>21.0</td><td>9.38</td><td>3.91</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr class="total"><td colspan="2">Total</td><td>$49,000</td><td></td><td></td><td></td><td>178.03</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><em>Spread is shown from each listed player's own team perspective (negative = favorite). Implied team total = (Game Total − Team Spread) ÷ 2. "vs." labels the matchup only and doesn't indicate home/away. Injury blank = Active; none of this roster's players currently carry a Questionable/Doubtful/Out tag. Roster floor: ~123.68. Roster ceiling: ~250.18. $1,000 of cap space is unused.</em></p>
+      <h3>What the Numbers Tell Us</h3>
+      <p>There's a mild, incidental correlation footprint here even though Cash isn't built for it: Kayshon Boutte and Dalton Schultz are both Houston pieces in the same CIN@HOU game, and Trevor Lawrence and the Jaguars D/ST are both Jacksonville — though that pairing is common in Cash builds and reflects each grading out as the position's best option independently, not a stack decision. Otherwise this roster is spread across seven different games with no single environment doing disproportionate work. The more telling number is the value distribution: every non-Schultz starter clears a 2.9 value floor, and three players (Lawrence, Henry, Boutte) sit at or above 3.2 — this is a genuinely efficient roster, not just a high-projection one padded by a couple of expensive stars.</p>
+      <h3>DFS Translation</h3>
+      <p><strong>How to read Grade and Signal:</strong> Signal layers Value (projected points per $1,000 of salary) on top of Grade to flag roster fit:</p>
+      <ul class="dfs-list">
+        <li><strong>CORE</strong> — Grade A and Value at or above a position-specific bar. Build your lineup around this player.</li>
+        <li><strong>VALUE</strong> — Salary at or below a position-specific ceiling and Value at or above a bar. A cheap, efficient pivot that frees up cap space.</li>
+        <li><strong>WATCH</strong> — Neither bar was cleared. Not a red flag, just no strong edge either way.</li>
+      </ul>
+      <p>The exact cutoffs differ by position — a WR needs fewer raw points than a QB to earn a Grade A, for example:</p>
+      <div class="roster-wrap">
+        <table class="roster-table">
+          <thead><tr><th>Position</th><th>Grade A</th><th>Grade B</th><th>CORE — Value &ge;</th><th>VALUE — Salary &le;</th><th>VALUE — Value percentile &ge;</th></tr></thead>
+          <tbody>
+            <tr><td class="pos">QB</td><td>&ge; 20</td><td>&ge; 16</td><td>2.95</td><td>$6,500</td><td>65th</td></tr>
+            <tr><td class="pos">RB</td><td>&ge; 18</td><td>&ge; 12</td><td>2.5</td><td>$5,800</td><td>65th</td></tr>
+            <tr><td class="pos">WR</td><td>&ge; 16</td><td>&ge; 11</td><td>2.4</td><td>$5,200</td><td>65th</td></tr>
+            <tr><td class="pos">TE</td><td>&ge; 15</td><td>&ge; 10</td><td>2.5</td><td>$3,700</td><td>65th</td></tr>
+            <tr><td class="pos">DST</td><td>&ge; 7.5</td><td>top 42% (58th pct)</td><td>2.4</td><td>$2,600</td><td>65th</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Below the Grade B line at each position is a Grade C; missing both the CORE and VALUE bars is a WATCH.</p>
+      <p>For this build specifically:</p>
+      <div class="translation-row">
+        <div class="translation-pill core"><b>CORE (safest floor)</b>Trevor Lawrence, Bijan Robinson, Derrick Henry, Chris Olave, Christian Watson, Kayshon Boutte, Dallas Goedert, Jaguars D/ST</div>
+        <div class="translation-pill value"><b>VALUE (good pts/$)</b>Dalton Schultz</div>
+      </div>
+      <p>Eight CORE, one VALUE, zero WATCH — the deepest CORE tilt of any Cash build this season, with $1,000 still on the table.</p>
+      <h3>The Slate-IQ Take</h3>
+      <p>There isn't much to hedge on this week's Cash build — zero WATCH-tier spots is rare, and even the one non-CORE piece (Schultz) is a clean VALUE play rather than a speculative one. If there's a single point worth flagging plainly, it's that three of the nine salaries (Bijan Robinson, Derrick Henry, Chris Olave) sit at $7,000+, which is what's actually driving the unused $1,000 of cap space — the model isn't leaving money on the table by accident, it's just that Boutte's $4,000 price tag is so far under his own production that there wasn't a better place to spend it without displacing a CORE play for a lesser one. That's a good problem to have in a Cash build.</p>
+      <h3>Final Takeaway</h3>
+      <p>This is about as clean a Cash build as the model produces this week — no WATCH-tier spots, one clear value outlier in Kayshon Boutte, and $1,000 still on the table because the model simply ran out of better places to put it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BALANCED ============ -->
+<section class="lineup-section" id="balanced">
+  <div class="container">
+    <span class="lineup-tag tag-balanced">Balanced Build</span>
+    <h2>Week 2 Balanced Lineup for DraftKings Sun 9/20 1 PM Slate</h2>
+    <p class="lineup-excerpt">A projection-driven build that ended up touching three separate games through seven of its nine spots — including a real Tyler Shough/Chris Olave same-team stack with Derrick Henry as the bring-back.</p>
+    <div class="lineup-stats-row">
+      <div class="lineup-stat-pill"><span class="v">$49,700</span><span class="l">Salary Used</span></div>
+      <div class="lineup-stat-pill"><span class="v">164.71</span><span class="l">Proj. Total</span></div>
+      <div class="lineup-stat-pill"><span class="v">3</span><span class="l">Correlated Games</span></div>
+    </div>
+    <div class="article-body">
+      <h3>Definition</h3>
+      <p><strong>Balanced is the hybrid build, still projection-driven but with some correlation and a few lower-owned pivots.</strong> It gets 3 of the week's 15 $1 entries, going into Single-Entry-Only GPPs, a format built for exactly one well-considered lineup rather than volume. Construction-wise it stays close to Cash: the same primary QB (or the secondary one), with just 1–2 player swaps for higher-upside, lower-owned pieces — moderate leverage and some correlation, not a full stack.</p>
+      <h3>Why This Lineup, Why Now</h3>
+      <p>Worth being upfront about this build's shape before getting into the players: it carries more real correlation than a typical Balanced roster. Tyler Shough stacks with Chris Olave on the same New Orleans offense (both underdogs by 8.5 in a 47.5-point game), and Derrick Henry sits on the other side of that exact game as the bring-back — a genuine 3-piece, both-sides stack, not an incidental overlap. On top of that, two more pairs happen to share games: Chase Brown (CIN) and Kayshon Boutte (HOU) both touch the CIN@HOU game, and D'Andre Swift (CHI) and the Vikings D/ST (MIN) both touch CHI@MIN. Put together, 7 of the 9 roster spots touch a shared game with at least one teammate. That's a bigger correlation footprint than Balanced's usual "1-2 swaps, no real stack" shape — closer to what Leverage or Ceiling normally look like — but it's a byproduct of where this week's best individual plays and the model's own soft QB-stack preference landed, not a deliberate departure from the formula.</p>
+      <h3>The Lineup, Player by Player</h3>
+      <p><strong>QB — Tyler Shough ($5,300, NO vs. BAL)</strong><br>Grade B, VALUE signal, projected for 18.89 points — 6th among 25 active QBs in raw points, 4th in value. New Orleans is an 8.5-point underdog in a 47.5-point game, for a 19.5 implied team total — the exact kind of negative-script, pass-heavy setup that tends to inflate a young QB's volume, and it puts him in a natural stack with Olave below.</p>
+      <p><strong>RB — Derrick Henry ($7,200, BAL vs. NO)</strong><br>Grade A, CORE signal, projected for 23.10 points — 2nd among 35 active RBs in raw points, 1st in value. The bring-back half of this build's New Orleans-Baltimore correlation, and independently the best RB value on the entire board regardless of the stack, for a 28.0 implied team total.</p>
+      <p><strong>RB — D'Andre Swift ($6,300, CHI vs. MIN)</strong><br>Grade A, CORE signal, projected for 20.09 points — 3rd among RBs in raw points and value. Chicago is favored by 5.5 in the week's 2nd-highest total game (49.5), for a 27.5 implied team total — a strong workload projection in a good scoring environment.</p>
+      <p><strong>WR — Chris Olave ($7,200, NO vs. BAL)</strong><br>Grade A, CORE signal, projected for 20.88 points — 2nd among 39 active WRs in raw points, 5th in value. New Orleans' clear WR1 and Shough's direct stack partner — the centerpiece of this build's correlation thesis, for a 19.5 implied team total.</p>
+      <p><strong>WR — Stefon Diggs ($5,300, WAS vs. DAL)</strong><br>Grade B, WATCH signal, projected for 13.81 points — 10th among WRs in raw points, 8th in value. Washington-Dallas carries the actual highest total on the entire Week 2 board (50.5), and Diggs is priced at just $5,300 for exposure to it, for a 23.5 implied team total — a game-environment play more than a per-target volume bet.</p>
+      <p><strong>WR — Kayshon Boutte ($4,000, HOU vs. CIN)</strong><br>Grade A, CORE signal, projected for 28.55 points — 1st among WRs in both raw points and value, for a 24.75 implied team total — the same league-best value that anchors this week's Cash build, now doing double duty here.</p>
+      <p><strong>TE — Tucker Kraft ($4,900, GB vs. NYJ)</strong><br>Grade B, WATCH signal, projected for 13.93 points — 4th among 27 active TEs in raw points, 8th in value. Green Bay is favored by 3.5 at home, for a 24.0 implied team total — a solid game script without a standout individual signal at the position this week; a serviceable rather than exceptional roster spot.</p>
+      <p><strong>FLEX — Chase Brown ($6,900, CIN vs. HOU)</strong><br>Grade B, WATCH signal, projected for 17.48 points — 6th among RBs in raw points, 9th in value. The Cincinnati side of this build's second incidental game overlap with Boutte, for a 21.75 implied team total — solid production without clearing either Signal bar this week.</p>
+      <p><strong>DST — Minnesota Vikings ($2,600, MIN vs. CHI)</strong><br>Grade A, CORE signal, projected for 8.00 points — 4th among 26 active DSTs in raw points, 3rd in value. The Minnesota side of this build's third incidental overlap, alongside D'Andre Swift's Chicago game (22.0 implied total) — a strong unit in its own right independent of that connection.</p>
+      <h3>The Full Roster</h3>
+      <div class="roster-wrap">
+        <table class="roster-table">
+          <thead><tr><th>Pos</th><th>Player</th><th>Salary</th><th>Matchup</th><th>Vegas (Total/Spread)</th><th>Implied Total</th><th>Proj. DK</th><th>Value ($/1K)</th><th>Grade</th><th>Signal</th></tr></thead>
+          <tbody>
+            <tr><td class="pos">QB</td><td class="name">Tyler Shough</td><td>$5,300</td><td>NO vs. BAL</td><td>47.5 / +8.5</td><td>19.5</td><td>18.89</td><td>3.56</td><td class="grade">B</td><td class="signal-VALUE">VALUE</td></tr>
+            <tr><td class="pos">RB</td><td class="name">Derrick Henry</td><td>$7,200</td><td>BAL vs. NO</td><td>47.5 / -8.5</td><td>28.0</td><td>23.10</td><td>3.21</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">RB</td><td class="name">D'Andre Swift</td><td>$6,300</td><td>CHI vs. MIN</td><td>49.5 / -5.5</td><td>27.5</td><td>20.09</td><td>3.19</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Chris Olave</td><td>$7,200</td><td>NO vs. BAL</td><td>47.5 / +8.5</td><td>19.5</td><td>20.88</td><td>2.90</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Stefon Diggs</td><td>$5,300</td><td>WAS vs. DAL</td><td>50.5 / +3.5</td><td>23.5</td><td>13.81</td><td>2.61</td><td class="grade">B</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Kayshon Boutte</td><td>$4,000</td><td>HOU vs. CIN</td><td>46.5 / -3.0</td><td>24.75</td><td>28.55</td><td>7.14</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">TE</td><td class="name">Tucker Kraft</td><td>$4,900</td><td>GB vs. NYJ</td><td>44.5 / -3.5</td><td>24.0</td><td>13.93</td><td>2.84</td><td class="grade">B</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">FLEX</td><td class="name">Chase Brown</td><td>$6,900</td><td>CIN vs. HOU</td><td>46.5 / +3.0</td><td>21.75</td><td>17.48</td><td>2.53</td><td class="grade">B</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">DST</td><td class="name">Vikings</td><td>$2,600</td><td>MIN vs. CHI</td><td>49.5 / +5.5</td><td>22.0</td><td>8.00</td><td>3.08</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr class="total"><td colspan="2">Total</td><td>$49,700</td><td></td><td></td><td></td><td>164.71</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><em>Spread is shown from each listed player's own team perspective (negative = favorite). Implied team total = (Game Total − Team Spread) ÷ 2. "vs." labels the matchup only and doesn't indicate home/away. Injury blank = Active; none of this roster's players currently carry a Questionable/Doubtful/Out tag. Roster floor: ~114.50. Roster ceiling: ~231.40. $300 of cap space is unused.</em></p>
+      <h3>What the Numbers Tell Us</h3>
+      <p>The correlation is the story here, not any one player. New Orleans-Baltimore (Shough, Olave, Henry) is a genuine, deliberate 3-piece bring-back stack — the kind of construction the model's soft QB-stack preference is designed to produce. Layered on top of that, purely by coincidence of where the week's best remaining plays landed, Cincinnati-Houston (Chase Brown, Boutte) and Chicago-Minnesota (Swift, Vikings D/ST) each contribute a second correlated pair. Only Diggs and Kraft sit fully outside a shared-game connection. The practical effect: this build's outcome leans more heavily on three specific games going well than a typical Balanced roster would, even though nothing here was force-stacked beyond the Shough/Olave pairing.</p>
+      <h3>DFS Translation</h3>
+      <p><strong>How to read Grade and Signal:</strong> Signal layers Value (projected points per $1,000 of salary) on top of Grade to flag roster fit:</p>
+      <ul class="dfs-list">
+        <li><strong>CORE</strong> — Grade A and Value at or above a position-specific bar. Build your lineup around this player.</li>
+        <li><strong>VALUE</strong> — Salary at or below a position-specific ceiling and Value at or above a bar. A cheap, efficient pivot that frees up cap space.</li>
+        <li><strong>WATCH</strong> — Neither bar was cleared. Not a red flag, just no strong edge either way.</li>
+      </ul>
+      <p>The exact cutoffs differ by position — a WR needs fewer raw points than a QB to earn a Grade A, for example:</p>
+      <div class="roster-wrap">
+        <table class="roster-table">
+          <thead><tr><th>Position</th><th>Grade A</th><th>Grade B</th><th>CORE — Value &ge;</th><th>VALUE — Salary &le;</th><th>VALUE — Value percentile &ge;</th></tr></thead>
+          <tbody>
+            <tr><td class="pos">QB</td><td>&ge; 20</td><td>&ge; 16</td><td>2.95</td><td>$6,500</td><td>65th</td></tr>
+            <tr><td class="pos">RB</td><td>&ge; 18</td><td>&ge; 12</td><td>2.5</td><td>$5,800</td><td>65th</td></tr>
+            <tr><td class="pos">WR</td><td>&ge; 16</td><td>&ge; 11</td><td>2.4</td><td>$5,200</td><td>65th</td></tr>
+            <tr><td class="pos">TE</td><td>&ge; 15</td><td>&ge; 10</td><td>2.5</td><td>$3,700</td><td>65th</td></tr>
+            <tr><td class="pos">DST</td><td>&ge; 7.5</td><td>top 42% (58th pct)</td><td>2.4</td><td>$2,600</td><td>65th</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Below the Grade B line at each position is a Grade C; missing both the CORE and VALUE bars is a WATCH.</p>
+      <p>For this build specifically:</p>
+      <div class="translation-row">
+        <div class="translation-pill core"><b>CORE</b>Derrick Henry, D'Andre Swift, Chris Olave, Kayshon Boutte, Vikings D/ST</div>
+        <div class="translation-pill value"><b>VALUE</b>Tyler Shough</div>
+        <div class="translation-pill watch"><b>WATCH</b>Stefon Diggs, Tucker Kraft, Chase Brown</div>
+      </div>
+      <p>Five CORE, one VALUE, three WATCH — a solid point-scoring foundation, though the concentration across three connected games is a real caveat for a build whose job is usually to differentiate.</p>
+      <h3>The Slate-IQ Take</h3>
+      <p>Worth being direct about the construction question first, since it's the headline: this build reads structurally closer to Leverage than to its own "close to Cash, 1-2 swaps" definition, purely because of how the correlations stacked up this week. That's not a flaw — Shough/Olave/Henry is a real, defensible stack, and the two incidental overlaps (Chase Brown/Boutte, Swift/Vikings) are strong individual plays that happen to share games rather than forced pairings. On the player level, Tucker Kraft and Stefon Diggs are the softest spots on the roster — both Grade B/WATCH with no standout signal — worth knowing that's where this build's floor is thinnest if something has to give.</p>
+      <h3>Final Takeaway</h3>
+      <p>A projection-driven build that ended up carrying real correlation across three separate games rather than the usual one-or-two-swap shape — the individual plays are sound, the connections are mostly a product of where this week's value landed rather than a deliberate strategy shift.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GPP #1 ============ -->
+<section class="lineup-section" id="gpp1">
+  <div class="container">
+    <span class="lineup-tag tag-gpp">GPP #1 · Tournament Build</span>
+    <h2>Week 2 GPP Lineup: Panthers-Falcons &amp; Bengals-Texans Build</h2>
+    <p class="lineup-excerpt">Two separate correlation clusters — a Carolina QB/WR stack with an Atlanta bring-back, plus a Cincinnati-Houston crossover through Xavier Hutchinson and Ja'Marr Chase — built around real ownership discrepancies rather than one big story.</p>
+    <div class="lineup-stats-row">
+      <div class="lineup-stat-pill"><span class="v">$50,000</span><span class="l">Salary Used</span></div>
+      <div class="lineup-stat-pill"><span class="v">158.06</span><span class="l">Proj. Total</span></div>
+      <div class="lineup-stat-pill"><span class="v">2</span><span class="l">Correlated Games</span></div>
+    </div>
+    <div class="article-body">
+      <h3>Definition</h3>
+      <p><strong>Leverage is built around ownership discrepancies, where the field is likely wrong.</strong> It gets 4 of the week's 15 $1 entries, paired one-for-one with a Ceiling entry into Three-Entry Max GPPs — the stack-focused tournament format built around high-upside game correlation. Construction-wise this is 2–4 player changes from Cash, stronger game correlation than Balanced, and more ownership differentiation — leverage-driven substitutions rather than a straight upgrade.</p>
+      <h3>Why This Lineup, Why Now</h3>
+      <p>This build carries two distinct correlation clusters rather than one. The first is a genuine Carolina stack: Bryce Young and Jalen Coker on the same Panthers offense, with Bijan Robinson as the bring-back on the Atlanta side of that same 43.5-point game — a real 3-piece, both-sides look. The second is a Cincinnati-Houston crossover: Xavier Hutchinson (Houston) and Ja'Marr Chase (Cincinnati) sit on opposite sides of the same 46.5-point game. Neither cluster was forced — both are the model's genuinely best available options at their salaries — but together they give this build more built-in correlation than Balanced while still leaving three standalone value plays (Christian Watson, Dallas Goedert, Jaguars D/ST) untouched by either stack.</p>
+      <h3>The Lineup, Player by Player</h3>
+      <p><strong>QB — Bryce Young ($5,400, CAR vs. ATL)</strong><br>Grade B, VALUE signal, projected for 19.97 points — 5th among 25 active QBs in raw points, 3rd in value. Carolina is a modest 1.5-point underdog in a competitive 43.5-point game, for a 22.5 implied team total — enough volume upside to anchor a real stack with Coker below at a below-market salary.</p>
+      <p><strong>RB — Bijan Robinson ($8,200, ATL vs. CAR)</strong><br>Grade A, CORE signal, projected for 25.16 points — 1st among 35 active RBs in raw points, 3rd in value. The bring-back half of this build's Carolina-Atlanta correlation, and independently the top raw-point RB on the entire board regardless of the stack, for a 21.0 implied team total.</p>
+      <p><strong>RB — Ashton Jeanty ($6,800, LV vs. LAC)</strong><br>Grade A, WATCH signal, projected for 20.05 points — 4th among RBs in both raw points and value. A strong Grade A profile that hasn't cleared either Signal bar yet — the raw production is real, but the model isn't calling it a lock at this salary, for an 18.25 implied team total.</p>
+      <p><strong>WR — Christian Watson ($6,200, GB vs. NYJ)</strong><br>Grade A, CORE signal, projected for 19.08 points — 3rd among 39 active WRs in raw points and value alike. A standalone play with no correlation partner elsewhere on this roster — in purely on merit, same as it is in Cash, for a 24.0 implied team total.</p>
+      <p><strong>WR — Jalen Coker ($5,100, CAR vs. ATL)</strong><br>Grade B, VALUE signal, projected for 15.30 points — 7th among WRs in raw points, 4th in value. The direct stack partner to Bryce Young on Carolina's side of the CAR@ATL game, for a 22.5 implied team total.</p>
+      <p><strong>WR — Xavier Hutchinson ($3,500, HOU vs. CIN)</strong><br>Grade A, CORE signal, projected for 17.22 points — 4th among WRs in raw points, 2nd in value — the cheapest WR on this roster by a wide margin and the clearest single mispricing in the build. The Houston side of this build's second correlation cluster with Ja'Marr Chase, for a 24.75 implied team total.</p>
+      <p><strong>TE — Dallas Goedert ($4,800, PHI vs. TEN)</strong><br>Grade A, CORE signal, projected for 15.39 points — 2nd among 27 active TEs in raw points and value. A standalone play, same profile that makes him a Cash-caliber CORE piece here too, for a 23.25 implied team total.</p>
+      <p><strong>FLEX — Ja'Marr Chase ($7,600, CIN vs. HOU)</strong><br>Grade A, WATCH signal, projected for 16.53 points — 6th among WRs in raw points, but 18th in value — the most expensive piece on the roster and the one place this build pays up rather than leans on price. The Cincinnati side of the Hutchinson correlation; Grade A on production, but the salary keeps it off both Signal bars, for a 21.75 implied team total.</p>
+      <p><strong>DST — Jacksonville Jaguars ($2,400, JAX vs. DEN)</strong><br>Grade A, CORE signal, projected for 9.38 points — 1st among 26 active DSTs in both raw points and value. A standalone play with no correlation tie elsewhere in this build — the same top-ranked unit anchoring Cash, for a 21.0 implied team total.</p>
+      <h3>The Full Roster</h3>
+      <div class="roster-wrap">
+        <table class="roster-table">
+          <thead><tr><th>Pos</th><th>Player</th><th>Salary</th><th>Matchup</th><th>Vegas (Total/Spread)</th><th>Implied Total</th><th>Proj. DK</th><th>Value ($/1K)</th><th>Grade</th><th>Signal</th></tr></thead>
+          <tbody>
+            <tr><td class="pos">QB</td><td class="name">Bryce Young</td><td>$5,400</td><td>CAR vs. ATL</td><td>43.5 / -1.5</td><td>22.5</td><td>19.97</td><td>3.70</td><td class="grade">B</td><td class="signal-VALUE">VALUE</td></tr>
+            <tr><td class="pos">RB</td><td class="name">Bijan Robinson</td><td>$8,200</td><td>ATL vs. CAR</td><td>43.5 / +1.5</td><td>21.0</td><td>25.16</td><td>3.07</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">RB</td><td class="name">Ashton Jeanty</td><td>$6,800</td><td>LV vs. LAC</td><td>43.5 / +7.0</td><td>18.25</td><td>20.05</td><td>2.95</td><td class="grade">A</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Christian Watson</td><td>$6,200</td><td>GB vs. NYJ</td><td>44.5 / -3.5</td><td>24.0</td><td>19.08</td><td>3.08</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Jalen Coker</td><td>$5,100</td><td>CAR vs. ATL</td><td>43.5 / -1.5</td><td>22.5</td><td>15.30</td><td>3.00</td><td class="grade">B</td><td class="signal-VALUE">VALUE</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Xavier Hutchinson</td><td>$3,500</td><td>HOU vs. CIN</td><td>46.5 / -3.0</td><td>24.75</td><td>17.22</td><td>4.92</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">TE</td><td class="name">Dallas Goedert</td><td>$4,800</td><td>PHI vs. TEN</td><td>39.5 / -7.0</td><td>23.25</td><td>15.39</td><td>3.21</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">FLEX</td><td class="name">Ja'Marr Chase</td><td>$7,600</td><td>CIN vs. HOU</td><td>46.5 / +3.0</td><td>21.75</td><td>16.53</td><td>2.17</td><td class="grade">A</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">DST</td><td class="name">Jaguars</td><td>$2,400</td><td>JAX vs. DEN</td><td>44.5 / +2.5</td><td>21.0</td><td>9.38</td><td>3.91</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr class="total"><td colspan="2">Total</td><td>$50,000</td><td></td><td></td><td></td><td>158.06</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><em>Spread is shown from each listed player's own team perspective (negative = favorite). Implied team total = (Game Total − Team Spread) ÷ 2. "vs." labels the matchup only and doesn't indicate home/away. Injury blank = Active; none of this roster's players currently carry a Questionable/Doubtful/Out tag. Roster floor: ~109.71. Roster ceiling: ~222.23. Full $50,000 cap spent.</em></p>
+      <h3>What the Numbers Tell Us</h3>
+      <p>Five of nine roster spots touch one of two correlated games — Carolina-Atlanta (Young, Coker, Robinson) and Cincinnati-Houston (Hutchinson, Chase) — while Watson, Goedert, and the Jaguars D/ST stand entirely apart from both. That's a genuinely different shape from Balanced this week: rather than one accidental cluster spreading across the roster, this build has two deliberate, self-contained correlation plays sitting alongside independent value picks. The full $50,000 cap is spent, with Ja'Marr Chase's $7,600 salary the one spot where the build pays for talent rather than hunting for a discount.</p>
+      <h3>DFS Translation</h3>
+      <p><strong>How to read Grade and Signal:</strong> Signal layers Value (projected points per $1,000 of salary) on top of Grade to flag roster fit:</p>
+      <ul class="dfs-list">
+        <li><strong>CORE</strong> — Grade A and Value at or above a position-specific bar. Build your lineup around this player.</li>
+        <li><strong>VALUE</strong> — Salary at or below a position-specific ceiling and Value at or above a bar. A cheap, efficient pivot that frees up cap space.</li>
+        <li><strong>WATCH</strong> — Neither bar was cleared. Not a red flag, just no strong edge either way.</li>
+      </ul>
+      <p>The exact cutoffs differ by position — a WR needs fewer raw points than a QB to earn a Grade A, for example:</p>
+      <div class="roster-wrap">
+        <table class="roster-table">
+          <thead><tr><th>Position</th><th>Grade A</th><th>Grade B</th><th>CORE — Value &ge;</th><th>VALUE — Salary &le;</th><th>VALUE — Value percentile &ge;</th></tr></thead>
+          <tbody>
+            <tr><td class="pos">QB</td><td>&ge; 20</td><td>&ge; 16</td><td>2.95</td><td>$6,500</td><td>65th</td></tr>
+            <tr><td class="pos">RB</td><td>&ge; 18</td><td>&ge; 12</td><td>2.5</td><td>$5,800</td><td>65th</td></tr>
+            <tr><td class="pos">WR</td><td>&ge; 16</td><td>&ge; 11</td><td>2.4</td><td>$5,200</td><td>65th</td></tr>
+            <tr><td class="pos">TE</td><td>&ge; 15</td><td>&ge; 10</td><td>2.5</td><td>$3,700</td><td>65th</td></tr>
+            <tr><td class="pos">DST</td><td>&ge; 7.5</td><td>top 42% (58th pct)</td><td>2.4</td><td>$2,600</td><td>65th</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Below the Grade B line at each position is a Grade C; missing both the CORE and VALUE bars is a WATCH.</p>
+      <p>For this build specifically:</p>
+      <div class="translation-row">
+        <div class="translation-pill core"><b>CORE</b>Bijan Robinson, Christian Watson, Xavier Hutchinson, Dallas Goedert, Jaguars D/ST</div>
+        <div class="translation-pill value"><b>VALUE (leverage)</b>Bryce Young, Jalen Coker</div>
+        <div class="translation-pill watch"><b>WATCH</b>Ashton Jeanty, Ja'Marr Chase</div>
+      </div>
+      <p>Five CORE, two VALUE, two WATCH — real ownership differentiation across two self-contained correlation clusters.</p>
+      <h3>The Slate-IQ Take</h3>
+      <p>The two-cluster structure here is sound and matches what Leverage is supposed to look like — genuine correlation, real ownership differentiation (Hutchinson at $3,500 in particular), without going as far into game-stacking as Ceiling does. The one spot worth a plain-spoken flag is Ja'Marr Chase: Grade A on production, but his value rank (18th among 39 WRs) is a real step down from what this build's other pieces offer, the direct cost of needing a same-tier correlation partner for Hutchinson at a salary that fit. Ashton Jeanty is a strong talent (Grade A) that the model still calls WATCH rather than CORE — worth knowing that's an unproven-workload bet, not a locked-in one.</p>
+      <h3>Final Takeaway</h3>
+      <p>This build's edge comes from two separate, real correlation plays rather than one big story — Carolina's QB/WR/bring-back stack and the Cincinnati-Houston crossover — with Xavier Hutchinson's $3,500 price tag standing out as the single clearest mispricing on the roster.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GPP #2 ============ -->
+<section class="lineup-section" id="gpp2">
+  <div class="container">
+    <span class="lineup-tag tag-gpp">GPP #2 · Tournament Build</span>
+    <h2>Week 2 GPP Lineup: Bears-Vikings Full Bring-Back</h2>
+    <p class="lineup-excerpt">A full bring-back build around the Bears-Vikings game — five of nine roster spots tied to one 49.5-point environment, both sides represented.</p>
+    <div class="lineup-stats-row">
+      <div class="lineup-stat-pill"><span class="v">$50,000</span><span class="l">Salary Used</span></div>
+      <div class="lineup-stat-pill"><span class="v">141.34</span><span class="l">Proj. Total</span></div>
+      <div class="lineup-stat-pill"><span class="v">5-Man</span><span class="l">Same-Game Stack</span></div>
+    </div>
+    <div class="article-body">
+      <h3>Definition</h3>
+      <p><strong>Ceiling is the highest-ceiling, most aggressive-correlation build, willing to sacrifice floor for upside.</strong> It gets 4 of the week's 15 $1 entries, paired one-for-one with a Leverage entry into Three-Entry Max GPPs. Construction-wise it leans hardest into game stacks and volatility — more volatile WRs, lower-owned players, and often a different QB and game environment entirely from the other three builds.</p>
+      <h3>Why This Lineup, Why Now</h3>
+      <p>This is the most concentrated correlation play of the week's four established builds: 5 of 9 roster spots are tied to the Chicago-Minnesota game — Caleb Williams, D'Andre Swift, and Rome Odunze on the Bears side, Jordan Addison and the Vikings D/ST on the Vikings side. That's a genuine bring-back structure, both offenses represented, built around a 49.5-point total. One accuracy note worth flagging: that 49.5 total is the 2nd-highest on this week's board, not the single highest — Washington-Dallas actually carries the week's top total at 50.5. This roster does touch that game too, through Stefon Diggs, but only as a single-player look rather than a second full stack. The construction logic here is "lean into the best available two-sided game correlation," which this week means Chicago-Minnesota rather than literally the highest number on the slate.</p>
+      <h3>The Lineup, Player by Player</h3>
+      <p><strong>QB — Caleb Williams ($6,800, CHI vs. MIN)</strong><br>Grade A, WATCH signal, projected for 23.77 points — 1st among 25 active QBs in raw points. The centerpiece of this build's bring-back — Chicago's clear passing-game hub in the week's 2nd-highest total game, for a 27.5 implied team total, with three of his own weapons rostered around him or across the field. Grade A on production; the WATCH tag reflects that his value rank (5th) sits behind several cheaper options, not a concern about the matchup itself.</p>
+      <p><strong>RB — D'Andre Swift ($6,300, CHI vs. MIN)</strong><br>Grade A, CORE signal, projected for 20.09 points — 3rd among 35 active RBs in raw points and value. Chicago's clear lead back in a game the team is favored to control (-5.5), for a 27.5 implied team total — a stable floor with real upside if the shootout script materializes.</p>
+      <p><strong>RB — Chase Brown ($6,900, CIN vs. HOU)</strong><br>Grade B, WATCH signal, projected for 17.48 points — 6th among RBs in raw points, 9th in value. The one roster spot with no tie to the Chicago-Minnesota correlation — a solid, standalone play in a good CIN@HOU environment (21.75 implied total) on its own merits.</p>
+      <p><strong>WR — Rome Odunze ($5,500, CHI vs. MIN)</strong><br>Grade B, WATCH signal, projected for 11.30 points — 22nd among 39 active WRs in raw points and value. The more speculative half of the Bears' side of the bring-back — behind Williams and Swift in expected usage, but here to complete the game correlation rather than on a standout individual case, for a 27.5 implied team total.</p>
+      <p><strong>WR — Stefon Diggs ($5,300, WAS vs. DAL)</strong><br>Grade B, WATCH signal, projected for 13.81 points — 10th among WRs in raw points, 8th in value. The lineup's one look at the actual highest total on the board (50.5, Washington-Dallas), for a 23.5 implied team total — a single-player exposure rather than a second full stack.</p>
+      <p><strong>WR — Jordan Addison ($5,100, MIN vs. CHI)</strong><br>Grade B, VALUE signal, projected for 13.59 points — 12th among WRs in raw points, 7th in value. The Vikings' side of the bring-back — Minnesota is a 5.5-point underdog in this game, the negative-script role that tends to support receiving volume, for a 22.0 implied team total.</p>
+      <p><strong>TE — Trey McBride ($6,900, ARI vs. SEA)</strong><br>Grade A, WATCH signal, projected for 20.46 points — 1st among 27 active TEs in raw points, 5th in value — the most expensive non-RB piece in the lineup and the only Arizona exposure on this roster, entirely outside the Chicago-Minnesota correlation, for an 18.5 implied team total.</p>
+      <p><strong>FLEX — Wan'Dale Robinson ($4,600, TEN vs. PHI)</strong><br>Grade B, VALUE signal, projected for 12.84 points — 15th among WRs in raw points, 6th in value. A cheap, standalone salary-efficient piece in the TEN@PHI game (16.25 implied total) — not tied to any other roster spot, here to free up cap for the rest of the build.</p>
+      <p><strong>DST — Minnesota Vikings ($2,600, MIN vs. CHI)</strong><br>Grade A, CORE signal, projected for 8.00 points — 4th among 26 active DSTs in raw points, 3rd in value. The final piece of the Chicago-Minnesota bring-back, for a 22.0 implied team total, and a strong unit independent of that tie.</p>
+      <h3>The Full Roster</h3>
+      <div class="roster-wrap">
+        <table class="roster-table">
+          <thead><tr><th>Pos</th><th>Player</th><th>Salary</th><th>Matchup</th><th>Vegas (Total/Spread)</th><th>Implied Total</th><th>Proj. DK</th><th>Value ($/1K)</th><th>Grade</th><th>Signal</th></tr></thead>
+          <tbody>
+            <tr><td class="pos">QB</td><td class="name">Caleb Williams</td><td>$6,800</td><td>CHI vs. MIN</td><td>49.5 / -5.5</td><td>27.5</td><td>23.77</td><td>3.50</td><td class="grade">A</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">RB</td><td class="name">D'Andre Swift</td><td>$6,300</td><td>CHI vs. MIN</td><td>49.5 / -5.5</td><td>27.5</td><td>20.09</td><td>3.19</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">RB</td><td class="name">Chase Brown</td><td>$6,900</td><td>CIN vs. HOU</td><td>46.5 / +3.0</td><td>21.75</td><td>17.48</td><td>2.53</td><td class="grade">B</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Rome Odunze</td><td>$5,500</td><td>CHI vs. MIN</td><td>49.5 / -5.5</td><td>27.5</td><td>11.30</td><td>2.06</td><td class="grade">B</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Stefon Diggs</td><td>$5,300</td><td>WAS vs. DAL</td><td>50.5 / +3.5</td><td>23.5</td><td>13.81</td><td>2.61</td><td class="grade">B</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Jordan Addison</td><td>$5,100</td><td>MIN vs. CHI</td><td>49.5 / +5.5</td><td>22.0</td><td>13.59</td><td>2.66</td><td class="grade">B</td><td class="signal-VALUE">VALUE</td></tr>
+            <tr><td class="pos">TE</td><td class="name">Trey McBride</td><td>$6,900</td><td>ARI vs. SEA</td><td>41.5 / +4.5</td><td>18.5</td><td>20.46</td><td>2.96</td><td class="grade">A</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">FLEX</td><td class="name">Wan'Dale Robinson</td><td>$4,600</td><td>TEN vs. PHI</td><td>39.5 / +7.0</td><td>16.25</td><td>12.84</td><td>2.79</td><td class="grade">B</td><td class="signal-VALUE">VALUE</td></tr>
+            <tr><td class="pos">DST</td><td class="name">Vikings</td><td>$2,600</td><td>MIN vs. CHI</td><td>49.5 / +5.5</td><td>22.0</td><td>8.00</td><td>3.08</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr class="total"><td colspan="2">Total</td><td>$50,000</td><td></td><td></td><td></td><td>141.34</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><em>Spread is shown from each listed player's own team perspective (negative = favorite). Implied team total = (Game Total − Team Spread) ÷ 2. "vs." labels the matchup only and doesn't indicate home/away. Injury blank = Active; none of this roster's players currently carry a Questionable/Doubtful/Out tag. Roster floor: ~98.14. Roster ceiling: ~198.67. Full $50,000 cap spent.</em></p>
+      <h3>What the Numbers Tell Us</h3>
+      <p>Five of nine roster spots trace back to one game (Chicago-Minnesota, 49.5 total, both sides represented), with Chase Brown, McBride, and Wan'Dale Robinson diversifying into three other environments and Diggs adding a single-player look at the week's actual highest total (Washington-Dallas, 50.5). That's real, deliberate concentration risk — if Chicago-Minnesota turns into the shootout the total suggests, this roster has more ways to cash in than almost any build this week; if it doesn't, five roster spots are affected at once rather than one.</p>
+      <h3>DFS Translation</h3>
+      <p><strong>How to read Grade and Signal:</strong> Signal layers Value (projected points per $1,000 of salary) on top of Grade to flag roster fit:</p>
+      <ul class="dfs-list">
+        <li><strong>CORE</strong> — Grade A and Value at or above a position-specific bar. Build your lineup around this player.</li>
+        <li><strong>VALUE</strong> — Salary at or below a position-specific ceiling and Value at or above a bar. A cheap, efficient pivot that frees up cap space.</li>
+        <li><strong>WATCH</strong> — Neither bar was cleared. Not a red flag, just no strong edge either way.</li>
+      </ul>
+      <p>The exact cutoffs differ by position — a WR needs fewer raw points than a QB to earn a Grade A, for example:</p>
+      <div class="roster-wrap">
+        <table class="roster-table">
+          <thead><tr><th>Position</th><th>Grade A</th><th>Grade B</th><th>CORE — Value &ge;</th><th>VALUE — Salary &le;</th><th>VALUE — Value percentile &ge;</th></tr></thead>
+          <tbody>
+            <tr><td class="pos">QB</td><td>&ge; 20</td><td>&ge; 16</td><td>2.95</td><td>$6,500</td><td>65th</td></tr>
+            <tr><td class="pos">RB</td><td>&ge; 18</td><td>&ge; 12</td><td>2.5</td><td>$5,800</td><td>65th</td></tr>
+            <tr><td class="pos">WR</td><td>&ge; 16</td><td>&ge; 11</td><td>2.4</td><td>$5,200</td><td>65th</td></tr>
+            <tr><td class="pos">TE</td><td>&ge; 15</td><td>&ge; 10</td><td>2.5</td><td>$3,700</td><td>65th</td></tr>
+            <tr><td class="pos">DST</td><td>&ge; 7.5</td><td>top 42% (58th pct)</td><td>2.4</td><td>$2,600</td><td>65th</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Below the Grade B line at each position is a Grade C; missing both the CORE and VALUE bars is a WATCH.</p>
+      <p>For this build specifically:</p>
+      <div class="translation-row">
+        <div class="translation-pill core"><b>CORE</b>D'Andre Swift, Vikings D/ST</div>
+        <div class="translation-pill value"><b>VALUE</b>Jordan Addison, Wan'Dale Robinson</div>
+        <div class="translation-pill watch"><b>WATCH</b>Caleb Williams, Chase Brown, Rome Odunze, Stefon Diggs, Trey McBride</div>
+      </div>
+      <p>Two CORE, two VALUE, five WATCH — the fewest CORE-tier plays of the week's builds, a direct tradeoff for leaning this hard into one game's ceiling.</p>
+      <h3>The Slate-IQ Take</h3>
+      <p>The construction here is sound — a genuine two-sided bring-back around a top-tier total, not a forced stack — but it's worth being honest that this is a five-player bet on one game rather than four spread across the board. Caleb Williams and Trey McBride are both Grade A but sit at WATCH: Williams because his value rank trails several cheaper options even with the highest raw-point total among QBs, McBride because his salary ($6,900, the priciest non-RB on the roster) keeps him off the VALUE bar despite leading all TEs in raw production. Neither is a reason to avoid the build — just spots where "ceiling" means real upside that isn't fully locked in yet.</p>
+      <h3>Final Takeaway</h3>
+      <p>The highest-ceiling build of the week's four established lineups, anchored on real two-sided game correlation in the slate's 2nd-highest total environment rather than any one player's individual spike week — the tradeoff is that its outcome leans more heavily on a single game going well than any of the other builds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HYBRID ============ -->
+<section class="lineup-section" id="hybrid">
+  <div class="container">
+    <span class="lineup-tag tag-hybrid">Hybrid · Fifth Build</span>
+    <h2>Week 2 Hybrid Lineup: Grade-A Watch List Build</h2>
+    <p class="lineup-excerpt">A fifth build this week, forcing in four of the model's Grade-A/WATCH prospects around two proven CORE holdovers — full cap spent, zero cushion left.</p>
+    <div class="lineup-stats-row">
+      <div class="lineup-stat-pill"><span class="v">$50,000</span><span class="l">Salary Used</span></div>
+      <div class="lineup-stat-pill"><span class="v">151.07</span><span class="l">Proj. Total</span></div>
+      <div class="lineup-stat-pill"><span class="v">4</span><span class="l">Grade-A/WATCH Bets</span></div>
+    </div>
+    <div class="article-body">
+      <h3>Definition</h3>
+      <p><strong>Hybrid isn't one of Slate-IQ's four established weekly archetypes (Cash, Balanced, Leverage, Ceiling) — it's a fifth, standalone build</strong> tied to two specific DK entry IDs outside the normal 2-of-4 exposure-cap system that governs the other four. Per its own construction label in the workbook, the thesis is to force in players the model grades A on raw production but hasn't yet certified with a CORE or VALUE signal — high-conviction talent the numbers like, without the efficiency or proven-workload case a CORE tag requires. This roster hasn't changed since it was first built earlier this week. <strong>Open question:</strong> which contest(s) this goes into and how many entries it gets haven't been specified — that's being treated as unresolved rather than guessed at.</p>
+      <h3>Why This Lineup, Why Now</h3>
+      <p>Four of the nine roster spots — Caleb Williams, Ashton Jeanty, De'Von Achane, and the Seahawks D/ST — are Grade A players the model still flags WATCH rather than CORE or VALUE, meaning the raw production case is strong but hasn't cleared the efficiency (Value) or price (salary ceiling + percentile) bar that would make them a "safe" build-around. Christian Watson and Derrick Henry anchor the roster as the two genuinely proven CORE holdovers, and Jalen Coker, Wan'Dale Robinson, and Darren Waller round it out as cheap, efficient VALUE plays that free up cap space for the four bigger bets. The full $50,000 is spent — there's no cushion left if any of the four WATCH-tier pieces disappoints.</p>
+      <h3>The Lineup, Player by Player</h3>
+      <p><strong>QB — Caleb Williams ($6,800, CHI vs. MIN)</strong><br>Grade A, WATCH signal, projected for 23.77 points — 1st among 25 active QBs in raw points. The single highest QB projection on the entire board, for a 27.5 implied team total — Grade A on production, WATCH because his value rank (5th) trails several cheaper options in a week where price-efficient QBs are plentiful.</p>
+      <p><strong>RB — Ashton Jeanty ($6,800, LV vs. LAC)</strong><br>Grade A, WATCH signal, projected for 20.05 points — 4th among 35 active RBs in raw points and value. A strong Grade A profile the model hasn't fully certified yet — real talent, unproven workload consistency at this price, for an 18.25 implied team total.</p>
+      <p><strong>RB — De'Von Achane ($6,700, MIA vs. SF)</strong><br>Grade A, WATCH signal, projected for 18.34 points — 5th among RBs in raw points and value. Miami is a 13.5-point underdog — the widest spread on the board, for a 16.0 implied team total — which cuts both ways for a receiving-heavy back: more garbage-time targets, but a real risk of the run game getting abandoned early.</p>
+      <p><strong>WR — Christian Watson ($6,200, GB vs. NYJ)</strong><br>Grade A, CORE signal, projected for 19.08 points — 3rd among 39 active WRs in raw points and value alike. The same profile that makes him a CORE piece in Leverage — a proven, efficient play rather than a speculative one here, for a 24.0 implied team total.</p>
+      <p><strong>WR — Jalen Coker ($5,100, CAR vs. ATL)</strong><br>Grade B, VALUE signal, projected for 15.30 points — 7th among WRs in raw points, 4th in value. A cheap, efficient complement freeing up cap for the four bigger bets elsewhere on this roster, for a 22.5 implied team total.</p>
+      <p><strong>WR — Wan'Dale Robinson ($4,600, TEN vs. PHI)</strong><br>Grade B, VALUE signal, projected for 12.84 points — 15th among WRs in raw points, 6th in value. The cheapest WR on the roster and a clean value hold, same role it plays in this week's Ceiling build, for a 16.25 implied team total.</p>
+      <p><strong>FLEX — Derrick Henry ($7,200, BAL vs. NO)</strong><br>Grade A, CORE signal, projected for 23.10 points — 2nd among RBs in raw points, 1st in value. The most expensive player in the lineup and the roster's other proven anchor — an 8.5-point favorite with the clearest touchdown equity on the board, for a 28.0 implied team total.</p>
+      <p><strong>TE — Darren Waller ($3,100, CAR vs. ATL)</strong><br>Grade C, VALUE signal, projected for 9.52 points — the cheapest player on the roster. Not part of the Grade-A/WATCH thesis — this is straightforward salary relief that also happens to land on the same Carolina game as Jalen Coker (22.5 implied total), freeing up cap for the four bigger bets elsewhere.</p>
+      <p><strong>DST — Seattle Seahawks ($3,500, SEA vs. ARI)</strong><br>Grade A, WATCH signal, projected for 9.08 points — 2nd among 26 active DSTs in raw points. A strong unit the model likes on production but hasn't certified on value (6th), for a 23.0 implied team total — the fourth and final Grade-A/WATCH piece in this build.</p>
+      <h3>The Full Roster</h3>
+      <div class="roster-wrap">
+        <table class="roster-table">
+          <thead><tr><th>Pos</th><th>Player</th><th>Salary</th><th>Matchup</th><th>Vegas (Total/Spread)</th><th>Implied Total</th><th>Proj. DK</th><th>Value ($/1K)</th><th>Grade</th><th>Signal</th></tr></thead>
+          <tbody>
+            <tr><td class="pos">QB</td><td class="name">Caleb Williams</td><td>$6,800</td><td>CHI vs. MIN</td><td>49.5 / -5.5</td><td>27.5</td><td>23.77</td><td>3.50</td><td class="grade">A</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">RB</td><td class="name">Ashton Jeanty</td><td>$6,800</td><td>LV vs. LAC</td><td>43.5 / +7.0</td><td>18.25</td><td>20.05</td><td>2.95</td><td class="grade">A</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">RB</td><td class="name">De'Von Achane</td><td>$6,700</td><td>MIA vs. SF</td><td>45.5 / +13.5</td><td>16.0</td><td>18.34</td><td>2.74</td><td class="grade">A</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Christian Watson</td><td>$6,200</td><td>GB vs. NYJ</td><td>44.5 / -3.5</td><td>24.0</td><td>19.08</td><td>3.08</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Jalen Coker</td><td>$5,100</td><td>CAR vs. ATL</td><td>43.5 / -1.5</td><td>22.5</td><td>15.30</td><td>3.00</td><td class="grade">B</td><td class="signal-VALUE">VALUE</td></tr>
+            <tr><td class="pos">WR</td><td class="name">Wan'Dale Robinson</td><td>$4,600</td><td>TEN vs. PHI</td><td>39.5 / +7.0</td><td>16.25</td><td>12.84</td><td>2.79</td><td class="grade">B</td><td class="signal-VALUE">VALUE</td></tr>
+            <tr><td class="pos">FLEX</td><td class="name">Derrick Henry</td><td>$7,200</td><td>BAL vs. NO</td><td>47.5 / -8.5</td><td>28.0</td><td>23.10</td><td>3.21</td><td class="grade">A</td><td class="signal-CORE">CORE</td></tr>
+            <tr><td class="pos">TE</td><td class="name">Darren Waller</td><td>$3,100</td><td>CAR vs. ATL</td><td>43.5 / -1.5</td><td>22.5</td><td>9.52</td><td>3.07</td><td class="grade">C</td><td class="signal-VALUE">VALUE</td></tr>
+            <tr><td class="pos">DST</td><td class="name">Seahawks</td><td>$3,500</td><td>SEA vs. ARI</td><td>41.5 / -4.5</td><td>23.0</td><td>9.08</td><td>2.59</td><td class="grade">A</td><td class="signal-WATCH">WATCH</td></tr>
+            <tr class="total"><td colspan="2">Total</td><td>$50,000</td><td></td><td></td><td></td><td>151.07</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><em>Spread is shown from each listed player's own team perspective (negative = favorite). Implied team total = (Game Total − Team Spread) ÷ 2. "vs." labels the matchup only and doesn't indicate home/away. Injury blank = Active; none of this roster's players currently carry a Questionable/Doubtful/Out tag. Roster floor: ~104.84. Roster ceiling: ~212.40. Full $50,000 cap spent.</em></p>
+      <h3>What the Numbers Tell Us</h3>
+      <p>The only real correlation here is incidental: Jalen Coker and Darren Waller both sit on Carolina's side of CAR@ATL, a two-player look that wasn't the point of either pick. Otherwise this roster is spread across seven different games, which fits a build that's organized around player conviction (Grade A talent) rather than game environment. The full $50,000 cap being spent, with zero cushion, means every one of the four WATCH-tier bets needs to hold up roughly as projected — there's no cheap floor play elsewhere absorbing the risk if one of them doesn't.</p>
+      <h3>DFS Translation</h3>
+      <p><strong>How to read Grade and Signal:</strong> Signal layers Value (projected points per $1,000 of salary) on top of Grade to flag roster fit:</p>
+      <ul class="dfs-list">
+        <li><strong>CORE</strong> — Grade A and Value at or above a position-specific bar. Build your lineup around this player.</li>
+        <li><strong>VALUE</strong> — Salary at or below a position-specific ceiling and Value at or above a bar. A cheap, efficient pivot that frees up cap space.</li>
+        <li><strong>WATCH</strong> — Neither bar was cleared. Not a red flag, just no strong edge either way.</li>
+      </ul>
+      <p>The exact cutoffs differ by position — a WR needs fewer raw points than a QB to earn a Grade A, for example:</p>
+      <div class="roster-wrap">
+        <table class="roster-table">
+          <thead><tr><th>Position</th><th>Grade A</th><th>Grade B</th><th>CORE — Value &ge;</th><th>VALUE — Salary &le;</th><th>VALUE — Value percentile &ge;</th></tr></thead>
+          <tbody>
+            <tr><td class="pos">QB</td><td>&ge; 20</td><td>&ge; 16</td><td>2.95</td><td>$6,500</td><td>65th</td></tr>
+            <tr><td class="pos">RB</td><td>&ge; 18</td><td>&ge; 12</td><td>2.5</td><td>$5,800</td><td>65th</td></tr>
+            <tr><td class="pos">WR</td><td>&ge; 16</td><td>&ge; 11</td><td>2.4</td><td>$5,200</td><td>65th</td></tr>
+            <tr><td class="pos">TE</td><td>&ge; 15</td><td>&ge; 10</td><td>2.5</td><td>$3,700</td><td>65th</td></tr>
+            <tr><td class="pos">DST</td><td>&ge; 7.5</td><td>top 42% (58th pct)</td><td>2.4</td><td>$2,600</td><td>65th</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Below the Grade B line at each position is a Grade C; missing both the CORE and VALUE bars is a WATCH.</p>
+      <p>For this build specifically:</p>
+      <div class="translation-row">
+        <div class="translation-pill core"><b>CORE</b>Christian Watson, Derrick Henry</div>
+        <div class="translation-pill value"><b>VALUE</b>Jalen Coker, Wan'Dale Robinson, Darren Waller</div>
+        <div class="translation-pill watch"><b>WATCH</b>Caleb Williams, Ashton Jeanty, De'Von Achane, Seahawks D/ST</div>
+      </div>
+      <p>Two CORE, three VALUE, four WATCH — the highest WATCH count of any build this week, by design.</p>
+      <h3>The Slate-IQ Take</h3>
+      <p>This build is exactly what its own label says it is — a bet on talent the model likes but hasn't fully certified, concentrated in four spots (Williams, Jeanty, Achane, Seahawks) rather than spread thin. That's a real, structural difference from the other four builds this week, all of which lean more heavily on CORE or VALUE signals. Worth being direct that De'Von Achane's 13.5-point spread is the single biggest game-script risk on the roster — that's the widest underdog number on the entire board, and a lopsided game can pull his workload down fast regardless of how the matchup-only numbers read.</p>
+      <h3>Final Takeaway</h3>
+      <p>A talent-forward, fifth-lineup build: this roster bets on upside the model already likes but hasn't fully certified, rather than the safest path to that talent — worth entering with that framing in mind rather than as a fifth "safe" lineup.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg width="26" height="26" viewBox="0 0 300 300"><use href="#badge"/></svg>
+        Slate-IQ
+      </div>
+      <div class="footer-links">
+        <a href="https://twitter.com/DFS_SlateIQ" target="_blank">@DFS_SlateIQ</a>
+        <a href="https://instagram.com/slate_iq" target="_blank">@slate_iq</a>
+        <a href="https://www.slate-iq.com" target="_blank">slate-iq.com</a>
+      </div>
+      <p>© 2026 Slate-IQ. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
