@@ -370,51 +370,51 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,.6);padding:2.5rem 0}
           <a href="slate-iq-evaluations.html" class="btn-secondary" style="font-size:1rem;padding:.75rem 1.5rem">Player Evaluations</a>
           <a href="slate-iq-essays.html" class="btn-secondary" style="font-size:1rem;padding:.75rem 1.5rem">Read the Essays</a>
         </div>
-        <!-- WEEK 4 LINEUP BOXES — sourced from Notion "Blog Posts & Essays" DB (Type = Lineups), Sun 10/4 1PM slate.
-             Cash = "Week 4 Cash Lineup"; Balanced = "JAX Game Stack (Lawrence/Washington/Jaguars DST)"; GPP #1 =
-             "KC/LV Game Stack with CHI@NYJ Secondary Correlation" (Leverage); GPP #2 = "Buffalo Game Stack with
-             Bring-Back" (Ceiling). No Hybrid build this week — standard four-lineup slate. All four posts are
-             Status = Ready to Publish in Notion — update these boxes whenever that week's lineups change. Each
-             links to its full write-up on slate-iq-lineups.html. -->
+        <!-- WEEK 3 LINEUP BOXES — sourced from Notion "Blog Posts & Essays" DB (Type = Lineups), Sun 9/27 1PM slate.
+             Cash = "Week 3 Cash Lineup"; Balanced = "Week 3 Balanced Lineup" (Saints stack w/ Jets-Lions overlap);
+             GPP #1 = "Panthers Stack Plus a Houston-Indy Split" (Leverage); GPP #2 = "Fading the Lions Blowout for a
+             Ravens-Cowboys Shootout" (Ceiling). No Hybrid build this week — back to the standard four-lineup slate.
+             All four posts are Status = Ready to Publish in Notion — update these boxes whenever that week's lineups
+             change. Each links to its full write-up on slate-iq-lineups.html. -->
         <div class="lineup-boxes">
           <div class="lineup-card">
-            <span class="lineup-card-label">Week 4 · Cash</span>
-            <div class="lineup-card-title">Seven CORE plays across seven different games — the model's highest-confidence build of the season</div>
+            <span class="lineup-card-label">Week 3 · Cash</span>
+            <div class="lineup-card-title">Full cap spent on five CORE plays spread across nine different games — zero shared risk</div>
             <div class="lineup-card-stats">
-              <div><span class="lineup-stat-val">$49,900</span><span class="lineup-stat-label">Salary Used</span></div>
-              <div><span class="lineup-stat-val">168.62</span><span class="lineup-stat-label">Proj. Total</span></div>
+              <div><span class="lineup-stat-val">$50,000</span><span class="lineup-stat-label">Salary Used</span></div>
+              <div><span class="lineup-stat-val">159.43</span><span class="lineup-stat-label">Proj. Total</span></div>
             </div>
-            <p class="lineup-card-note">Seven of nine roster spots grade out as CORE plays, anchored by Josh Allen's backup Brock Purdy and the KC/LAR game environments.</p>
+            <p class="lineup-card-note">Five of nine roster spots grade out as CORE plays, with zero overlap between any two games on the roster.</p>
             <a class="lineup-card-link" href="slate-iq-lineups.html#cash">Full lineup &amp; breakdown →</a>
           </div>
           <div class="lineup-card">
-            <span class="lineup-card-label">Week 4 · Balanced</span>
-            <div class="lineup-card-title">A real four-piece JAX@CIN game stack breaks Balanced's usual "no real stack" mold</div>
+            <span class="lineup-card-label">Week 3 · Balanced</span>
+            <div class="lineup-card-title">The required Saints stack is joined by an unplanned three-player Jets-Lions overlap</div>
             <div class="lineup-card-stats">
-              <div><span class="lineup-stat-val">$50,000</span><span class="lineup-stat-label">Salary Used</span></div>
-              <div><span class="lineup-stat-val">149.38</span><span class="lineup-stat-label">Proj. Total</span></div>
+              <div><span class="lineup-stat-val">$49,900</span><span class="lineup-stat-label">Salary Used</span></div>
+              <div><span class="lineup-stat-val">144.27</span><span class="lineup-stat-label">Proj. Total</span></div>
             </div>
-            <p class="lineup-card-note">Trevor Lawrence, Parker Washington, and the Jaguars DST all tie into the slate's highest-total game, with Tee Higgins as the bring-back.</p>
+            <p class="lineup-card-note">Amon-Ra St. Brown, Breece Hall, and Garrett Wilson all landed here on value alone — not by design.</p>
             <a class="lineup-card-link" href="slate-iq-lineups.html#balanced">Full lineup &amp; breakdown →</a>
           </div>
           <div class="lineup-card">
-            <span class="lineup-card-label">Week 4 · GPP #1</span>
-            <div class="lineup-card-title">A full KC stack-and-bring-back, plus a second correlation play in CHI@NYJ</div>
+            <span class="lineup-card-label">Week 3 · GPP #1</span>
+            <div class="lineup-card-title">Panthers stack plus a Houston-Indy split — the week's highest-CORE-count build</div>
             <div class="lineup-card-stats">
-              <div><span class="lineup-stat-val">$49,900</span><span class="lineup-stat-label">Salary Used</span></div>
-              <div><span class="lineup-stat-val">143.06</span><span class="lineup-stat-label">Proj. Total</span></div>
+              <div><span class="lineup-stat-val">$49,600</span><span class="lineup-stat-label">Salary Used</span></div>
+              <div><span class="lineup-stat-val">158.39</span><span class="lineup-stat-label">Proj. Total</span></div>
             </div>
-            <p class="lineup-card-note">Mahomes, Kelce, and Walker anchor the Chiefs side of KC@LV, with Tre Tucker bringing back the Raiders.</p>
+            <p class="lineup-card-note">Five of nine roster spots grade CORE — the model's highest-conviction plays, arranged around two correlated pairs.</p>
             <a class="lineup-card-link" href="slate-iq-lineups.html#gpp1">Full lineup &amp; breakdown →</a>
           </div>
           <div class="lineup-card">
-            <span class="lineup-card-label">Week 4 · GPP #2</span>
-            <div class="lineup-card-title">A four-man Buffalo stack bets on the week's best shootout environment</div>
+            <span class="lineup-card-label">Week 3 · GPP #2</span>
+            <div class="lineup-card-title">Fading the Lions blowout for a Ravens-Cowboys shootout instead</div>
             <div class="lineup-card-stats">
-              <div><span class="lineup-stat-val">$49,800</span><span class="lineup-stat-label">Salary Used</span></div>
-              <div><span class="lineup-stat-val">151.93</span><span class="lineup-stat-label">Proj. Total</span></div>
+              <div><span class="lineup-stat-val">$49,900</span><span class="lineup-stat-label">Salary Used</span></div>
+              <div><span class="lineup-stat-val">121.65</span><span class="lineup-stat-label">Proj. Total</span></div>
             </div>
-            <p class="lineup-card-note">Josh Allen, James Cook III, and Dalton Kincaid stack BUF@NE, with a second cluster riding the JAX@CIN shootout.</p>
+            <p class="lineup-card-note">A manual pivot off the model's default output — five of nine spots tied to the slate's tightest high-total game.</p>
             <a class="lineup-card-link" href="slate-iq-lineups.html#gpp2">Full lineup &amp; breakdown →</a>
           </div>
         </div>
