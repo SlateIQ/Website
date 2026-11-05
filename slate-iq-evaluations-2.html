@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Slate-IQ | Player Evaluations</title>
+<meta name="description" content="Data-driven DraftKings NFL Player Evaluations for Week 8, ranked by Slate-IQ Value Score (projected points per $1K salary) — updated weekly all season."/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Slate-IQ"/>
+<meta property="og:title" content="Slate-IQ | Player Evaluations"/>
+<meta property="og:description" content="Data-driven DraftKings NFL Player Evaluations for Week 8, ranked by Slate-IQ Value Score (projected points per $1K salary) — updated weekly all season."/>
+<meta property="og:url" content="https://slate-iq.com/slate-iq-evaluations.html"/>
+<meta property="og:image" content="https://slate-iq.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@DFS_SlateIQ"/>
+<meta name="twitter:title" content="Slate-IQ | Player Evaluations"/>
+<meta name="twitter:description" content="Data-driven DraftKings NFL Player Evaluations for Week 8, ranked by Slate-IQ Value Score (projected points per $1K salary) — updated weekly all season."/>
+<meta name="twitter:image" content="https://slate-iq.com/og-image.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border:0 solid #e5e7eb}
+html{font-family:Inter,ui-sans-serif,system-ui,sans-serif;line-height:1.5;scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;background:#fff;color:#0B2545}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:root{
+  --green:#00A94F;--green-dark:#007A38;--green-light:#E6F7ED;--green-border:rgba(0,169,79,0.3);
+  --navy:#0B2545;--navy-dark:#081B33;--navy-light:#13345C;
+  --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;
+  --blue:#3B82F6;--blue-light:rgba(59,130,246,0.12);
+  --gold:#D97706;--gold-light:rgba(217,119,6,0.12);
+  --purple:#7C3AED;--purple-light:rgba(124,58,237,0.12);
+  --red:#DC2626;--red-light:rgba(220,38,38,0.1);
+}
+.container{max-width:80rem;margin:0 auto;padding:0 1.5rem}
+@media(min-width:1024px){.container{padding:0 2rem}}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border-bottom:1px solid var(--gray-100)}
+nav{max-width:80rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-svg{height:32px;width:auto}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+.nav-back{display:flex;align-items:center;gap:.4rem;font-size:.875rem;font-weight:500;color:rgba(11,37,69,.7);transition:color .15s}
+.nav-back:hover{color:var(--green)}
+.nav-back svg{width:1rem;height:1rem;stroke:currentColor;fill:none;stroke-width:2}
+.page-hero{background:linear-gradient(to bottom,var(--navy-light),var(--navy));color:#fff;padding:6rem 0 4rem;position:relative;overflow:hidden}
+@media(min-width:1024px){.page-hero{padding:8rem 0 5rem}}
+.page-hero-bg{position:absolute;inset:0;opacity:.08;pointer-events:none}
+.hero-eyebrow{display:inline-block;background:rgba(0,169,79,.15);color:rgba(230,247,237,1);font-size:.75rem;font-weight:600;letter-spacing:.025em;text-transform:uppercase;padding:.25rem .75rem;border-radius:9999px;margin-bottom:1.25rem;border:1px solid var(--green-border)}
+.page-hero h1{font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem}
+@media(min-width:640px){.page-hero h1{font-size:3rem}}
+.page-hero p{font-size:1.0625rem;color:rgba(255,255,255,.75);max-width:38rem;line-height:1.65}
+.disclaimer-band{background:rgba(0,169,79,.07);border-bottom:1px solid var(--green-border)}
+.disclaimer-inner{display:flex;align-items:flex-start;gap:.75rem;padding:1rem 1.5rem;max-width:80rem;margin:0 auto}
+@media(min-width:1024px){.disclaimer-inner{padding:1rem 2rem}}
+.disclaimer-icon{flex-shrink:0;width:1.25rem;height:1.25rem;stroke:var(--green);fill:none;stroke-width:2;margin-top:.1rem}
+.disclaimer-text{font-size:.875rem;color:var(--navy);line-height:1.55}
+.disclaimer-text strong{color:var(--green-dark);font-weight:600}
+.filters-bar{background:#fff;border-bottom:1px solid var(--gray-100);padding:.875rem 0;position:sticky;top:4rem;z-index:40}
+.filters-inner{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.filter-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);margin-right:.25rem}
+.filter-btn{font-size:.8125rem;font-weight:600;background:none;border:1px solid var(--gray-200);border-radius:.375rem;padding:.35rem .875rem;color:rgba(11,37,69,.75);cursor:pointer;transition:all .15s}
+.filter-btn:hover,.filter-btn.active{background:var(--green-light);color:var(--green-dark);border-color:var(--green-border)}
+.filter-sep{width:1px;height:1.25rem;background:var(--gray-200);margin:0 .25rem}
+.evals-section{padding:2.5rem 0 6rem;background:var(--gray-50)}
+.section-group{margin-bottom:3rem}
+.group-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.group-badge{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .9rem;border-radius:9999px}
+.group-badge-core{background:var(--green-light);color:var(--green-dark);border:1px solid var(--green-border)}
+.group-badge-watch{background:var(--gold-light);color:var(--gold);border:1px solid rgba(217,119,6,0.25)}
+.group-badge-featured{background:var(--blue-light);color:var(--blue);border:1px solid rgba(59,130,246,0.25)}
+.group-title{font-size:1.125rem;font-weight:700;color:var(--navy)}
+.group-count{font-size:.8125rem;color:rgba(11,37,69,.4);font-weight:500}
+.group-line{flex:1;height:1px;background:var(--gray-200)}
+.eval-grid{display:grid;gap:1.25rem}
+@media(min-width:640px){.eval-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.eval-grid{grid-template-columns:repeat(4,1fr)}}
+.eval-card{background:#fff;border:1px solid var(--gray-100);border-radius:.75rem;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:box-shadow .2s,transform .2s;cursor:pointer}
+.eval-card:hover{box-shadow:0 8px 16px -4px rgba(0,0,0,.1);transform:translateY(-2px)}
+.pos-bar{height:3px}
+.pos-bar-qb{background:var(--green)}
+.pos-bar-rb{background:var(--blue)}
+.pos-bar-wr{background:var(--gold)}
+.pos-bar-te{background:var(--purple)}
+.pos-bar-dst{background:var(--red)}
+.eval-card-body{padding:1.25rem;flex:1;display:flex;flex-direction:column}
+.eval-card-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem}
+.pos-badge{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:.2rem .55rem;border-radius:.25rem}
+.pos-badge-qb{background:var(--green-light);color:var(--green-dark)}
+.pos-badge-rb{background:var(--blue-light);color:var(--blue)}
+.pos-badge-wr{background:var(--gold-light);color:var(--gold)}
+.pos-badge-te{background:var(--purple-light);color:var(--purple)}
+.pos-badge-dst{background:var(--red-light);color:var(--red)}
+.rec-badge{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.2rem .55rem;border-radius:.25rem}
+.rec-core{background:var(--green-light);color:var(--green-dark)}
+.rec-strong{background:var(--blue-light);color:var(--blue)}
+.rec-watch{background:var(--gold-light);color:var(--gold)}
+.rec-value{background:rgba(156,163,175,.15);color:rgba(11,37,69,.5)}
+.eval-name{font-size:1rem;font-weight:800;margin-bottom:.15rem;line-height:1.2}
+.eval-team{font-size:.75rem;color:rgba(11,37,69,.45);font-weight:500;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.05em}
+.eval-summary{font-size:.8125rem;color:rgba(11,37,69,.65);line-height:1.55;flex:1;margin-bottom:.85rem}
+.eval-mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.375rem;margin-bottom:.85rem}
+.mini-stat{background:var(--gray-50);border-radius:.375rem;padding:.45rem .35rem;text-align:center}
+.mini-stat-val{font-size:.875rem;font-weight:700;color:var(--navy)}
+.mini-stat-key{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(11,37,69,.4);margin-top:.1rem}
+.eval-card-footer{padding:.75rem 1.25rem;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between}
+.eval-salary{font-size:.75rem;font-weight:600;color:rgba(11,37,69,.45)}
+.eval-salary span{color:var(--green);font-weight:700}
+.eval-arrow{width:1rem;height:1rem;stroke:rgba(11,37,69,.25);fill:none;stroke-width:2;transition:all .2s}
+.eval-card:hover .eval-arrow{stroke:var(--green);transform:translateX(3px)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:200;overflow-y:auto;padding:1.5rem}
+.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal{background:#fff;border-radius:1rem;max-width:52rem;width:100%;margin:auto;overflow:hidden;box-shadow:0 25px 50px -12px rgba(0,0,0,.35)}
+@keyframes mo{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.modal{animation:mo .25s ease}
+.modal-top-bar{height:4px}
+.modal-header{padding:2rem 2rem 1.25rem;border-bottom:1px solid var(--gray-100)}
+.modal-badges{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;margin-bottom:.85rem}
+.modal-close{margin-left:auto;background:none;border:1px solid var(--gray-200);border-radius:.375rem;padding:.35rem .75rem;font-size:.8rem;font-weight:600;color:rgba(11,37,69,.5);cursor:pointer;transition:all .15s}
+.modal-close:hover{color:var(--green);border-color:var(--green)}
+.modal-name{font-size:1.75rem;font-weight:800;line-height:1.15;margin-bottom:.3rem}
+.modal-team-line{font-size:.8125rem;color:rgba(11,37,69,.45);font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.modal-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gray-100)}
+.modal-stat-cell{padding:.875rem;text-align:center;border-right:1px solid var(--gray-100)}
+.modal-stat-cell:last-child{border-right:none}
+.modal-stat-val{font-size:1.0625rem;font-weight:700;color:var(--green)}
+.modal-stat-key{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);margin-top:.2rem}
+.modal-body{padding:1.75rem 2rem}
+.modal-section{margin-bottom:1.5rem}
+.modal-section:last-child{margin-bottom:0}
+.ms-heading{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--green);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
+.ms-heading::after{content:'';flex:1;height:1px;background:var(--gray-100)}
+.ms-body{font-size:.9375rem;color:rgba(11,37,69,.7);line-height:1.7}
+.ms-body strong{color:var(--navy);font-weight:600}
+.str-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:.65rem}
+.str-item,.con-item{font-size:.8125rem;color:rgba(11,37,69,.65);line-height:1.5;display:flex;align-items:flex-start;gap:.4rem}
+.str-item::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.con-item::before{content:'△';color:var(--gold);flex-shrink:0}
+.outlook-grid{display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-top:.65rem}
+.outlook-box{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:.5rem;padding:.875rem 1rem}
+.outlook-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.35rem}
+.outlook-label.cash{color:var(--green-dark)}
+.outlook-label.gpp{color:var(--gold)}
+.outlook-body{font-size:.8125rem;color:rgba(11,37,69,.65);line-height:1.6}
+.modal-callout{background:var(--green-light);border-left:3px solid var(--green);border-radius:0 .375rem .375rem 0;padding:.875rem 1.125rem;margin-top:1.25rem}
+.callout-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--green-dark);margin-bottom:.3rem}
+.callout-body{font-size:.875rem;color:var(--navy);line-height:1.6}
+.modal-question{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:.5rem;padding:.875rem 1.125rem;margin-top:1rem}
+.q-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:rgba(11,37,69,.4);margin-bottom:.35rem}
+.q-text{font-size:.875rem;color:rgba(11,37,69,.65);font-style:italic;line-height:1.55}
+.modal-footer{padding:1.25rem 2rem;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.modal-salary{font-size:.875rem;color:rgba(11,37,69,.5);font-weight:600}
+.modal-salary span{color:var(--green);font-weight:700;font-size:1rem}
+.btn-primary{display:inline-block;background:var(--green);color:#fff;font-weight:600;font-size:.875rem;padding:.5rem 1.1rem;border-radius:.25rem;transition:background .15s}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-outline{display:inline-block;background:transparent;color:rgba(11,37,69,.75);font-weight:600;font-size:.875rem;padding:.5rem 1.1rem;border-radius:.25rem;border:1px solid var(--gray-200);transition:all .15s}
+.btn-outline:hover{color:var(--green);border-color:var(--green-border)}
+.modal-table{width:100%;border-collapse:collapse;font-size:.8125rem;margin-top:.65rem}
+.modal-table th{text-align:left;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);padding:.4rem .65rem;border-bottom:1px solid var(--gray-100)}
+.modal-table td{padding:.55rem .65rem;border-bottom:1px solid var(--gray-50);color:rgba(11,37,69,.65)}
+.modal-table td:first-child{font-weight:600;color:var(--navy)}
+.modal-table td.hi{color:var(--green);font-weight:700}
+.modal-table tr:last-child td{border-bottom:none}
+footer{background:var(--navy-dark);color:rgba(255,255,255,.6);padding:2.5rem 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem;font-size:.875rem}
+@media(min-width:640px){.footer-inner{flex-direction:row}}
+.footer-logo{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a:hover{color:#fff;transition:color .15s}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="badge" viewBox="0 0 300 300">
+      <circle cx="150" cy="150" r="145" fill="#081B33"/>
+      <circle cx="150" cy="150" r="145" fill="none" stroke="#00A94F" stroke-width="6"/>
+      <line x1="75" y1="195" x2="205" y2="115" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+      <circle cx="75" cy="195" r="8" fill="#fff"/>
+      <g transform="translate(220,100) rotate(-14) scale(1.9)">
+        <ellipse cx="0" cy="0" rx="27" ry="16" fill="#00A94F"/>
+        <line x1="-16" y1="0" x2="16" y2="0" stroke="#081B33" stroke-width="2"/>
+        <line x1="-10" y1="-4.5" x2="-10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="-5" y1="-4.5" x2="-5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="0" y1="-4.5" x2="0" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="5" y1="-4.5" x2="5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="10" y1="-4.5" x2="10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <nav>
+    <a href="index.html">
+      <svg class="nav-logo-svg" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="3" width="128" height="40" rx="3" fill="#D7EFDE"/>
+        <text x="64" y="33" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#0B2545" text-anchor="middle" letter-spacing="1">SLATE</text>
+        <rect x="128" y="3" width="56" height="40" rx="3" fill="#00A94F"/>
+        <text x="156" y="33" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">IQ</text>
+      </svg>
+    </a>
+    <div class="nav-right">
+      <a href="slate-iq-intro.html" class="nav-back">Introduction</a>
+      <a href="slate-iq-essays.html" class="nav-back">Essays</a>
+      <a href="slate-iq-lineups.html" class="nav-back">Lineups</a>
+      <a href="index.html" class="nav-back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Main Site
+      </a>
+    </div>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 800 400">
+      <circle cx="700" cy="80" r="160" fill="#00A94F"/>
+      <circle cx="30" cy="350" r="180" fill="#00A94F"/>
+    </svg>
+  </div>
+  <div class="container" style="position:relative">
+    <p class="hero-eyebrow">Week 8 · 2026 NFL Season</p>
+    <h1>Player Evaluations</h1>
+    <p>Data-driven DraftKings Week 8 evaluations, ranked by Slate-IQ Value Score (projected points per $1K salary).</p>
+  </div>
+</div>
+<div class="disclaimer-band">
+  <div class="disclaimer-inner">
+    <svg class="disclaimer-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <p class="disclaimer-text"><strong>Live Week 8 Evaluations:</strong> These grades are built on 2026 Week 8 matchup data, DraftKings salaries, and Vegas lines. They'll be updated each week as new slates, injury reports, and lineup news roll in.</p>
+  </div>
+</div>
+<div class="filters-bar">
+  <div class="container">
+    <div class="filters-inner">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-btn active" onclick="filterCards('all',this)">All</button>
+      <div class="filter-sep"></div>
+      <button class="filter-btn" onclick="filterCards('QB',this)">QB</button>
+      <button class="filter-btn" onclick="filterCards('RB',this)">RB</button>
+      <button class="filter-btn" onclick="filterCards('WR',this)">WR</button>
+      <button class="filter-btn" onclick="filterCards('TE',this)">TE</button>
+      <button class="filter-btn" onclick="filterCards('DST',this)">D/ST</button>
+    </div>
+  </div>
+</div>
+<section class="evals-section">
+  <div class="container">
+
+    <div class="section-group" id="core-group">
+      <div class="group-header">
+        <span class="group-badge group-badge-core">⭐ Week 8 Evaluations</span>
+        <span class="group-count">11 Core Plays</span>
+        <div class="group-line"></div>
+      </div>
+      <div class="eval-grid">
+        <div class="eval-card" data-pos="QB" data-tier="core" onclick="openModal('maye')">
+  <div class="pos-bar pos-bar-qb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Drake Maye</div><div class="eval-team">New England Patriots</div>
+    <p class="eval-summary">Core Play in Week 8 (32.57 proj, $6,500) &mdash; Value 5.01 clears the CORE bar by 1.51; NE -7.5 vs MIA.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">32.57</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">5.01x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$6,500</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$6,500</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="QB" data-tier="core" onclick="openModal('lawrence')">
+  <div class="pos-bar pos-bar-qb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Trevor Lawrence</div><div class="eval-team">Jacksonville Jaguars</div>
+    <p class="eval-summary">Core Play in Week 8 (28.54 proj, $6,200) &mdash; Value 4.60 clears the CORE bar by 1.10; JAX -7.5 vs IND.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">28.54</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">4.60x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$6,200</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$6,200</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="QB" data-tier="core" onclick="openModal('willis')">
+  <div class="pos-bar pos-bar-qb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Malik Willis</div><div class="eval-team">Miami Dolphins</div>
+    <p class="eval-summary">Core Play in Week 8 (22.95 proj, $4,900) &mdash; Value 4.68 clears the CORE bar by 1.18; MIA +7.5 vs NE.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">22.95</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">4.68x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$4,900</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$4,900</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="RB" data-tier="core" onclick="openModal('gibbs')">
+  <div class="pos-bar pos-bar-rb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Jahmyr Gibbs</div><div class="eval-team">Detroit Lions</div>
+    <p class="eval-summary">Core Play in Week 8 (31.00 proj, $9,500) &mdash; Value 3.26 clears the CORE bar by 0.86; DET -3 vs MIN.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">31.00</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">3.26x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$9,500</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$9,500</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="RB" data-tier="core" onclick="openModal('cook')">
+  <div class="pos-bar pos-bar-rb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">James Cook III</div><div class="eval-team">Buffalo Bills</div>
+    <p class="eval-summary">Core Play in Week 8 (25.55 proj, $7,900) &mdash; Value 3.23 clears the CORE bar by 0.83; BUF -3.5 vs BAL.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">25.55</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">3.23x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$7,900</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$7,900</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="WR" data-tier="core" onclick="openModal('jwilliams')">
+  <div class="pos-bar pos-bar-wr"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Jameson Williams</div><div class="eval-team">Detroit Lions</div>
+    <p class="eval-summary">Core Play in Week 8 (22.40 proj, $6,000) &mdash; Value 3.73 clears the CORE bar by 1.23; DET -3 vs MIN.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">22.40</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">3.73x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$6,000</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$6,000</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="WR" data-tier="core" onclick="openModal('washington')">
+  <div class="pos-bar pos-bar-wr"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Parker Washington</div><div class="eval-team">Jacksonville Jaguars</div>
+    <p class="eval-summary">Core Play in Week 8 (21.90 proj, $6,500) &mdash; Value 3.37 clears the CORE bar by 0.87; JAX -7.5 vs IND.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">21.90</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">3.37x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$6,500</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$6,500</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="WR" data-tier="core" onclick="openModal('tucker')">
+  <div class="pos-bar pos-bar-wr"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Tre Tucker</div><div class="eval-team">Las Vegas Raiders</div>
+    <p class="eval-summary">Core Play in Week 8 (19.50 proj, $5,500) &mdash; Value 3.55 clears the CORE bar by 1.05; LV -1.5 vs NYJ.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">19.50</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">3.55x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$5,500</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$5,500</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="TE" data-tier="core" onclick="openModal('pitts')">
+  <div class="pos-bar pos-bar-te"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-te">TE</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Kyle Pitts Sr.</div><div class="eval-team">Atlanta Falcons</div>
+    <p class="eval-summary">Core Play in Week 8 (17.13 proj, $4,500) &mdash; Value 3.81 clears the CORE bar by 0.61; ATL +2.5 vs TB.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">17.13</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">3.81x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$4,500</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$4,500</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="DST" data-tier="core" onclick="openModal('dbucs')">
+  <div class="pos-bar pos-bar-dst"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-dst">DST</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Tampa Bay Buccaneers</div><div class="eval-team">Tampa Bay Buccaneers</div>
+    <p class="eval-summary">Core Play in Week 8 (12.33 proj, $2,900) &mdash; Value 4.25 clears the CORE bar by 0.75; TB -2.5 vs ATL.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">12.33</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">4.25x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$2,900</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$2,900</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="DST" data-tier="core" onclick="openModal('dbroncos')">
+  <div class="pos-bar pos-bar-dst"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-dst">DST</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Denver Broncos</div><div class="eval-team">Denver Broncos</div>
+    <p class="eval-summary">Core Play in Week 8 (9.33 proj, $2,300) &mdash; Value 4.06 clears the CORE bar by 0.56; DEN +1.5 vs KC.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">9.33</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">4.06x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$2,300</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$2,300</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- MODAL -->
+<div class="modal-overlay" id="overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-top-bar" id="m-bar"></div>
+    <div class="modal-header">
+      <div class="modal-badges" id="m-badges"></div>
+      <div class="modal-name" id="m-name"></div>
+      <div class="modal-team-line" id="m-team"></div>
+    </div>
+    <div class="modal-stats-bar" id="m-stats"></div>
+    <div class="modal-body" id="m-body"></div>
+    <div class="modal-footer">
+      <div class="modal-salary" id="m-salary"></div>
+      <div style="display:flex;gap:.65rem">
+        <a href="index.html" class="btn-outline">Main Site</a>
+        <a href="https://twitter.com/DFS_SlateIQ" class="btn-primary" target="_blank" rel="noopener">Follow @DFS_SlateIQ</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo"><svg width="26" height="26" viewBox="0 0 300 300"><use href="#badge"/></svg>Slate-IQ</div>
+      <div class="footer-links">
+        <a href="https://twitter.com/DFS_SlateIQ" target="_blank">@DFS_SlateIQ</a>
+        <a href="https://instagram.com/slate_iq" target="_blank">@slate_iq</a>
+        <a href="https://www.slate-iq.com" target="_blank">slate-iq.com</a>
+      </div>
+      <p>© 2026 Slate-IQ. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+const D={
+  maye:{bar:`pos-bar-qb`,pos:`QB`,rec:`Core Play`,recClass:`rec-core`,name:`Drake Maye`,team:`New England Patriots &middot; HC: Mike Vrabel &middot; OC: Josh McDaniels &middot; Week 8 at MIA`,stats:[{v:`32.57`,k:`Proj. DK Pts`},{v:`$6,500`,k:`DK Salary`},{v:`5.01x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$6,500</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Drake Maye grades A with a CORE signal in Week 8: 32.57 projected points at $6,500 is a 5.01 Value, 1.51 above the 3.50 QB CORE bar and 12.57 points above the 20.0 Grade A cutoff, the highest Value in this group. He scored 42.46, 23.80 and 31.44 in his last three games and threw for 374 and 321 yards in two of them. The matchup frame is yellow: Miami has allowed 20.19 DK points per game to quarterbacks over its last three (67th percentile, against a league average of 18.14). New England is a 7.5-point road favorite in a 44.5-point game, and Maye projects at 9.9% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>QB</td></tr><tr><td>Team</td><td>New England Patriots</td></tr><tr><td>Opponent</td><td>MIA</td></tr><tr><td>Salary</td><td>$6,500</td></tr><tr><td>Projection</td><td>32.57</td></tr><tr><td>Value</td><td>5.01</td></tr><tr><td>Floor</td><td>22.80</td></tr><tr><td>Ceiling</td><td>45.59</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>44.5 / NE -7.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Maye has thrown 33, 22, 25, 37, 34, 32 and 31 times, 30.6 per game, for 1,784 yards, 13 touchdowns and 8 interceptions in seven games. He also has 38 carries for 211 yards and 2 touchdowns.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 12.82, 9.02, 6.76, 28.16, 42.46, 23.80 and 31.44, a 22.07 average. The 42.46 came on 26 of 34 for 374 yards and 4 touchdowns in a 45-17 win over Las Vegas, and Week 8 was 24 of 31 for 321 yards, 2 touchdowns and a rushing touchdown in a 24-30 loss at Chicago. His first three games produced 6 of his 8 interceptions.</div><div class="str-item"><strong>Matchup: </strong>Miami has allowed 20.19 DK points per game to quarterbacks over its last three, against a league average of 18.14 (67th percentile, yellow frame). The Dolphins allow 26.2 points per game and face 29.2 pass attempts (29th) and 28.7 rushes (11th) per game.</div><div class="str-item"><strong>Receiving group: </strong>New England spreads its targets: DeMario Douglas has 34, Hunter Henry 31, Romeo Doubs 24 and Rhamondre Stevenson 24. A.J. Brown missed Thursday's practice with a knee issue and his availability is uncertain, and TreVeyon Henderson is questionable with an illness.</div><div class="str-item"><strong>Price: </strong>His salary was $6,100 in Weeks 2 and 3, $6,000 in Week 4, $6,300 in Week 5 and $6,600 in Week 6 and is $6,500 this week, down $100.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 44.5 total with New England -7.5 at Miami on Sunday at 4:25 PM ET, an implied total near 26.0 points for New England and 18.5 for Miami. New England scores 22.9 points per game (19th) and runs 29.1 times per game (8th).</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Mike Vrabel is the Patriots' head coach and Josh McDaniels is the offensive coordinator. Douglas, Henry, Doubs and Stevenson share the volume, and Brown's status decides how concentrated the passing game is. Miami is coached by Jeff Hafley, and its defense is coordinated by Sean Duggan.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Mike Vrabel is the Patriots' head coach and Josh McDaniels is the offensive coordinator. Miami is coached by Jeff Hafley.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 22.80 floor returns 3.51 points per $1,000. He has scored 23.80 or more in each of his last four games; the 6.76, 9.02 and 12.82 all came in the first three weeks.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 45.59 ceiling is 7.01 points per $1,000 at 9.9% projected ownership. His 42.46 and 31.44 games show the top end, and a Maye stack is the 7.5-point-favorite version of this slate.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 5.01. The highest Value in this group; the road setting and the A.J. Brown report are the cautions.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Maye carries the highest Value (5.01) of any quarterback in this group, and he's scored 23.80 or better in four straight games.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: four straight games of 23.80 or more say Core, and the pass-catcher health report says confirm before locking. Quality Data Leads to Smart Decisions, so Maye is the strongest Value of the quarterbacks. Numbers Don't Lie.</p></div>`},
+  lawrence:{bar:`pos-bar-qb`,pos:`QB`,rec:`Core Play`,recClass:`rec-core`,name:`Trevor Lawrence`,team:`Jacksonville Jaguars &middot; HC: Liam Coen &middot; OC: Grant Udinski &middot; Week 8 vs IND`,stats:[{v:`28.54`,k:`Proj. DK Pts`},{v:`$6,200`,k:`DK Salary`},{v:`4.60x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$6,200</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Trevor Lawrence grades A with a CORE signal in Week 8: 28.54 projected points at $6,200 is a 4.60 Value, 1.10 above the 3.50 QB CORE bar and 8.54 points above the 20.0 Grade A cutoff. He scored 25.74 and 31.34 in his last two games, throwing 39 and 41 passes, and Jacksonville is a 7.5-point home favorite in a 46.5-point game. The matchup frame is yellow: Indianapolis has allowed 14.49 DK points per game to quarterbacks over its last three (27th percentile, against a league average of 18.14). Lawrence projects at 8.5% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>QB</td></tr><tr><td>Team</td><td>Jacksonville Jaguars</td></tr><tr><td>Opponent</td><td>IND</td></tr><tr><td>Salary</td><td>$6,200</td></tr><tr><td>Projection</td><td>28.54</td></tr><tr><td>Value</td><td>4.60</td></tr><tr><td>Floor</td><td>19.98</td></tr><tr><td>Ceiling</td><td>39.96</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>46.5 / JAX -7.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Lawrence has thrown 23, 29, 29, 23, 39 and 41 times, 30.7 per game, for 1,480 yards, 14 touchdowns and 4 interceptions in six games. His last two games are his two highest attempt totals.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 26.10, 7.16, 20.78, 13.08, 25.74 and 31.34, a 20.70 average. The 31.34 came on 306 yards and 4 touchdowns in a 31-34 home loss to Houston in Week 6, and the 25.74 on 331 yards and 2 touchdowns in a 19-17 home win over Philadelphia. Jacksonville had a bye in Week 8.</div><div class="str-item"><strong>Matchup: </strong>Indianapolis has allowed 14.49 DK points per game to quarterbacks over its last three, against a league average of 18.14 (27th percentile, yellow frame). The Colts' defense faces 30.4 pass attempts per game (25th) and 26.1 rushes (18th), and Indianapolis allows 25.7 points per game.</div><div class="str-item"><strong>Receiving group: </strong>Parker Washington leads Jacksonville with 46 targets, ahead of Brenton Strange (33) and Jakobi Meyers (28). Meyers is listed questionable with a hamstring issue, so check the Sunday inactives before building a stack.</div><div class="str-item"><strong>Price: </strong>His salary was $5,800 in Week 1 and $5,900 in Week 4, the last recorded, and is $6,200 this week.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 46.5 total with Jacksonville -7.5 at home on Sunday at 1:00 PM ET, an implied total near 27.0 points for Jacksonville and 19.5 for Indianapolis. Jacksonville scores 25.7 points per game (9th) and allows 17.3 (3rd fewest).</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Liam Coen is the Jaguars' head coach and Grant Udinski is the offensive coordinator. Washington, Strange and Meyers carry the target load, and Bhayshul Tuten leads the backfield with 94 carries. Indianapolis is coached by Shane Steichen, and its defense is coordinated by Lou Anarumo.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Liam Coen is the Jaguars' head coach and Grant Udinski is the offensive coordinator. Indianapolis is coached by Shane Steichen.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 19.98 floor returns 3.22 points per $1,000. He has scored 13.08 or more in five of six games, and a 7.5-point home favorite gives him a stable script; the 7.16 in Week 2 is the one miss.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 39.96 ceiling is 6.44 points per $1,000 at 8.5% projected ownership. A Lawrence-Washington stack fits the 46.5 total, and his 31.34 and 26.10 games show the top end.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 4.60. Recent volume and a home-favorite script carry the case; the yellow frame and the Meyers status are the cautions.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Lawrence's two highest attempt totals of the season are also his two most recent games (39 and 41 attempts), and both produced 25-plus fantasy points.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the form and the favorite status say Core, and the Meyers report says confirm the stack before Sunday. Quality Data Leads to Smart Decisions, so Lawrence is a mid-priced anchor at 8.5% ownership. Numbers Don't Lie.</p></div>`},
+  willis:{bar:`pos-bar-qb`,pos:`QB`,rec:`Core Play`,recClass:`rec-core`,name:`Malik Willis`,team:`Miami Dolphins &middot; HC: Jeff Hafley &middot; OC: Bobby Slowik &middot; Week 8 vs NE`,stats:[{v:`22.95`,k:`Proj. DK Pts`},{v:`$4,900`,k:`DK Salary`},{v:`4.68x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$4,900</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Malik Willis grades A with a CORE signal in Week 8: 22.95 projected points at $4,900 is a 4.68 Value, 1.18 above the 3.50 QB CORE bar and 2.95 points above the 20.0 Grade A cutoff. He is the cheapest quarterback in this group and gets much of his production on the ground, with 223 rushing yards and 3 rushing touchdowns in six games. The matchup frame is yellow: New England has allowed 18.01 DK points per game to quarterbacks over its last three (48th percentile, against a league average of 18.14). Miami is a 7.5-point home underdog in a 44.5-point game, and Willis projects at 6.7% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>QB</td></tr><tr><td>Team</td><td>Miami Dolphins</td></tr><tr><td>Opponent</td><td>NE</td></tr><tr><td>Salary</td><td>$4,900</td></tr><tr><td>Projection</td><td>22.95</td></tr><tr><td>Value</td><td>4.68</td></tr><tr><td>Floor</td><td>16.07</td></tr><tr><td>Ceiling</td><td>32.13</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>44.5 / MIA +7.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Willis has thrown 27, 23, 36, 17, 27 and 21 times, 25.2 per game, for 1,057 yards, 4 touchdowns and 4 interceptions in six games. He adds 35 carries for 223 yards and 3 touchdowns.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 17.70, 12.48, 12.00, 3.50, 21.88 and 26.02, a 15.60 average. The 26.02 came on 208 passing yards, 2 touchdowns and a rushing touchdown in a 28-25 win at the Jets in Week 8; the 21.88 in Week 5 included a rushing touchdown and a two-point conversion in a 24-31 loss to Cincinnati.</div><div class="str-item"><strong>Matchup: </strong>New England has allowed 18.01 DK points per game to quarterbacks over its last three, against a league average of 18.14 (48th percentile, yellow frame). The Patriots' defense faces 32.1 pass attempts per game (20th) and 24.3 rushes (25th), and New England allows 20.4 points per game.</div><div class="str-item"><strong>Offense: </strong>Miami scores 16.3 points per game (30th) and passes on 46.9% of plays (32nd), so Willis depends on rushing production and on Miami playing from behind. De'Von Achane is out for the season, and Ollie Gordon leads the backfield with 72 carries.</div><div class="str-item"><strong>Price: </strong>His salary was $5,300 in Week 1, $4,600 in Week 5 and $4,700 in Week 8 and is $4,900 this week, up $200 after the 26.02 game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 44.5 total with Miami +7.5 at home on Sunday at 4:25 PM ET, an implied total near 18.5 points for Miami and 26.0 for New England. A trailing script helps pass volume but caps the win path.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Jeff Hafley is the Dolphins' head coach and Bobby Slowik is the offensive coordinator. Malik Washington (39 targets) is the top target and Greg Dulcich (22) leads the tight ends; Washington was limited in practice with a knee issue, so confirm him Sunday. New England is coached by Mike Vrabel, and its defense is coordinated by Zak Kuhr.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Jeff Hafley is the Dolphins' head coach and Bobby Slowik is the offensive coordinator. New England is coached by Mike Vrabel.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 16.07 floor returns 3.28 points per $1,000. Rushing gives him a base (6, 2, 9, 2, 8 and 8 carries), but a 3.50 and a 12.00 in the same six games show the risk on the 30th-ranked scoring offense.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 32.13 ceiling is 6.56 points per $1,000 at 6.7% projected ownership. A Willis-Washington stack with a New England bring-back is the leverage version, and the 26.02 and 21.88 games show the upside.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 4.68. A salary-saver with rushing upside; Miami's low scoring is the caution.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Willis is the cheapest quarterback in this group at $4,900, and his 3 rushing touchdowns in six games give him a scoring path his arm alone doesn't provide.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the price and the rushing say Core, and Miami's scoring says keep the exposure measured. Quality Data Leads to Smart Decisions, so Willis is a salary-saver at 6.7% ownership. Numbers Don't Lie.</p></div>`},
+  gibbs:{bar:`pos-bar-rb`,pos:`RB`,rec:`Core Play`,recClass:`rec-core`,name:`Jahmyr Gibbs`,team:`Detroit Lions &middot; HC: Dan Campbell &middot; OC: Drew Petzing &middot; Week 8 vs MIN`,stats:[{v:`31.00`,k:`Proj. DK Pts`},{v:`$9,500`,k:`DK Salary`},{v:`3.26x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$9,500</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Jahmyr Gibbs grades A with a CORE signal in Week 8: 31.00 projected points at $9,500 is a 3.26 Value, 0.86 above the 2.40 RB CORE bar and 13.00 points above the 18.0 Grade A cutoff. He averages 30.33 DK points per game with 134 carries and 40 targets in six games. Minnesota has allowed 20.37 DK points per game to running backs over its last three (39th percentile, a yellow frame, against a league average of 23.44), but its defense allows a league-low 12.3 points per game. Detroit is a 3-point home favorite in a 46.5-point game, and Gibbs projects at 27.1% ownership, the highest of this group.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>RB</td></tr><tr><td>Team</td><td>Detroit Lions</td></tr><tr><td>Opponent</td><td>MIN</td></tr><tr><td>Salary</td><td>$9,500</td></tr><tr><td>Projection</td><td>31.00</td></tr><tr><td>Value</td><td>3.26</td></tr><tr><td>Floor</td><td>21.70</td></tr><tr><td>Ceiling</td><td>43.40</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>46.5 / DET -3</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Workload: </strong>Gibbs has 134 carries for 620 yards (4.6 per carry) and 40 targets for 32 catches and 270 yards in six games. He has scored 9 touchdowns, 7 rushing and 2 receiving.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 37.60, 23.30, 41.40, 17.70, 40.70 and 21.30, a 30.33 average. Week 8 was 29 carries for 116 yards and 5 catches for 27 yards, without a touchdown, in a 20-17 win over Green Bay. Detroit had a bye in Week 6.</div><div class="str-item"><strong>Matchup: </strong>Minnesota has allowed 20.37 DK points per game to running backs over its last three, against a league average of 23.44 (39th percentile, yellow frame). The Vikings allow 12.3 points per game, the fewest in the league, and face only 23.5 rushes per game (28th), so game script is the question.</div><div class="str-item"><strong>Passing game: </strong>Gibbs has 5 to 8 targets in every game, 6.7 per game, which keeps him in play if Minnesota controls the run. Amon-Ra St. Brown leads Detroit with 68 targets, Sam LaPorta has 39 and Jameson Williams has 38.</div><div class="str-item"><strong>Status and price: </strong>Gibbs was a full participant Thursday after sitting out Wednesday with a shoulder issue and carries no injury designation. His salary was $8,000 in Week 1, $8,800 in Week 3 and $9,800 in Weeks 5 and 7 and is $9,500 this week, down $300.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 46.5 total with Detroit -3 at home on Sunday at 1:00 PM ET, an implied total near 24.8 points for Detroit and 21.8 for Minnesota. Detroit scores 30.7 points per game (2nd) but allows 27.5, and its defense faces 43.0 pass attempts per game (1st).</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Dan Campbell is the Lions' head coach and Drew Petzing is the offensive coordinator. Jared Goff, St. Brown, LaPorta and Williams share the passing game with Gibbs, so Gibbs rosters correlate with all of them. Minnesota is coached by Kevin O'Connell, and its defense is coordinated by Brian Flores.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Dan Campbell is the Lions' head coach and Drew Petzing is the offensive coordinator. Minnesota is coached by Kevin O'Connell.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 21.70 floor returns 2.28 points per $1,000. Five or more targets every week and a 17.70 low give him one of the steadier running back floors, but $9,500 leaves less room for the rest of the lineup.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 43.40 ceiling is 4.57 points per $1,000 at 27.1% projected ownership. The upside is real (41.40, 40.70, 37.60), but the field is already there, so the GPP edge comes from what you pair with him.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 3.26. A strong player at a fair price; the 27.1% ownership and Minnesota's defense are the cautions.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Gibbs is the highest-owned play in this group at 27.1%, and his floor has never dipped below 17.70 points in his last six games.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the workload says Core, and the ownership says the field agrees. Quality Data Leads to Smart Decisions, so decide whether you are paying for safety or fading him for leverage. Numbers Don't Lie.</p></div>`},
+  cook:{bar:`pos-bar-rb`,pos:`RB`,rec:`Core Play`,recClass:`rec-core`,name:`James Cook III`,team:`Buffalo Bills &middot; HC: Joe Brady &middot; OC: Pete Carmichael Jr. &middot; Week 8 vs BAL`,stats:[{v:`25.55`,k:`Proj. DK Pts`},{v:`$7,900`,k:`DK Salary`},{v:`3.23x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$7,900</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">James Cook grades A with a CORE signal in Week 8: 25.55 projected points at $7,900 is a 3.23 Value, 0.83 above the 2.40 RB CORE bar and 7.55 points above the 18.0 Grade A cutoff. He averages 20.77 DK points per game with 117 carries, 627 rushing yards and 6 touchdowns, and scored 26.80 and 24.30 in his last two games. The matchup frame is red: Baltimore has allowed 17.67 DK points per game to running backs over its last three (11th percentile, against a league average of 23.44). Buffalo is a 3.5-point home favorite in a 53.5-point game, the highest total in this group, and Cook projects at 18.7% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>RB</td></tr><tr><td>Team</td><td>Buffalo Bills</td></tr><tr><td>Opponent</td><td>BAL</td></tr><tr><td>Salary</td><td>$7,900</td></tr><tr><td>Projection</td><td>25.55</td></tr><tr><td>Value</td><td>3.23</td></tr><tr><td>Floor</td><td>17.89</td></tr><tr><td>Ceiling</td><td>35.77</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>53.5 / BUF -3.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Workload: </strong>Cook has 117 carries for 627 yards (5.4 per carry) and 6 touchdowns, but only 14 targets (2.3 per game) for 10 catches and 89 yards in six games.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 9.90, 23.90, 23.40, 16.30, 26.80 and 24.30, a 20.77 average. The 26.80 came on 25 carries for 111 yards and 2 touchdowns against the Rams in Week 5; the 24.30 came on 22 carries for 95 yards, a touchdown and 3 catches for 58 yards at Las Vegas in Week 6. Buffalo had a bye in Week 8.</div><div class="str-item"><strong>Matchup: </strong>Baltimore has allowed 17.67 DK points per game to running backs over its last three, against a league average of 23.44 (11th percentile, red frame). The Ravens' defense faces 25.4 rushes per game (22nd) and 32.4 pass attempts (18th) and allows 23.9 points per game. That is a clear negative, offset by Buffalo's scoring.</div><div class="str-item"><strong>Offense: </strong>Buffalo leads the league with 32.8 points per game and runs 29.3 times per game (7th) on a 49.3% pass rate (29th), a profile that supports Cook's carries. Josh Allen has 48 carries and 8 rushing touchdowns, so he competes for goal-line scores.</div><div class="str-item"><strong>Status and price: </strong>Cook is not on the injury report. DJ Moore (shoulder) and Dalton Kincaid (chest) are questionable on Buffalo's side. His salary was $7,200 in Week 1, $6,900 in Week 3 and $7,400 in Weeks 4 and 6 and is $7,900 this week, up $500.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 53.5 total with Buffalo -3.5 at home on Sunday at 1:00 PM ET, an implied total near 28.5 points for Buffalo and 25.0 for Baltimore.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Joe Brady is the Bills' head coach, Pete Carmichael Jr. is the offensive coordinator and Jim Leonhard is the defensive coordinator. Khalil Shakir (32 targets) and Kincaid (29) lead the passing game. Baltimore is coached by Jesse Minter, with Declan Doyle at offensive coordinator and Anthony Weaver at defensive coordinator; Lamar Jackson practiced fully this week.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Joe Brady is the Bills' head coach and Pete Carmichael Jr. is the offensive coordinator. Baltimore is coached by Jesse Minter.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 17.89 floor returns 2.26 points per $1,000. He has scored a rushing touchdown in five straight games, but with 2.3 targets per game his floor depends on scoring, and the red frame adds risk.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 35.77 ceiling is 4.53 points per $1,000 at 18.7% projected ownership. The 53.5 total is the highest in this group, and his 26.80 and 24.30 games show the top end.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 3.23. Buffalo's scoring and his touchdown streak carry the case; the red frame against Baltimore and the thin target share are the cautions.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Cook has scored a rushing touchdown in five straight games, and Buffalo's 53.5-point total is the highest game environment of any player in this group.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the offense and the touchdown streak say Core, and the red frame says size it sensibly. Quality Data Leads to Smart Decisions, so Cook is a game-environment play more than a matchup play. Numbers Don't Lie.</p></div>`},
+  jwilliams:{bar:`pos-bar-wr`,pos:`WR`,rec:`Core Play`,recClass:`rec-core`,name:`Jameson Williams`,team:`Detroit Lions &middot; HC: Dan Campbell &middot; OC: Drew Petzing &middot; Week 8 vs MIN`,stats:[{v:`22.40`,k:`Proj. DK Pts`},{v:`$6,000`,k:`DK Salary`},{v:`3.73x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$6,000</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Jameson Williams grades A with a CORE signal in Week 8: 22.40 projected points at $6,000 is a 3.73 Value, 1.23 above the 2.50 WR CORE bar and 6.40 points above the 16.0 Grade A cutoff. He has 38 targets, 23 catches, 367 yards and 4 touchdowns in six games, and scored 18.70 and 26.10 in his last two games played. The matchup frame is red: Minnesota has allowed 14.80 DK points per game to wide receivers over its last three (2nd percentile, against a league average of 32.13). Detroit is a 3-point home favorite in a 46.5-point game, and Williams projects at 7.3% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>WR</td></tr><tr><td>Team</td><td>Detroit Lions</td></tr><tr><td>Opponent</td><td>MIN</td></tr><tr><td>Salary</td><td>$6,000</td></tr><tr><td>Projection</td><td>22.40</td></tr><tr><td>Value</td><td>3.73</td></tr><tr><td>Floor</td><td>15.68</td></tr><tr><td>Ceiling</td><td>31.36</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>46.5 / DET -3</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Williams has 9, 4, 4, 8, 4 and 9 targets, 6.3 per game, for 23 catches, 367 yards and 4 touchdowns in six games. He averages 16.0 yards per catch, a big-play profile.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 8.50, 5.30, 8.90, 19.20, 18.70 and 26.10, a 14.45 average. Week 8 was 5 catches for 91 yards and 2 touchdowns on 9 targets in a 20-17 win over Green Bay, and Week 5 was 2 catches for 47 yards and 2 touchdowns. Detroit had a bye in Week 6.</div><div class="str-item"><strong>Matchup: </strong>Minnesota has allowed 14.80 DK points per game to wide receivers over its last three, against a league average of 32.13 (2nd percentile, red frame), the lowest wide receiver frame in this group. The Vikings face 29.7 pass attempts per game (28th) and allow 12.3 points per game.</div><div class="str-item"><strong>Role: </strong>Williams is Detroit's third receiving option: Amon-Ra St. Brown has 68 targets, Gibbs 40, LaPorta 39 and Williams 38. St. Brown carries no injury designation after a full practice, so no extra volume is expected.</div><div class="str-item"><strong>Price: </strong>His salary was $6,000 in Week 1, $5,400 in Week 3, $5,900 in Week 5 and $5,800 in Week 8 and is $6,000 this week, up $200.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 46.5 total with Detroit -3 at home on Sunday at 1:00 PM ET, an implied total near 24.8 points for Detroit. Detroit's defense faces 43.0 pass attempts per game (1st), so the Lions' offense should see plenty of possessions.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Dan Campbell is the Lions' head coach and Drew Petzing is the offensive coordinator. St. Brown, Gibbs and LaPorta take the larger target shares, and Isaac TeSlaa has 21 targets. Minnesota is coached by Kevin O'Connell, and its defense is coordinated by Brian Flores.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Dan Campbell is the Lions' head coach and Drew Petzing is the offensive coordinator. Minnesota is coached by Kevin O'Connell.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 15.68 floor returns 2.61 points per $1,000. Scores of 5.30 and 8.50 in the first three weeks and a red frame make him a touchdown-dependent option, not a cash anchor.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 31.36 ceiling is 5.23 points per $1,000 at 7.3% projected ownership. A Goff-Williams pairing at low ownership is the upside path, and his 26.10 and 19.20 games show it.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 3.73. Big-play ability and a strong offense carry the case; the red Minnesota frame and the touchdown dependence are the cautions.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Williams is Detroit's third option by target share, yet his 16.0 yards-per-catch average is the big-play profile behind his 3.73 Value, the best of any Week 8 wide receiver in this group.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the form and the price say Core, and the red frame says this is a GPP-leaning play. Quality Data Leads to Smart Decisions, so Williams is a low-ownership piece of a Detroit stack. Numbers Don't Lie.</p></div>`},
+  washington:{bar:`pos-bar-wr`,pos:`WR`,rec:`Core Play`,recClass:`rec-core`,name:`Parker Washington`,team:`Jacksonville Jaguars &middot; HC: Liam Coen &middot; OC: Grant Udinski &middot; Week 8 vs IND`,stats:[{v:`21.90`,k:`Proj. DK Pts`},{v:`$6,500`,k:`DK Salary`},{v:`3.37x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$6,500</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Parker Washington grades A with a CORE signal in Week 8: 21.90 projected points at $6,500 is a 3.37 Value, 0.87 above the 2.50 WR CORE bar and 5.90 points above the 16.0 Grade A cutoff. He leads Jacksonville with 46 targets, 26 catches, 416 yards and 4 touchdowns in six games. The matchup frame is red: Indianapolis has allowed 21.10 DK points per game to wide receivers over its last three (5th percentile, against a league average of 32.13). Jacksonville is a 7.5-point home favorite in a 46.5-point game, and Washington projects at 8.5% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>WR</td></tr><tr><td>Team</td><td>Jacksonville Jaguars</td></tr><tr><td>Opponent</td><td>IND</td></tr><tr><td>Salary</td><td>$6,500</td></tr><tr><td>Projection</td><td>21.90</td></tr><tr><td>Value</td><td>3.37</td></tr><tr><td>Floor</td><td>15.33</td></tr><tr><td>Ceiling</td><td>30.66</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>46.5 / JAX -7.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Washington has 6, 12, 5, 3, 9 and 11 targets, 7.7 per game, for 26 catches, 416 yards and 4 touchdowns in six games. He has had 9 or more targets in three of six games.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 19.30, 16.80, 13.00, 2.00, 33.40 and 10.40, a 15.82 average. The 33.40 came on 6 catches for 124 yards and 2 touchdowns in a 19-17 win over Philadelphia; the 2.00 came on 3 targets at Cincinnati. Jacksonville had a bye in Week 8.</div><div class="str-item"><strong>Matchup: </strong>Indianapolis has allowed 21.10 DK points per game to wide receivers over its last three, against a league average of 32.13 (5th percentile, red frame). The Colts score 22.0 points per game (20th) and their defense faces 30.4 pass attempts per game (25th).</div><div class="str-item"><strong>Competition: </strong>Brenton Strange has 33 targets and Jakobi Meyers 28; Meyers is questionable with a hamstring issue, and if he is out Washington's 7.7 targets per game has room to grow. Brian Thomas has 19 targets in six games.</div><div class="str-item"><strong>Price: </strong>His salary was $5,600 in Week 1, $5,900 in Week 2, $6,000 in Week 3 and $6,500 in Week 4 and is $6,500 this week, flat to the last recorded price.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 46.5 total with Jacksonville -7.5 at home on Sunday at 1:00 PM ET, an implied total near 27.0 points for Jacksonville. Jacksonville scores 25.7 points per game (9th) and throws 30.7 times per game (21st).</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Liam Coen is the Jaguars' head coach and Grant Udinski is the offensive coordinator. Trevor Lawrence has thrown 39 and 41 times in his last two games, and Bhayshul Tuten leads the backfield with 94 carries. Indianapolis is coached by Shane Steichen, and its defense is coordinated by Lou Anarumo.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Liam Coen is the Jaguars' head coach and Grant Udinski is the offensive coordinator. Indianapolis is coached by Shane Steichen.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 15.33 floor returns 2.36 points per $1,000. He has scored 10.40 or more in five of six games, and the one miss (2.00) came on 3 targets; the red frame is the risk.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 30.66 ceiling is 4.72 points per $1,000 at 8.5% projected ownership. A Lawrence-Washington stack fits the 46.5 total, and the 33.40 game shows the top end.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 3.37. Target volume and a home-favorite script carry the case; the red Indianapolis frame is the caution.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Washington leads Jacksonville's receiving room with 46 targets, and a questionable Jakobi Meyers (28 targets of his own) could push even more his way.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the target volume says Core, and the red frame says do not overpay in a stack. Quality Data Leads to Smart Decisions, so check the Meyers report and the Sunday inactives. Numbers Don't Lie.</p></div>`},
+  tucker:{bar:`pos-bar-wr`,pos:`WR`,rec:`Core Play`,recClass:`rec-core`,name:`Tre Tucker`,team:`Las Vegas Raiders &middot; HC: Klint Kubiak &middot; OC: Andrew Janocko &middot; Week 8 at NYJ`,stats:[{v:`19.50`,k:`Proj. DK Pts`},{v:`$5,500`,k:`DK Salary`},{v:`3.55x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$5,500</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Tre Tucker grades A with a CORE signal in Week 8: 19.50 projected points at $5,500 is a 3.55 Value, 1.05 above the 2.50 WR CORE bar and 3.50 points above the 16.0 Grade A cutoff. He has 47 targets, 29 catches, 474 yards and 4 touchdowns in seven games, and scored 26.70 and 24.30 in the last two. The matchup frame is yellow: New York has allowed 34.37 DK points per game to wide receivers over its last three (64th percentile, against a league average of 32.13). Las Vegas is a 1.5-point road favorite in a 45.5-point game, and Tucker projects at 5.8% ownership, the lowest of the offensive players in this group.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>WR</td></tr><tr><td>Team</td><td>Las Vegas Raiders</td></tr><tr><td>Opponent</td><td>NYJ</td></tr><tr><td>Salary</td><td>$5,500</td></tr><tr><td>Projection</td><td>19.50</td></tr><tr><td>Value</td><td>3.55</td></tr><tr><td>Floor</td><td>13.65</td></tr><tr><td>Ceiling</td><td>27.30</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>45.5 / LV -1.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Tucker has 4, 7, 4, 8, 5, 7 and 12 targets, 6.7 per game, for 29 catches, 474 yards and 4 touchdowns in seven games. The 12-target game came against the Rams in Week 8 and is his high.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 4.70, 25.90, 8.30, 8.40, 7.50, 26.70 and 24.30, a 15.11 average. He has three games above 24 and four at 8.40 or lower. The 26.70 came on 5 catches for 97 yards and 2 touchdowns against Buffalo in Week 6, and the 24.30 on 5 catches for 103 yards and a touchdown in Week 8.</div><div class="str-item"><strong>Matchup: </strong>New York has allowed 34.37 DK points per game to wide receivers over its last three, against a league average of 32.13 (64th percentile, yellow frame). The Jets' defense faces 30.4 pass attempts per game (25th) and 31.0 rushes (3rd) and allows 21.4 points per game.</div><div class="str-item"><strong>Offense: </strong>Las Vegas passes on 60.5% of plays (8th) and throws 38.0 times per game (7th), scoring 26.1 points per game (7th) but allowing 28.1. Brock Bowers (51 targets, calf, full participant Thursday), Ashton Jeanty (44) and Michael Mayer (37) share the load with Tucker's 47.</div><div class="str-item"><strong>Price: </strong>His salary was $5,000 in Week 3, $5,100 in Week 4, $4,800 in Week 5, $4,700 in Week 6 and $5,200 in Week 8 and is $5,500 this week, up $300 after the 24.30 game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 45.5 total with Las Vegas -1.5 at New York on Sunday at 1:00 PM ET, an implied total near 23.5 points for Las Vegas and 22.0 for New York. New York scores 19.6 points per game (27th), and Breece Hall (quad) is questionable.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Klint Kubiak is the Raiders' head coach and Andrew Janocko is the offensive coordinator. Bowers, Jeanty and Mayer take a combined 132 of the team's targets, so Tucker's volume depends on game flow. New York is coached by Aaron Glenn, with Frank Reich at offensive coordinator and Brian Duker at defensive coordinator.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Klint Kubiak is the Raiders' head coach and Andrew Janocko is the offensive coordinator. New York is coached by Aaron Glenn.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 13.65 floor returns 2.48 points per $1,000. Four of seven games at 8.40 or lower make him a poor cash option despite the recent run.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 27.30 ceiling is 4.96 points per $1,000 at 5.8% projected ownership. Three games above 24 and a pass-heavy offense make him a low-ownership upside piece.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 3.55. A GPP-leaning recommendation: low ownership and recent volume carry the case, and the boom-or-bust game log is the caution.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Tucker's 5.8% projected ownership is the lowest of any offensive player in this group, right as he's strung together back-to-back 24-plus-point games.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the recent volume and the ownership say Core for tournaments, and the four low games say stay away from cash. Quality Data Leads to Smart Decisions, so Tucker is a leverage piece, not a floor play. Numbers Don't Lie.</p></div>`},
+  pitts:{bar:`pos-bar-te`,pos:`TE`,rec:`Core Play`,recClass:`rec-core`,name:`Kyle Pitts Sr.`,team:`Atlanta Falcons &middot; HC: Kevin Stefanski &middot; OC: Tommy Rees &middot; Week 8 at TB`,stats:[{v:`17.13`,k:`Proj. DK Pts`},{v:`$4,500`,k:`DK Salary`},{v:`3.81x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$4,500</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Kyle Pitts grades A with a CORE signal in Week 8: 17.13 projected points at $4,500 is a 3.81 Value, 0.61 above the 3.20 TE CORE bar and 2.13 points above the 15.0 Grade A cutoff. He scored 15.20, 23.00 and 13.20 in his last three games, averaging 6.0 targets, and has 20 catches, 191 yards and 4 touchdowns in seven games. The matchup frame is yellow: Tampa Bay has allowed 14.03 DK points per game to tight ends over its last three (48th percentile, against a league average of 14.92). Atlanta is a 2.5-point road underdog in a 48.5-point game, and Pitts projects at 6.1% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>TE</td></tr><tr><td>Team</td><td>Atlanta Falcons</td></tr><tr><td>Opponent</td><td>TB</td></tr><tr><td>Salary</td><td>$4,500</td></tr><tr><td>Projection</td><td>17.13</td></tr><tr><td>Value</td><td>3.81</td></tr><tr><td>Floor</td><td>11.99</td></tr><tr><td>Ceiling</td><td>23.99</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>48.5 / ATL +2.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Pitts has 1, 3, 2, 3, 6, 7 and 5 targets, 3.9 per game, for 20 catches, 191 yards and 4 touchdowns in seven games. His last three games average 6.0 targets, against 2.3 in the first four.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 0.00, 2.50, 1.50, 7.70, 15.20, 23.00 and 13.20, a 9.01 average. The 23.00 came on 5 catches for 60 yards and 2 touchdowns against Chicago in Week 6, and the 13.20 on 5 catches for 22 yards and a touchdown against San Francisco in Week 8.</div><div class="str-item"><strong>Matchup: </strong>Tampa Bay has allowed 14.03 DK points per game to tight ends over its last three, against a league average of 14.92 (48th percentile, yellow frame). The Buccaneers' defense faces 35.1 pass attempts per game (9th) and 21.6 rushes (31st), so opponents lean on the pass, and Tampa Bay allows 21.6 points per game.</div><div class="str-item"><strong>Role and touchdown rate: </strong>Drake London leads Atlanta with 56 targets, Bijan Robinson has 32 and Pitts 27. Four touchdowns on 191 yards means the production is touchdown-dependent, and Atlanta throws only 28.7 times per game (29th) on a 49.4% pass rate (28th).</div><div class="str-item"><strong>Price: </strong>His salary was $4,700 in Week 1, $4,500 in Week 2, $3,700 in Week 6 and $4,000 in Week 8 and is $4,500 this week, up $500 after the 13.20 game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 48.5 total with Atlanta +2.5 at Tampa Bay on Sunday at 1:00 PM ET, an implied total near 23.0 points for Atlanta and 25.5 for Tampa Bay. Atlanta scores 24.4 points per game (10th) and runs 29.4 times per game (5th).</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Kevin Stefanski is the Falcons' head coach and Tommy Rees is the offensive coordinator. London, Robinson and Pitts carry the target load, and Brian Robinson Jr. (hamstring) did not practice Wednesday or Thursday. Tampa Bay is coached by Todd Bowles, who also runs the defense, with Zac Robinson at offensive coordinator.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Kevin Stefanski is the Falcons' head coach and Tommy Rees is the offensive coordinator. Tampa Bay is coached by Todd Bowles.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 11.99 floor returns 2.67 points per $1,000. All four of his first-four-week games were under 8, which makes him a limited cash option, though the recent target volume is real.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 23.99 ceiling is 5.33 points per $1,000 at 6.1% projected ownership. His 23.00 game shows the touchdown-driven top end, and a Falcons stack with a Tampa Bay bring-back fits the 48.5 total.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 3.81. Recent volume and the price carry the case; the touchdown dependence and Atlanta's low pass rate are the cautions.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Pitts has tripled his early-season target share over his last three games (6.0 per game vs. 2.3 before), and all 4 of his touchdowns have come in that same stretch.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the last three games say Core, and the first four say do not chase the ceiling blindly. Quality Data Leads to Smart Decisions, so Pitts is a priced-right tight end with a touchdown-driven upside. Numbers Don't Lie.</p></div>`},
+  dbucs:{bar:`pos-bar-dst`,pos:`DST`,rec:`Core Play`,recClass:`rec-core`,name:`Tampa Bay Buccaneers`,team:`Tampa Bay Buccaneers &middot; HC/DC: Todd Bowles &middot; Week 8 vs ATL`,stats:[{v:`12.33`,k:`Proj. DK Pts`},{v:`$2,900`,k:`DK Salary`},{v:`4.25x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$2,900</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">The Buccaneers D/ST grades A with a CORE signal in Week 8: 12.33 projected points at $2,900 is a 4.25 Value, 0.75 above the 3.50 D/ST CORE bar. Tampa Bay scored 23 in a 43-13 win at Carolina in Week 8 on 5 sacks, 2 interceptions and 2 fumble recoveries, and has 16 sacks and 12 takeaways in seven games. Atlanta has taken 2.3 sacks and committed 1.7 turnovers per game this season (5th most) while scoring 24.4 points per game (10th). Tampa Bay is a 2.5-point home favorite in a 48.5-point game, and the Buccaneers project at 2.8% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>DST</td></tr><tr><td>Team</td><td>Tampa Bay Buccaneers</td></tr><tr><td>Opponent</td><td>ATL</td></tr><tr><td>Salary</td><td>$2,900</td></tr><tr><td>Projection</td><td>12.33</td></tr><tr><td>Value</td><td>4.25</td></tr><tr><td>Floor</td><td>7.40</td></tr><tr><td>Ceiling</td><td>18.50</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>48.5 / TB -2.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Recent form: </strong>DK scores of 2, 2, 5, 5, 7, 7 and 23, a 7.29 average. The 23 came in the 43-13 win at Carolina in Week 8 on 5 sacks, 2 interceptions, 2 fumble recoveries and 13 points allowed. The first six games never exceeded 7.</div><div class="str-item"><strong>Pass rush and takeaways: </strong>Tampa Bay has 16 sacks (2.3 per game, 15th) and 12 takeaways (1.7 per game, 3rd) in seven games. Atlanta has taken 2.3 sacks per game (15th most) and committed 1.7 turnovers per game (5th most) this season.</div><div class="str-item"><strong>Matchup: </strong>Atlanta scores 24.4 points per game (10th), passes on 49.4% of plays (28th) and runs 29.4 times per game (5th). Over the Falcons' last three games they averaged 25.0 points, 1.3 turnovers and 2.7 sacks taken (69th, 62nd and 59th percentiles).</div><div class="str-item"><strong>Position frames: </strong>Tampa Bay has allowed 15.49 DK points per game to quarterbacks over its last three (30th percentile), 18.40 to running backs (17th), 37.33 to wide receivers (73rd) and 14.03 to tight ends (48th), so it is stout against the run and exposed to receivers.</div><div class="str-item"><strong>Price: </strong>The Buccaneers' salary was $2,600 in Week 1, $3,600 in Week 2, $2,600 in Week 3, $2,800 in Week 4, $2,600 in Week 6 and $2,200 in Week 8 and is $2,900 this week, up $700 after the 23-point game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 48.5 total with Tampa Bay -2.5 at home on Sunday at 1:00 PM ET, an implied total near 25.5 points for Tampa Bay and 23.0 for Atlanta. Tampa Bay allows 21.6 points per game and its defense faces 35.1 pass attempts (9th).</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Todd Bowles is the Buccaneers' head coach and runs the defense. Tampa Bay's defense faces 35.1 pass attempts (9th) and 21.6 rushes (31st) per game. Atlanta is coached by Kevin Stefanski, with Tommy Rees at offensive coordinator.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Todd Bowles is the Buccaneers' head coach and also runs the defense. Atlanta is coached by Kevin Stefanski.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 7.40 floor returns 2.55 points per $1,000. It sits above six of the seven game scores (all but the 23), but the projection rests on one spike, so it is a measured cash option.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 18.50 ceiling is 6.38 points per $1,000 at 2.8% projected ownership. The projection does not include defensive or special-teams touchdowns, so the real ceiling runs higher than the raw number; the 23-point Week 8 game shows the shape.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 4.25. A price-and-matchup recommendation resting on a recent spike; Atlanta's turnover rate is the case.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Tampa Bay has 12 takeaways in seven games, 3rd-most in the league, against a Falcons offense that has turned the ball over 1.7 times per game, the 5th-highest rate.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the price and Atlanta's turnovers say Core, and one 23-point game in seven says do not overpay for the spike. Quality Data Leads to Smart Decisions, so the Buccaneers are a low-ownership defense with a real path. Numbers Don't Lie.</p></div>`},
+  dbroncos:{bar:`pos-bar-dst`,pos:`DST`,rec:`Core Play`,recClass:`rec-core`,name:`Denver Broncos`,team:`Denver Broncos &middot; HC: Sean Payton &middot; DC: Vance Joseph &middot; Week 8 vs KC`,stats:[{v:`9.33`,k:`Proj. DK Pts`},{v:`$2,300`,k:`DK Salary`},{v:`4.06x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 8 Salary: <span>$2,300</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">The Broncos D/ST grades A with a CORE signal in Week 8: 9.33 projected points at $2,300 is a 4.06 Value, 0.56 above the 3.50 D/ST CORE bar. Denver has 21 sacks (3.0 per game, 4th), 10 takeaways and a defensive touchdown in seven games and allows 20.1 points per game (7th fewest). Kansas City has taken only 1.2 sacks and committed 0.8 turnovers per game this season, so the case is the price, which fell $1,000 from Week 8. Denver is a 1.5-point home underdog in a 41.5-point game, and the Broncos project at 2.9% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>DST</td></tr><tr><td>Team</td><td>Denver Broncos</td></tr><tr><td>Opponent</td><td>KC</td></tr><tr><td>Salary</td><td>$2,300</td></tr><tr><td>Projection</td><td>9.33</td></tr><tr><td>Value</td><td>4.06</td></tr><tr><td>Floor</td><td>5.60</td></tr><tr><td>Ceiling</td><td>14.00</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>41.5 / DEN +1.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Recent form: </strong>DK scores of 3, 8, 14, 0, 12, 12 and 4, a 7.57 average. Week 5 was 5 sacks, an interception and 2 fumble recoveries in a 23-17 win at the Chargers, Week 6 was 5 sacks and 3 takeaways in a 17-14 win over Seattle, and Week 8 was 3 sacks and 16 points allowed in a 30-16 win at Arizona.</div><div class="str-item"><strong>Pass rush and takeaways: </strong>Denver has 21 sacks in seven games (3.0 per game, 4th) and 10 takeaways (1.4 per game, 11th). Kansas City has taken 1.2 sacks per game (the third fewest) and committed 0.8 turnovers per game (the 8th fewest).</div><div class="str-item"><strong>Matchup: </strong>Kansas City scores 23.8 points per game (14th) but scored 3 in a 20-3 loss at Seattle in Week 8. Over its last three games the Chiefs averaged 18.3 points, 1.0 turnovers and 1.0 sacks taken. Rashee Rice is expected to return, Patrick Mahomes practiced fully, and Travis Kelce carries no designation.</div><div class="str-item"><strong>Position frames: </strong>Denver has allowed 13.91 DK points per game to quarterbacks over its last three (20th percentile), 18.90 to running backs (23rd), 27.63 to wide receivers (30th) and 17.60 to tight ends (73rd), so it is strongest against the pass and weaker against tight ends such as Kelce.</div><div class="str-item"><strong>Price: </strong>The Broncos' salary was $2,800 in Week 2, $2,500 in Week 4, $3,200 in Week 5 and $3,300 in Week 8 and is $2,300 this week, down $1,000, the cheapest defense in this group.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 41.5 total with Denver +1.5 at home on Sunday at 4:25 PM ET, an implied total near 20.0 points for Denver and 21.5 for Kansas City, the lowest total in this group. Denver's defense faces 37.7 pass attempts per game (4th), and safety Talanoa Hufanga (ankle) is expected to miss multiple weeks.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Sean Payton is the Broncos' head coach and Vance Joseph is the defensive coordinator. Denver's defense faces 37.7 pass attempts (4th) and 29.1 rushes (8th) per game. Kansas City is coached by Andy Reid, with Eric Bieniemy at offensive coordinator and Steve Spagnuolo at defensive coordinator.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Sean Payton is the Broncos' head coach and Vance Joseph is the defensive coordinator. Kansas City is coached by Andy Reid.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 5.60 floor returns 2.43 points per $1,000 and the $2,300 price frees up salary. The 0 in Week 4 and the 4 in Week 8 are the risk against an offense that rarely gets sacked.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 14.00 ceiling is 6.09 points per $1,000 at 2.9% projected ownership. The projection does not include defensive or special-teams touchdowns, so the real ceiling runs higher than the raw number; the 14-point Week 3 game shows the shape.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 4.06. A price-driven recommendation; Kansas City's low sack and turnover rates are the caution.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Denver's salary dropped $1,000 from Week 8 to the cheapest defense in this group, even though it still ranks 4th in the league with 3.0 sacks per game.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the price and the pass rush say Core, and Kansas City's protection says this is a salary-saver, not a matchup lean. Quality Data Leads to Smart Decisions, so the Broncos fit when you need salary elsewhere. Numbers Don't Lie.</p></div>`},
+};
+
+function openModal(id){
+  const p=D[id];if(!p)return;
+  document.getElementById('m-bar').className='modal-top-bar '+p.bar;
+  document.getElementById('m-badges').innerHTML='<span class="pos-badge pos-badge-'+p.bar.replace('pos-bar-','')+'">'+p.pos+'</span><span class="rec-badge '+p.recClass+'">'+p.rec+'</span><button class="modal-close" onclick="closeModal()">Close \u2715</button>';
+  document.getElementById('m-name').textContent=p.name;
+  document.getElementById('m-team').textContent=p.team;
+  document.getElementById('m-stats').innerHTML=p.stats.map(s=>'<div class="modal-stat-cell"><div class="modal-stat-val">'+s.v+'</div><div class="modal-stat-key">'+s.k+'</div></div>').join('');
+  document.getElementById('m-body').innerHTML=p.body;
+  document.getElementById('m-salary').innerHTML=p.salary;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('overlay').scrollTop=0;
+}
+function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow=''}
+function handleOverlayClick(e){if(e.target===document.getElementById('overlay'))closeModal()}
+function filterCards(f,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.eval-card').forEach(c=>{
+    const cp=c.dataset.pos;
+    const show=(f==='all')||(cp===f);
+    c.style.display=show?'':'none';
+  });
+}
+document.addEventListener('keydown',e=>{if(document.getElementById('overlay').classList.contains('open')&&e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
