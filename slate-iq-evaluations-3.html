@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Slate-IQ | Player Evaluations</title>
+<meta name="description" content="Data-driven DraftKings NFL Player Evaluations for Week 9, ranked by Slate-IQ Value Score (projected points per $1K salary) — updated weekly all season."/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Slate-IQ"/>
+<meta property="og:title" content="Slate-IQ | Player Evaluations"/>
+<meta property="og:description" content="Data-driven DraftKings NFL Player Evaluations for Week 9, ranked by Slate-IQ Value Score (projected points per $1K salary) — updated weekly all season."/>
+<meta property="og:url" content="https://slate-iq.com/slate-iq-evaluations.html"/>
+<meta property="og:image" content="https://slate-iq.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@DFS_SlateIQ"/>
+<meta name="twitter:title" content="Slate-IQ | Player Evaluations"/>
+<meta name="twitter:description" content="Data-driven DraftKings NFL Player Evaluations for Week 9, ranked by Slate-IQ Value Score (projected points per $1K salary) — updated weekly all season."/>
+<meta name="twitter:image" content="https://slate-iq.com/og-image.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border:0 solid #e5e7eb}
+html{font-family:Inter,ui-sans-serif,system-ui,sans-serif;line-height:1.5;scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;background:#fff;color:#0B2545}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:root{
+  --green:#00A94F;--green-dark:#007A38;--green-light:#E6F7ED;--green-border:rgba(0,169,79,0.3);
+  --navy:#0B2545;--navy-dark:#081B33;--navy-light:#13345C;
+  --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;
+  --blue:#3B82F6;--blue-light:rgba(59,130,246,0.12);
+  --gold:#D97706;--gold-light:rgba(217,119,6,0.12);
+  --purple:#7C3AED;--purple-light:rgba(124,58,237,0.12);
+  --red:#DC2626;--red-light:rgba(220,38,38,0.1);
+}
+.container{max-width:80rem;margin:0 auto;padding:0 1.5rem}
+@media(min-width:1024px){.container{padding:0 2rem}}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border-bottom:1px solid var(--gray-100)}
+nav{max-width:80rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-svg{height:32px;width:auto}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+.nav-back{display:flex;align-items:center;gap:.4rem;font-size:.875rem;font-weight:500;color:rgba(11,37,69,.7);transition:color .15s}
+.nav-back:hover{color:var(--green)}
+.nav-back svg{width:1rem;height:1rem;stroke:currentColor;fill:none;stroke-width:2}
+.page-hero{background:linear-gradient(to bottom,var(--navy-light),var(--navy));color:#fff;padding:6rem 0 4rem;position:relative;overflow:hidden}
+@media(min-width:1024px){.page-hero{padding:8rem 0 5rem}}
+.page-hero-bg{position:absolute;inset:0;opacity:.08;pointer-events:none}
+.hero-eyebrow{display:inline-block;background:rgba(0,169,79,.15);color:rgba(230,247,237,1);font-size:.75rem;font-weight:600;letter-spacing:.025em;text-transform:uppercase;padding:.25rem .75rem;border-radius:9999px;margin-bottom:1.25rem;border:1px solid var(--green-border)}
+.page-hero h1{font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem}
+@media(min-width:640px){.page-hero h1{font-size:3rem}}
+.page-hero p{font-size:1.0625rem;color:rgba(255,255,255,.75);max-width:38rem;line-height:1.65}
+.disclaimer-band{background:rgba(0,169,79,.07);border-bottom:1px solid var(--green-border)}
+.disclaimer-inner{display:flex;align-items:flex-start;gap:.75rem;padding:1rem 1.5rem;max-width:80rem;margin:0 auto}
+@media(min-width:1024px){.disclaimer-inner{padding:1rem 2rem}}
+.disclaimer-icon{flex-shrink:0;width:1.25rem;height:1.25rem;stroke:var(--green);fill:none;stroke-width:2;margin-top:.1rem}
+.disclaimer-text{font-size:.875rem;color:var(--navy);line-height:1.55}
+.disclaimer-text strong{color:var(--green-dark);font-weight:600}
+.filters-bar{background:#fff;border-bottom:1px solid var(--gray-100);padding:.875rem 0;position:sticky;top:4rem;z-index:40}
+.filters-inner{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.filter-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);margin-right:.25rem}
+.filter-btn{font-size:.8125rem;font-weight:600;background:none;border:1px solid var(--gray-200);border-radius:.375rem;padding:.35rem .875rem;color:rgba(11,37,69,.75);cursor:pointer;transition:all .15s}
+.filter-btn:hover,.filter-btn.active{background:var(--green-light);color:var(--green-dark);border-color:var(--green-border)}
+.filter-sep{width:1px;height:1.25rem;background:var(--gray-200);margin:0 .25rem}
+.evals-section{padding:2.5rem 0 6rem;background:var(--gray-50)}
+.section-group{margin-bottom:3rem}
+.group-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.group-badge{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .9rem;border-radius:9999px}
+.group-badge-core{background:var(--green-light);color:var(--green-dark);border:1px solid var(--green-border)}
+.group-badge-watch{background:var(--gold-light);color:var(--gold);border:1px solid rgba(217,119,6,0.25)}
+.group-badge-featured{background:var(--blue-light);color:var(--blue);border:1px solid rgba(59,130,246,0.25)}
+.group-title{font-size:1.125rem;font-weight:700;color:var(--navy)}
+.group-count{font-size:.8125rem;color:rgba(11,37,69,.4);font-weight:500}
+.group-line{flex:1;height:1px;background:var(--gray-200)}
+.eval-grid{display:grid;gap:1.25rem}
+@media(min-width:640px){.eval-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.eval-grid{grid-template-columns:repeat(4,1fr)}}
+.eval-card{background:#fff;border:1px solid var(--gray-100);border-radius:.75rem;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:box-shadow .2s,transform .2s;cursor:pointer}
+.eval-card:hover{box-shadow:0 8px 16px -4px rgba(0,0,0,.1);transform:translateY(-2px)}
+.pos-bar{height:3px}
+.pos-bar-qb{background:var(--green)}
+.pos-bar-rb{background:var(--blue)}
+.pos-bar-wr{background:var(--gold)}
+.pos-bar-te{background:var(--purple)}
+.pos-bar-dst{background:var(--red)}
+.eval-card-body{padding:1.25rem;flex:1;display:flex;flex-direction:column}
+.eval-card-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem}
+.pos-badge{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:.2rem .55rem;border-radius:.25rem}
+.pos-badge-qb{background:var(--green-light);color:var(--green-dark)}
+.pos-badge-rb{background:var(--blue-light);color:var(--blue)}
+.pos-badge-wr{background:var(--gold-light);color:var(--gold)}
+.pos-badge-te{background:var(--purple-light);color:var(--purple)}
+.pos-badge-dst{background:var(--red-light);color:var(--red)}
+.rec-badge{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.2rem .55rem;border-radius:.25rem}
+.rec-core{background:var(--green-light);color:var(--green-dark)}
+.rec-strong{background:var(--blue-light);color:var(--blue)}
+.rec-watch{background:var(--gold-light);color:var(--gold)}
+.rec-value{background:rgba(156,163,175,.15);color:rgba(11,37,69,.5)}
+.eval-name{font-size:1rem;font-weight:800;margin-bottom:.15rem;line-height:1.2}
+.eval-team{font-size:.75rem;color:rgba(11,37,69,.45);font-weight:500;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.05em}
+.eval-summary{font-size:.8125rem;color:rgba(11,37,69,.65);line-height:1.55;flex:1;margin-bottom:.85rem}
+.eval-mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.375rem;margin-bottom:.85rem}
+.mini-stat{background:var(--gray-50);border-radius:.375rem;padding:.45rem .35rem;text-align:center}
+.mini-stat-val{font-size:.875rem;font-weight:700;color:var(--navy)}
+.mini-stat-key{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(11,37,69,.4);margin-top:.1rem}
+.eval-card-footer{padding:.75rem 1.25rem;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between}
+.eval-salary{font-size:.75rem;font-weight:600;color:rgba(11,37,69,.45)}
+.eval-salary span{color:var(--green);font-weight:700}
+.eval-arrow{width:1rem;height:1rem;stroke:rgba(11,37,69,.25);fill:none;stroke-width:2;transition:all .2s}
+.eval-card:hover .eval-arrow{stroke:var(--green);transform:translateX(3px)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:200;overflow-y:auto;padding:1.5rem}
+.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal{background:#fff;border-radius:1rem;max-width:52rem;width:100%;margin:auto;overflow:hidden;box-shadow:0 25px 50px -12px rgba(0,0,0,.35)}
+@keyframes mo{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.modal{animation:mo .25s ease}
+.modal-top-bar{height:4px}
+.modal-header{padding:2rem 2rem 1.25rem;border-bottom:1px solid var(--gray-100)}
+.modal-badges{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;margin-bottom:.85rem}
+.modal-close{margin-left:auto;background:none;border:1px solid var(--gray-200);border-radius:.375rem;padding:.35rem .75rem;font-size:.8rem;font-weight:600;color:rgba(11,37,69,.5);cursor:pointer;transition:all .15s}
+.modal-close:hover{color:var(--green);border-color:var(--green)}
+.modal-name{font-size:1.75rem;font-weight:800;line-height:1.15;margin-bottom:.3rem}
+.modal-team-line{font-size:.8125rem;color:rgba(11,37,69,.45);font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.modal-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gray-100)}
+.modal-stat-cell{padding:.875rem;text-align:center;border-right:1px solid var(--gray-100)}
+.modal-stat-cell:last-child{border-right:none}
+.modal-stat-val{font-size:1.0625rem;font-weight:700;color:var(--green)}
+.modal-stat-key{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);margin-top:.2rem}
+.modal-body{padding:1.75rem 2rem}
+.modal-section{margin-bottom:1.5rem}
+.modal-section:last-child{margin-bottom:0}
+.ms-heading{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--green);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
+.ms-heading::after{content:'';flex:1;height:1px;background:var(--gray-100)}
+.ms-body{font-size:.9375rem;color:rgba(11,37,69,.7);line-height:1.7}
+.ms-body strong{color:var(--navy);font-weight:600}
+.str-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:.65rem}
+.str-item,.con-item{font-size:.8125rem;color:rgba(11,37,69,.65);line-height:1.5;display:flex;align-items:flex-start;gap:.4rem}
+.str-item::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.con-item::before{content:'△';color:var(--gold);flex-shrink:0}
+.outlook-grid{display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-top:.65rem}
+.outlook-box{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:.5rem;padding:.875rem 1rem}
+.outlook-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.35rem}
+.outlook-label.cash{color:var(--green-dark)}
+.outlook-label.gpp{color:var(--gold)}
+.outlook-body{font-size:.8125rem;color:rgba(11,37,69,.65);line-height:1.6}
+.modal-callout{background:var(--green-light);border-left:3px solid var(--green);border-radius:0 .375rem .375rem 0;padding:.875rem 1.125rem;margin-top:1.25rem}
+.callout-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--green-dark);margin-bottom:.3rem}
+.callout-body{font-size:.875rem;color:var(--navy);line-height:1.6}
+.modal-question{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:.5rem;padding:.875rem 1.125rem;margin-top:1rem}
+.q-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:rgba(11,37,69,.4);margin-bottom:.35rem}
+.q-text{font-size:.875rem;color:rgba(11,37,69,.65);font-style:italic;line-height:1.55}
+.modal-footer{padding:1.25rem 2rem;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.modal-salary{font-size:.875rem;color:rgba(11,37,69,.5);font-weight:600}
+.modal-salary span{color:var(--green);font-weight:700;font-size:1rem}
+.btn-primary{display:inline-block;background:var(--green);color:#fff;font-weight:600;font-size:.875rem;padding:.5rem 1.1rem;border-radius:.25rem;transition:background .15s}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-outline{display:inline-block;background:transparent;color:rgba(11,37,69,.75);font-weight:600;font-size:.875rem;padding:.5rem 1.1rem;border-radius:.25rem;border:1px solid var(--gray-200);transition:all .15s}
+.btn-outline:hover{color:var(--green);border-color:var(--green-border)}
+.modal-table{width:100%;border-collapse:collapse;font-size:.8125rem;margin-top:.65rem}
+.modal-table th{text-align:left;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(11,37,69,.4);padding:.4rem .65rem;border-bottom:1px solid var(--gray-100)}
+.modal-table td{padding:.55rem .65rem;border-bottom:1px solid var(--gray-50);color:rgba(11,37,69,.65)}
+.modal-table td:first-child{font-weight:600;color:var(--navy)}
+.modal-table td.hi{color:var(--green);font-weight:700}
+.modal-table tr:last-child td{border-bottom:none}
+footer{background:var(--navy-dark);color:rgba(255,255,255,.6);padding:2.5rem 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem;font-size:.875rem}
+@media(min-width:640px){.footer-inner{flex-direction:row}}
+.footer-logo{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a:hover{color:#fff;transition:color .15s}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="badge" viewBox="0 0 300 300">
+      <circle cx="150" cy="150" r="145" fill="#081B33"/>
+      <circle cx="150" cy="150" r="145" fill="none" stroke="#00A94F" stroke-width="6"/>
+      <line x1="75" y1="195" x2="205" y2="115" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+      <circle cx="75" cy="195" r="8" fill="#fff"/>
+      <g transform="translate(220,100) rotate(-14) scale(1.9)">
+        <ellipse cx="0" cy="0" rx="27" ry="16" fill="#00A94F"/>
+        <line x1="-16" y1="0" x2="16" y2="0" stroke="#081B33" stroke-width="2"/>
+        <line x1="-10" y1="-4.5" x2="-10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="-5" y1="-4.5" x2="-5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="0" y1="-4.5" x2="0" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="5" y1="-4.5" x2="5" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+        <line x1="10" y1="-4.5" x2="10" y2="4.5" stroke="#081B33" stroke-width="1.6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <nav>
+    <a href="index.html">
+      <svg class="nav-logo-svg" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="3" width="128" height="40" rx="3" fill="#D7EFDE"/>
+        <text x="64" y="33" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" fill="#0B2545" text-anchor="middle" letter-spacing="1">SLATE</text>
+        <rect x="128" y="3" width="56" height="40" rx="3" fill="#00A94F"/>
+        <text x="156" y="33" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">IQ</text>
+      </svg>
+    </a>
+    <div class="nav-right">
+      <a href="slate-iq-intro.html" class="nav-back">Introduction</a>
+      <a href="slate-iq-essays.html" class="nav-back">Essays</a>
+      <a href="slate-iq-lineups.html" class="nav-back">Lineups</a>
+      <a href="index.html" class="nav-back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Main Site
+      </a>
+    </div>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 800 400">
+      <circle cx="700" cy="80" r="160" fill="#00A94F"/>
+      <circle cx="30" cy="350" r="180" fill="#00A94F"/>
+    </svg>
+  </div>
+  <div class="container" style="position:relative">
+    <p class="hero-eyebrow">Week 9 · 2026 NFL Season</p>
+    <h1>Player Evaluations</h1>
+    <p>Data-driven DraftKings Week 9 evaluations, ranked by Slate-IQ Value Score (projected points per $1K salary).</p>
+  </div>
+</div>
+<div class="disclaimer-band">
+  <div class="disclaimer-inner">
+    <svg class="disclaimer-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <p class="disclaimer-text"><strong>Live Week 9 Evaluations:</strong> These grades are built on 2026 Week 9 matchup data, DraftKings salaries, and Vegas lines. They'll be updated each week as new slates, injury reports, and lineup news roll in.</p>
+  </div>
+</div>
+<div class="filters-bar">
+  <div class="container">
+    <div class="filters-inner">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-btn active" onclick="filterCards('all',this)">All</button>
+      <div class="filter-sep"></div>
+      <button class="filter-btn" onclick="filterCards('QB',this)">QB</button>
+      <button class="filter-btn" onclick="filterCards('RB',this)">RB</button>
+      <button class="filter-btn" onclick="filterCards('WR',this)">WR</button>
+      <button class="filter-btn" onclick="filterCards('TE',this)">TE</button>
+      <button class="filter-btn" onclick="filterCards('DST',this)">D/ST</button>
+    </div>
+  </div>
+</div>
+<section class="evals-section">
+  <div class="container">
+
+    <div class="section-group" id="core-group">
+      <div class="group-header">
+        <span class="group-badge group-badge-core">⭐ Week 9 Evaluations</span>
+        <span class="group-count">12 Evaluations</span>
+        <div class="group-line"></div>
+      </div>
+      <div class="eval-grid">
+        <div class="eval-card" data-pos="QB" data-tier="core" onclick="openModal('willis')">
+  <div class="pos-bar pos-bar-qb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Malik Willis</div><div class="eval-team">Miami Dolphins</div>
+    <p class="eval-summary">Core Play in Week 9 (20.83 proj, $5,100) &mdash; Value 4.08 clears the CORE bar by 0.58; MIA +6.5 vs DET.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">20.83</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">4.08x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$5,100</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$5,100</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="QB" data-tier="featured" onclick="openModal('prescott')">
+  <div class="pos-bar pos-bar-qb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-qb">QB</span><span class="rec-badge rec-strong">Strong Play</span></div>
+    <div class="eval-name">Dak Prescott</div><div class="eval-team">Dallas Cowboys</div>
+    <p class="eval-summary">Strong Play in Week 9 (18.03 proj, $6,500) &mdash; game total in the top 30% of the pool (51.5 total); DAL -5.5 vs IND.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">18.03</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">2.77x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$6,500</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$6,500</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="RB" data-tier="featured" onclick="openModal('coleman')">
+  <div class="pos-bar pos-bar-rb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-value">Value Play</span></div>
+    <div class="eval-name">Jonah Coleman</div><div class="eval-team">Denver Broncos</div>
+    <p class="eval-summary">Value Play in Week 9 (14.65 proj, $5,300) &mdash; salary under the $5,800 VALUE ceiling, Value 2.76 in the top 35%; DEN -2.5 vs CAR.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">14.65</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">2.76x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$5,300</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$5,300</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="RB" data-tier="watch" onclick="openModal('stevenson')">
+  <div class="pos-bar pos-bar-rb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-watch">Watch List</span></div>
+    <div class="eval-name">Rhamondre Stevenson</div><div class="eval-team">New England Patriots</div>
+    <p class="eval-summary">Watch List in Week 9 (12.70 proj, $6,100) &mdash; no signal clears at Value 2.08; NE -3 vs GB.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">12.70</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">2.08x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$6,100</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$6,100</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="RB" data-tier="featured" onclick="openModal('walker')">
+  <div class="pos-bar pos-bar-rb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-strong">Strong Play</span></div>
+    <div class="eval-name">Kenneth Walker III</div><div class="eval-team">Kansas City Chiefs</div>
+    <p class="eval-summary">Strong Play in Week 9 (17.67 proj, $9,000) &mdash; game total in the top 30% of the pool (47.5 total); KC -9.5 vs NYJ.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">17.67</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">1.96x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$9,000</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$9,000</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="RB" data-tier="featured" onclick="openModal('singletary')">
+  <div class="pos-bar pos-bar-rb"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-rb">RB</span><span class="rec-badge rec-value">Value Play</span></div>
+    <div class="eval-name">Devin Singletary</div><div class="eval-team">New York Giants</div>
+    <p class="eval-summary">Value Play in Week 9 (9.40 proj, $4,600) &mdash; salary under the $5,800 VALUE ceiling, Value 2.04 in the top 35%; NYG -3.5 vs PHI.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">9.40</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">2.04x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$4,600</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$4,600</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="WR" data-tier="core" onclick="openModal('nacua')">
+  <div class="pos-bar pos-bar-wr"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-strong">Strong Play</span></div>
+    <div class="eval-name">Puka Nacua</div><div class="eval-team">Los Angeles Rams</div>
+    <p class="eval-summary">Strong Play in Week 9 (20.27 proj, $8,800) &mdash; Value 2.30 clears the CASH-CORE bar by 0.40; LAR -4.5 vs WAS.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">20.27</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">2.30x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$8,800</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$8,800</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="WR" data-tier="featured" onclick="openModal('flournoy')">
+  <div class="pos-bar pos-bar-wr"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-strong">Strong Play</span></div>
+    <div class="eval-name">Ryan Flournoy</div><div class="eval-team">Dallas Cowboys</div>
+    <p class="eval-summary">Strong Play in Week 9 (13.70 proj, $4,800) &mdash; game total in the top 30% of the pool (51.5 total); DAL -5.5 vs IND.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">13.70</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">2.85x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$4,800</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$4,800</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="WR" data-tier="core" onclick="openModal('smithnjigba')">
+  <div class="pos-bar pos-bar-wr"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-core">Core Play</span></div>
+    <div class="eval-name">Jaxon Smith-Njigba</div><div class="eval-team">Seattle Seahawks</div>
+    <p class="eval-summary">Core Play in Week 9 (29.83 proj, $9,300) &mdash; Value 3.21 clears the CORE bar by 0.71; SEA -8.5 vs ARI.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">29.83</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">3.21x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$9,300</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$9,300</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="WR" data-tier="core" onclick="openModal('lamb')">
+  <div class="pos-bar pos-bar-wr"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-wr">WR</span><span class="rec-badge rec-strong">Strong Play</span></div>
+    <div class="eval-name">CeeDee Lamb</div><div class="eval-team">Dallas Cowboys</div>
+    <p class="eval-summary">Strong Play in Week 9 (17.73 proj, $8,300) &mdash; Value 2.14 clears the CASH-CORE bar by 0.24; DAL -5.5 vs IND.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">17.73</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">2.14x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$8,300</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$8,300</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="TE" data-tier="featured" onclick="openModal('dulcich')">
+  <div class="pos-bar pos-bar-te"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-te">TE</span><span class="rec-badge rec-strong">Strong Play</span></div>
+    <div class="eval-name">Greg Dulcich</div><div class="eval-team">Miami Dolphins</div>
+    <p class="eval-summary">Strong Play in Week 9 (10.95 proj, $3,100) &mdash; game total in the top 30% of the pool (50.5 total); MIA +6.5 vs DET.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">10.95</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">3.53x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$3,100</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$3,100</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+        <div class="eval-card" data-pos="DST" data-tier="core" onclick="openModal('dsaints')">
+  <div class="pos-bar pos-bar-dst"></div>
+  <div class="eval-card-body">
+    <div class="eval-card-meta"><span class="pos-badge pos-badge-dst">DST</span><span class="rec-badge rec-strong">Strong Play</span></div>
+    <div class="eval-name">New Orleans Saints</div><div class="eval-team">New Orleans Saints</div>
+    <p class="eval-summary">Strong Play in Week 9 (8.50 proj, $2,900) &mdash; Value 2.93 clears the CASH-CORE bar by 0.53; NO -3 vs CLE.</p>
+    <div class="eval-mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">8.50</div><div class="mini-stat-key">Proj. DK</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">2.93x</div><div class="mini-stat-key">Value</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">$2,900</div><div class="mini-stat-key">Salary</div></div>
+    </div>
+  </div>
+  <div class="eval-card-footer"><div class="eval-salary">DK Salary <span>$2,900</span></div><svg class="eval-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- MODAL -->
+<div class="modal-overlay" id="overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-top-bar" id="m-bar"></div>
+    <div class="modal-header">
+      <div class="modal-badges" id="m-badges"></div>
+      <div class="modal-name" id="m-name"></div>
+      <div class="modal-team-line" id="m-team"></div>
+    </div>
+    <div class="modal-stats-bar" id="m-stats"></div>
+    <div class="modal-body" id="m-body"></div>
+    <div class="modal-footer">
+      <div class="modal-salary" id="m-salary"></div>
+      <div style="display:flex;gap:.65rem">
+        <a href="index.html" class="btn-outline">Main Site</a>
+        <a href="https://twitter.com/DFS_SlateIQ" class="btn-primary" target="_blank" rel="noopener">Follow @DFS_SlateIQ</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo"><svg width="26" height="26" viewBox="0 0 300 300"><use href="#badge"/></svg>Slate-IQ</div>
+      <div class="footer-links">
+        <a href="https://twitter.com/DFS_SlateIQ" target="_blank">@DFS_SlateIQ</a>
+        <a href="https://instagram.com/slate_iq" target="_blank">@slate_iq</a>
+        <a href="https://www.slate-iq.com" target="_blank">slate-iq.com</a>
+      </div>
+      <p>© 2026 Slate-IQ. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+const D={
+  willis:{bar:`pos-bar-qb`,pos:`QB`,rec:`Core Play`,recClass:`rec-core`,name:`Malik Willis`,team:`Miami Dolphins &middot; HC: Jeff Hafley &middot; OC: Bobby Slowik &middot; Week 9 vs DET`,stats:[{v:`20.83`,k:`Proj. DK Pts`},{v:`$5,100`,k:`DK Salary`},{v:`4.08x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$5,100</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Malik Willis grades A with a CORE signal in Week 9: 20.83 projected points at $5,100 is a 4.08 Value, 0.58 above the 3.50 QB CORE bar and 0.83 points above the 20.0 Grade A cutoff. Willis averages 15.60 DK points per game over 7 games. The matchup frame is green: the Lions have allowed 21.71 DK points per game to quarterbacks over their last three (77th percentile, against a league average of 17.44). The Dolphins are a 6.5-point home underdog in a 50.5-point game, and Willis projects at 5.9% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>QB</td></tr><tr><td>Team</td><td>Miami Dolphins</td></tr><tr><td>Opponent</td><td>DET</td></tr><tr><td>Salary</td><td>$5,100</td></tr><tr><td>Projection</td><td>20.83</td></tr><tr><td>Value</td><td>4.08</td></tr><tr><td>Floor</td><td>14.58</td></tr><tr><td>Ceiling</td><td>29.16</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>50.5 / MIA +6.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Willis has thrown 27, 23, 36, 17, 27, 21, 32 times, 26.1 per game, for 1,268 yards, 6 touchdowns and 5 interceptions in 7 games. He adds 36 carries for 225 yards and 3 touchdowns.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 17.70, 12.48, 12.00, 3.50, 21.88, 26.02, 15.64, a 15.60 average. Week 9 was 211 passing yards, 2 touchdowns and an interception on 32 attempts, with only one carry, a low-rushing outing.</div><div class="str-item"><strong>Matchup: </strong>The Lions have allowed 21.71 DK points per game to quarterbacks over their last three, against a league average of 17.44 (77th percentile, green frame). The Lions defense faces 41.0 pass attempts per game (1st) and 23.3 rushes (28th), and the Lions allow 25.7 points per game (23rd fewest).</div><div class="str-item"><strong>Offense: </strong>Miami scores 16.7 points per game (31st) and passes on 48.5% of plays (31st), so Willis depends on rushing production and on Miami playing from behind. De'Von Achane is out for the season, and Ollie Gordon leads the backfield with 91 carries.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. His salary was $4,900 in Week 4, $4,600 in Week 5, $4,700 in Week 7 and $4,900 in Week 9 and is $5,100 this week, up $200 after the 15.64 game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 50.5 total with MIA +6.5 at home on Sunday at 1:00 PM ET, an implied total near 22.0 points for the Dolphins and 28.5 for the Lions.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Jeff Hafley is the Dolphins' head coach and Bobby Slowik is the offensive coordinator. Malik Washington (45 targets) is the top target, Greg Dulcich (28) leads the tight ends, and Chris Bell (24) and Caleb Douglas (6 targets in Week 9) add depth. Detroit is coached by Dan Campbell, its defense is coordinated by Kelvin Sheppard, and safety Kerby Joseph is out.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Jeff Hafley is the Dolphins' head coach and Bobby Slowik is the offensive coordinator. Detroit is coached by Dan Campbell.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 14.58 floor returns 2.86 points per $1,000. Rushing gives him a base (36 carries for 225 yards), but a 3.50 and a 12.00 in his first four games show the risk on the 31st-ranked scoring offense.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 29.16 ceiling is 5.72 points per $1,000 at 5.9% projected ownership. A Willis-Dulcich or Willis-Washington stack with a Detroit bring-back is the leverage version, and the 26.02 and 21.88 games show the upside.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 4.08. Miami's scoring rank and a 6.5-point home underdog role are the cautions.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Willis is the cheaper of this week's two rostered quarterbacks, and his 4.08 Value is still the best QB number in the group by a wide margin.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the price and Detroit's pass-heavy opponents say Core, and Miami's scoring says keep the exposure measured. Quality Data Leads to Smart Decisions, so Willis is a salary-saver at 5.9% ownership. Numbers Don't Lie.</p></div>`},
+  prescott:{bar:`pos-bar-qb`,pos:`QB`,rec:`Strong Play`,recClass:`rec-strong`,name:`Dak Prescott`,team:`Dallas Cowboys &middot; HC: Brian Schottenheimer &middot; OC: Klayton Adams &middot; Week 9 at IND`,stats:[{v:`18.03`,k:`Proj. DK Pts`},{v:`$6,500`,k:`DK Salary`},{v:`2.77x`,k:`Value Score`},{v:`B`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$6,500</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Dak Prescott grades B with a CEILING signal in Week 9: 18.03 projected points at $6,500 is a 2.77 Value and 2.03 points above the 16.0 Grade B cutoff. The CEILING signal comes from a game total in the top 30% of the pool. Prescott averages 19.87 DK points per game over 8 games. The matchup frame is yellow: the Colts have allowed 14.13 DK points per game to quarterbacks over their last three (26th percentile, against a league average of 17.44). The Cowboys are a 5.5-point road favorite in a 51.5-point game, and Prescott projects at 4.8% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>QB</td></tr><tr><td>Team</td><td>Dallas Cowboys</td></tr><tr><td>Opponent</td><td>IND</td></tr><tr><td>Salary</td><td>$6,500</td></tr><tr><td>Projection</td><td>18.03</td></tr><tr><td>Value</td><td>2.77</td></tr><tr><td>Floor</td><td>12.62</td></tr><tr><td>Ceiling</td><td>25.25</td></tr><tr><td>Grade</td><td>B</td></tr><tr><td>Signal</td><td>CEILING</td></tr><tr><td>Vegas Total / Spread</td><td>51.5 / DAL -5.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Prescott has thrown 34, 31, 40, 45, 42, 54, 27, 29 times, 37.8 per game, for 2,046 yards, 14 touchdowns and 5 interceptions in 8 games. He adds 23 carries for 101 yards and 1 touchdown.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 15.40, 29.76, 18.94, 21.10, 17.64, 13.02, 23.28, 19.80, a 19.87 average. Week 9 was 195 yards and a touchdown on 29 attempts, with four sacks taken, as Dallas lost a late lead to Arizona.</div><div class="str-item"><strong>Matchup: </strong>The Colts have allowed 14.13 DK points per game to quarterbacks over their last three, against a league average of 17.44 (26th percentile, yellow frame). The Colts defense faces 28.8 pass attempts per game (28th) and 27.0 rushes (18th), and the Colts allow 27.8 points per game (30th fewest).</div><div class="str-item"><strong>Offense: </strong>Dallas passes on 60.3% of plays (6th) and throws 37.8 times per game (7th), scoring 27.4 points per game (7th). Prescott has thrown 40 or more times in four of eight games, and Javonte Williams leads the backfield with 134 carries.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. His salary was $6,400 in Week 2, $6,700 in Week 3, $6,400 in Week 4 and $6,300 in Week 9 and is $6,500 this week, up $200 after the 19.80 game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 51.5 total with DAL -5.5 at IND on Sunday at 1:00 PM ET, an implied total near 28.5 points for the Cowboys and 23.0 for the Colts.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Brian Schottenheimer is the Cowboys' head coach, Klayton Adams is the offensive coordinator and Christian Parker coordinates the defense. CeeDee Lamb (92 targets), George Pickens (62, hamstring, limited in practice) and Ryan Flournoy (44) are the main targets, and tight end Jake Ferguson (ankle) is listed as TBD. Indianapolis is coached by Shane Steichen.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Brian Schottenheimer is the Cowboys' head coach and Klayton Adams is the offensive coordinator. Indianapolis is coached by Shane Steichen.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 12.62 floor returns 1.94 points per $1,000. Passing volume is the base: 27 or more attempts every week, and six games of 17.6 or more. The 13.02 in Week 6 came despite 54 attempts.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 25.25 ceiling is 3.88 points per $1,000 at 4.8% projected ownership. A Prescott-Lamb-Flournoy stack in a 51.5-point game is the low-ownership path, and the 29.76 game in Week 2 shows the top end.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Strong Play.</strong> Grade B, Signal CEILING, Value 2.77. The yellow Indianapolis frame and a Week 9 total of 195 passing yards are the cautions.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Prescott anchors a three-piece Dallas stack with Lamb and Flournoy in the week's highest shared game total (51.5-52), and all three turn up together in this week's lineups.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the volume and the game total say Ceiling, and the field has not caught on at 4.8%. Quality Data Leads to Smart Decisions, so Prescott is a stack anchor, not a standalone cash play. Numbers Don't Lie.</p></div>`},
+  coleman:{bar:`pos-bar-rb`,pos:`RB`,rec:`Value Play`,recClass:`rec-value`,name:`Jonah Coleman`,team:`Denver Broncos &middot; HC: Sean Payton &middot; OC: Davis Webb &middot; Week 9 at CAR`,stats:[{v:`14.65`,k:`Proj. DK Pts`},{v:`$5,300`,k:`DK Salary`},{v:`2.76x`,k:`Value Score`},{v:`B`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$5,300</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Jonah Coleman grades B with a VALUE signal in Week 9: 14.65 projected points at $5,300 is a 2.76 Value, with a salary under the $5,800 RB VALUE ceiling and a Value in the top 35% of the pool. Coleman averages 14.70 DK points per game over 3 games. The matchup frame is green: the Panthers have allowed 29.80 DK points per game to running backs over their last three (90th percentile, against a league average of 23.46). The Broncos are a 2.5-point road favorite in a 44.5-point game, and Coleman projects at 4.4% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>RB</td></tr><tr><td>Team</td><td>Denver Broncos</td></tr><tr><td>Opponent</td><td>CAR</td></tr><tr><td>Salary</td><td>$5,300</td></tr><tr><td>Projection</td><td>14.65</td></tr><tr><td>Value</td><td>2.76</td></tr><tr><td>Floor</td><td>10.26</td></tr><tr><td>Ceiling</td><td>20.51</td></tr><tr><td>Grade</td><td>B</td></tr><tr><td>Signal</td><td>VALUE</td></tr><tr><td>Vegas Total / Spread</td><td>44.5 / DEN -2.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Workload: </strong>Coleman has 30 carries for 134 yards (4.5 per carry) and 10 targets for 9 catches and 97 yards in 3 games. He has scored 2 touchdowns, 2 rushing and 0 receiving.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 14.80, 8.90, 20.40, a 14.70 average. Week 9 was 11 carries for 41 yards and 4 catches for 63 yards on 5 targets, his best game, while Dobbins had 7 carries.</div><div class="str-item"><strong>Matchup: </strong>The Panthers have allowed 29.80 DK points per game to running backs over their last three, against a league average of 23.46 (90th percentile, green frame). The Panthers defense faces 29.1 rushes per game (7th) and 34.4 pass attempts (13th), and the Panthers allow 27.6 points per game (28th fewest).</div><div class="str-item"><strong>Workload context: </strong>Denver runs 24.5 times per game (24th). Coleman has appeared in three games, with 10, 9 and 11 carries (Weeks 2, 7 and 8), and J.K. Dobbins leads the backfield with 94 carries. RJ Harvey has 28 targets, so the touches are split three ways.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. No earlier salary is recorded for him; he is $5,300 this week.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 44.5 total with DEN -2.5 at CAR on Sunday at 1:00 PM ET, an implied total near 23.5 points for the Broncos and 21.0 for the Panthers.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Sean Payton is the Broncos' head coach, Davis Webb is the offensive coordinator and Vance Joseph coordinates the defense. Jaylen Waddle (51 targets) and Courtland Sutton (37) lead the passing game. Carolina allows 27.6 points per game.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Sean Payton is the Broncos' head coach and Davis Webb is the offensive coordinator.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 10.26 floor returns 1.93 points per $1,000. Nine to eleven carries and two to five targets in each of his three games give him a usable role, but 8.90 in Week 7 is the low.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 20.51 ceiling is 3.87 points per $1,000. Against a defense with a 90th-percentile running back frame he is a cheap leverage piece, and the 20.40 in Week 9 is the ceiling to chase.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Value Play.</strong> Grade B, Signal VALUE, Value 2.76. Three games is a small sample and Dobbins still leads the backfield.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Coleman's 20.40-point Week 9 came on just 11 carries and 5 targets, in a committee where Dobbins still leads early-season touches.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the role and the matchup say Value, and the small sample says size the exposure. Quality Data Leads to Smart Decisions, so Coleman is a price play with a real touch count. Numbers Don't Lie.</p></div>`},
+  stevenson:{bar:`pos-bar-rb`,pos:`RB`,rec:`Watch List`,recClass:`rec-watch`,name:`Rhamondre Stevenson`,team:`New England Patriots &middot; HC: Mike Vrabel &middot; OC: Josh McDaniels &middot; Week 9 vs GB`,stats:[{v:`12.70`,k:`Proj. DK Pts`},{v:`$6,100`,k:`DK Salary`},{v:`2.08x`,k:`Value Score`},{v:`B`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$6,100</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Rhamondre Stevenson grades B with a WATCH signal in Week 9: 12.70 projected points at $6,100 is a 2.08 Value, but no signal clears: the grade is B, the game total ranks in the 63rd percentile of the pool (below the top-30% CEILING bar) and the salary is above the $5,800 RB VALUE ceiling. Stevenson averages 12.49 DK points per game over 8 games. The matchup frame is yellow: the Packers have allowed 21.87 DK points per game to running backs over their last three (42nd percentile, against a league average of 23.46). The Patriots are a 3-point home favorite in a 44.5-point game, and Stevenson projects at 7.2% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>RB</td></tr><tr><td>Team</td><td>New England Patriots</td></tr><tr><td>Opponent</td><td>GB</td></tr><tr><td>Salary</td><td>$6,100</td></tr><tr><td>Projection</td><td>12.70</td></tr><tr><td>Value</td><td>2.08</td></tr><tr><td>Floor</td><td>8.89</td></tr><tr><td>Ceiling</td><td>17.78</td></tr><tr><td>Grade</td><td>B</td></tr><tr><td>Signal</td><td>WATCH</td></tr><tr><td>Vegas Total / Spread</td><td>44.5 / NE -3</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Workload: </strong>Stevenson has 96 carries for 367 yards (3.8 per carry) and 27 targets for 23 catches and 212 yards in 8 games. He has scored 3 touchdowns, 2 rushing and 1 receiving.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 14.50, 4.60, 6.80, 18.40, 17.50, 3.60, 22.50, 12.00, a 12.49 average. Week 9 was 19 carries for 82 yards and 3 catches for 8 yards, his highest carry count of the year; Week 7 was 6 carries and 5 catches for 93 yards.</div><div class="str-item"><strong>Matchup: </strong>The Packers have allowed 21.87 DK points per game to running backs over their last three, against a league average of 23.46 (42nd percentile, yellow frame). The Packers defense faces 28.5 rushes per game (11th) and 35.5 pass attempts (6th), and the Packers allow 20.5 points per game (10th fewest).</div><div class="str-item"><strong>Workload context: </strong>New England runs 30.0 times per game (4th) and passes on 50.0% of plays (25th), so the backfield gets volume. Stevenson leads the team with 96 carries, TreVeyon Henderson has 52, and Stevenson has 27 targets, third on the team.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. His salary was $5,100 in Week 4, $5,500 in Week 5, $6,000 in Week 6 and $5,600 in Week 9 and is $6,100 this week, up $500 after the 12.00 game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 44.5 total with NE -3 at home on Sunday at 4:25 PM ET, an implied total near 23.8 points for the Patriots and 20.8 for the Packers.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Mike Vrabel is the Patriots' head coach, Josh McDaniels is the offensive coordinator and Zak Kuhr coordinates the defense. DeMario Douglas (37 targets) and Hunter Henry (34) lead the passing game. Green Bay's defense is coordinated by Jonathan Gannon.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Mike Vrabel is the Patriots' head coach and Josh McDaniels is the offensive coordinator.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 8.89 floor returns 1.46 points per $1,000. Carries ranged from 6 to 19, and scores of 3.60, 4.60 and 6.80 in three of eight games make him a volatile cash piece.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 17.78 ceiling is 2.91 points per $1,000 at 7.2% projected ownership. He is a mid-range option, and a game script with New England leading plays to his 19-carry profile.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Watch List.</strong> Grade B, Signal WATCH, Value 2.08. His carries swing from 6 to 19 and the signal is WATCH, not a lean.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Stevenson's carry count has ranged from 6 to 19 across eight games, and this week's jump to a $6,100 price tag doesn't come with a signal to back it up.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the workload says he is in play, and the volatility says the signal is Watch. Quality Data Leads to Smart Decisions, so Stevenson is a game-script bet at $6,100 with a defined range. Numbers Don't Lie.</p></div>`},
+  walker:{bar:`pos-bar-rb`,pos:`RB`,rec:`Strong Play`,recClass:`rec-strong`,name:`Kenneth Walker III`,team:`Kansas City Chiefs &middot; HC: Andy Reid &middot; OC: Eric Bieniemy &middot; Week 9 vs NYJ`,stats:[{v:`17.67`,k:`Proj. DK Pts`},{v:`$9,000`,k:`DK Salary`},{v:`1.96x`,k:`Value Score`},{v:`B`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$9,000</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Kenneth Walker III grades B with a CEILING signal in Week 9: 17.67 projected points at $9,000 is a 1.96 Value and 5.67 points above the 12.0 Grade B cutoff. The CEILING signal comes from a game total in the top 30% of the pool. Walker averages 24.59 DK points per game over 7 games. The matchup frame is red: the Jets have allowed 19.67 DK points per game to running backs over their last three (23rd percentile, against a league average of 23.46). The Chiefs are a 9.5-point home favorite in a 47.5-point game, and Walker projects at 20.9% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>RB</td></tr><tr><td>Team</td><td>Kansas City Chiefs</td></tr><tr><td>Opponent</td><td>NYJ</td></tr><tr><td>Salary</td><td>$9,000</td></tr><tr><td>Projection</td><td>17.67</td></tr><tr><td>Value</td><td>1.96</td></tr><tr><td>Floor</td><td>12.37</td></tr><tr><td>Ceiling</td><td>24.73</td></tr><tr><td>Grade</td><td>B</td></tr><tr><td>Signal</td><td>CEILING</td></tr><tr><td>Vegas Total / Spread</td><td>47.5 / KC -9.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Workload: </strong>Walker has 141 carries for 770 yards (5.5 per carry) and 32 targets for 22 catches and 131 yards in 7 games. He has scored 8 touchdowns, 6 rushing and 2 receiving.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 37.10, 26.80, 21.30, 33.90, 30.90, 9.70, 12.40, a 24.59 average. Weeks 7 and 8 were 9.70 and 12.40 on 14 and 21 carries, down from 37.10, 26.80, 33.90 and 30.90 earlier.</div><div class="str-item"><strong>Matchup: </strong>The Jets have allowed 19.67 DK points per game to running backs over their last three, against a league average of 23.46 (23rd percentile, red frame). The Jets defense faces 31.2 rushes per game (1st) and 29.9 pass attempts (26th), and the Jets allow 23.5 points per game (16th fewest).</div><div class="str-item"><strong>Workload context: </strong>Kansas City runs 26.4 times per game (18th). Walker has 141 carries and 32 targets, and he has had 14 to 24 carries in every game he has played.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. His salary was $7,400 in Week 3, $8,200 in Week 4, $8,500 in Week 6 and $8,800 in Week 9 and is $9,000 this week, up $200 after the 12.40 game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 47.5 total with KC -9.5 at home on Sunday at 1:00 PM ET, an implied total near 28.5 points for the Chiefs and 19.0 for the Jets.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Andy Reid is the Chiefs' head coach, Eric Bieniemy is the offensive coordinator and Steve Spagnuolo coordinates the defense. Travis Kelce (42 targets, ankle, limited) and Xavier Worthy (41) lead the passing game, and Rashee Rice (hamstring/knee) is limited. The Jets are coordinated by Brian Duker on defense.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Andy Reid is the Chiefs' head coach and Eric Bieniemy is the offensive coordinator.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 12.37 floor returns 1.37 points per $1,000, a low return for a $9,000 salary. Fourteen or more carries every week is a base, but his last two games sit below it.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 24.73 ceiling is 2.75 points per $1,000 at 20.9% projected ownership. The upside is real (37.10, 33.90, 30.90), but the field is already there, so the edge comes from the pairing.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Strong Play.</strong> Grade B, Signal CEILING, Value 1.96. The $9,000 salary and 20.9% ownership leave little room, and his last two scores are 9.70 and 12.40.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Walker is the week's most expensive RB and highest-owned play in this group at 20.9% ownership &mdash; a volume bet the field already knows about.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the workload and the 9.5-point favorite role say Ceiling, and the price and ownership say it is not free. Quality Data Leads to Smart Decisions, so decide whether you are paying for volume or fading it. Numbers Don't Lie.</p></div>`},
+  singletary:{bar:`pos-bar-rb`,pos:`RB`,rec:`Value Play`,recClass:`rec-value`,name:`Devin Singletary`,team:`New York Giants &middot; HC: John Harbaugh &middot; OC: Matt Nagy &middot; Week 9 at PHI`,stats:[{v:`9.40`,k:`Proj. DK Pts`},{v:`$4,600`,k:`DK Salary`},{v:`2.04x`,k:`Value Score`},{v:`C`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$4,600</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Devin Singletary grades C with a VALUE signal in Week 9: 9.40 projected points at $4,600 is a 2.04 Value, with a salary under the $5,800 RB VALUE ceiling and a Value in the top 35% of the pool. Singletary averages 8.38 DK points per game over 4 games. The matchup frame is yellow: the Eagles have allowed 24.67 DK points per game to running backs over their last three (58th percentile, against a league average of 23.46). The Giants are a 3.5-point road favorite in a 38.5-point game, and Singletary projects at 1.5% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>RB</td></tr><tr><td>Team</td><td>New York Giants</td></tr><tr><td>Opponent</td><td>PHI</td></tr><tr><td>Salary</td><td>$4,600</td></tr><tr><td>Projection</td><td>9.40</td></tr><tr><td>Value</td><td>2.04</td></tr><tr><td>Floor</td><td>6.58</td></tr><tr><td>Ceiling</td><td>13.16</td></tr><tr><td>Grade</td><td>C</td></tr><tr><td>Signal</td><td>VALUE</td></tr><tr><td>Vegas Total / Spread</td><td>38.5 / NYG -3.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Workload: </strong>Singletary has 18 carries for 80 yards (4.4 per carry) and 9 targets for 8 catches and 55 yards in 4 games. He has scored 2 touchdowns, 1 rushing and 1 receiving.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 13.80, 0.90, 4.30, 14.50, an 8.38 average. Week 7 was 5 carries for 41 yards and 3 catches for 14 yards, a 14.50; New York had a bye in Week 9.</div><div class="str-item"><strong>Matchup: </strong>The Eagles have allowed 24.67 DK points per game to running backs over their last three, against a league average of 23.46 (58th percentile, yellow frame). The Eagles defense faces 30.6 rushes per game (2nd) and 34.1 pass attempts (14th), and the Eagles allow 25.2 points per game (21st fewest).</div><div class="str-item"><strong>Workload context: </strong>New York runs 28.7 times per game (8th). Singletary is the third back in a committee: Cam Skattebo leads with 98 carries, Najee Harris has 31 and Singletary has 18 carries in four games. He has 9 targets in four games.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. No earlier salary is recorded for him; he is $4,600 this week.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 38.5 total with NYG -3.5 at PHI on Sunday at 1:00 PM ET, an implied total near 21.0 points for the Giants and 17.5 for the Eagles.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">John Harbaugh is the Giants' head coach, Matt Nagy is the offensive coordinator and Dennard Wilson coordinates the defense. Malik Nabers (70 targets) and Isaiah Likely (63) lead the passing game, and Tyrone Tracy Jr. is on injured reserve.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">John Harbaugh is the Giants' head coach and Matt Nagy is the offensive coordinator.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 6.58 floor returns 1.43 points per $1,000. With 3 to 6 carries a game, a 0.90 in Week 2 and a 4.30 in Week 6, he is not a cash option.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 13.16 ceiling is 2.86 points per $1,000 at 1.5% projected ownership. He is a punt in a 38.5-point game, and a touchdown or a Skattebo absence is the only path to the ceiling.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Value Play.</strong> Grade C, Signal VALUE, Value 2.04. He is third in the committee and has four appearances in eight games.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Singletary is this week's lowest-owned rostered running back at 1.5%, a true punt behind Skattebo's 98 carries.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the price says Value and the usage says Grade C. Quality Data Leads to Smart Decisions, so Singletary is a salary-relief piece only when you need the money. Numbers Don't Lie.</p></div>`},
+  nacua:{bar:`pos-bar-wr`,pos:`WR`,rec:`Strong Play`,recClass:`rec-strong`,name:`Puka Nacua`,team:`Los Angeles Rams &middot; HC: Sean McVay &middot; OC: Nate Scheelhaase &middot; Week 9 at WAS`,stats:[{v:`20.27`,k:`Proj. DK Pts`},{v:`$8,800`,k:`DK Salary`},{v:`2.30x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$8,800</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Puka Nacua grades A with a CASH-CORE signal in Week 9: 20.27 projected points at $8,800 is a 2.30 Value, 0.20 below the 2.50 WR CORE bar and 0.40 above the 1.90 CASH-CORE bar, with 4.27 points above the 16.0 Grade A cutoff. Nacua averages 24.10 DK points per game over 6 games. The matchup frame is red: the Commanders have allowed 25.57 DK points per game to wide receivers over their last three (19th percentile, against a league average of 31.22). The Rams are a 4.5-point road favorite in a 48.5-point game, and Nacua projects at 14.3% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>WR</td></tr><tr><td>Team</td><td>Los Angeles Rams</td></tr><tr><td>Opponent</td><td>WAS</td></tr><tr><td>Salary</td><td>$8,800</td></tr><tr><td>Projection</td><td>20.27</td></tr><tr><td>Value</td><td>2.30</td></tr><tr><td>Floor</td><td>14.19</td></tr><tr><td>Ceiling</td><td>28.37</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CASH-CORE</td></tr><tr><td>Vegas Total / Spread</td><td>48.5 / LAR -4.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Nacua has 9, 12, 24, 7, 10, 12 targets, 12.3 per game, for 56 catches, 565 yards and 3 touchdowns in 6 games.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 12.40, 30.70, 40.70, 14.00, 21.80, 25.00, a 24.10 average. Week 9 was 11 catches for 80 yards on 12 targets, and Week 5 was 17 catches on 24 targets for a 40.70.</div><div class="str-item"><strong>Matchup: </strong>The Commanders have allowed 25.57 DK points per game to wide receivers over their last three, against a league average of 31.22 (19th percentile, red frame). The Commanders defense faces 36.1 pass attempts per game (4th), and the Commanders allow 26.0 points per game (26th fewest).</div><div class="str-item"><strong>Role: </strong>Los Angeles passes on 59.0% of plays (9th) and throws 38.2 times per game (5th). Nacua has 74 targets in six games, 12.3 per game and 25 more than any teammate, and he has 7 or more in every game he played.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. His salary was $7,500 in Week 4, $8,100 in Week 6, $8,400 in Week 7 and $8,600 in Week 9 and is $8,800 this week, up $200 after the 25.00 game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 48.5 total with LAR -4.5 at WAS on Sunday at 1:00 PM ET, an implied total near 26.5 points for the Rams and 22.0 for the Commanders.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Sean McVay is the Rams' head coach and Nate Scheelhaase is the offensive coordinator. Davante Adams (49 targets) and Kyren Williams (42) share the passing game, and tight end Colby Parkinson (ribs) is TBD. Washington is coached by Dan Quinn, with Daronte Jones coordinating the defense.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Sean McVay is the Rams' head coach and Nate Scheelhaase is the offensive coordinator. Washington is coached by Dan Quinn.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 14.19 floor returns 1.61 points per $1,000. Seven or more targets every game is the steadiest wide receiver floor in this group.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 28.37 ceiling is 3.22 points per $1,000 at 14.3% projected ownership. The 40.70 and 30.70 games show the top end, and the field is already there.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Strong Play.</strong> Grade A, Signal CASH-CORE, Value 2.30. The $8,800 salary and 14.3% ownership leave little room for the rest of the lineup.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Nacua has 7 or more targets in every game he's played this season, the steadiest target floor of any player in this group.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the target share says Cash-Core, and the salary says this is a cash anchor, not a bargain. Quality Data Leads to Smart Decisions, so Nacua is the volume piece to build around. Numbers Don't Lie.</p></div>`},
+  flournoy:{bar:`pos-bar-wr`,pos:`WR`,rec:`Strong Play`,recClass:`rec-strong`,name:`Ryan Flournoy`,team:`Dallas Cowboys &middot; HC: Brian Schottenheimer &middot; OC: Klayton Adams &middot; Week 9 at IND`,stats:[{v:`13.70`,k:`Proj. DK Pts`},{v:`$4,800`,k:`DK Salary`},{v:`2.85x`,k:`Value Score`},{v:`B`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$4,800</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Ryan Flournoy grades B with a CEILING signal in Week 9: 13.70 projected points at $4,800 is a 2.85 Value and 2.70 points above the 11.0 Grade B cutoff. The CEILING signal comes from a game total in the top 30% of the pool. Flournoy averages 9.56 DK points per game over 8 games. The matchup frame is red: the Colts have allowed 20.10 DK points per game to wide receivers over their last three (6th percentile, against a league average of 31.22). The Cowboys are a 5.5-point road favorite in a 51.5-point game, and Flournoy projects at 3.5% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>WR</td></tr><tr><td>Team</td><td>Dallas Cowboys</td></tr><tr><td>Opponent</td><td>IND</td></tr><tr><td>Salary</td><td>$4,800</td></tr><tr><td>Projection</td><td>13.70</td></tr><tr><td>Value</td><td>2.85</td></tr><tr><td>Floor</td><td>9.59</td></tr><tr><td>Ceiling</td><td>19.18</td></tr><tr><td>Grade</td><td>B</td></tr><tr><td>Signal</td><td>CEILING</td></tr><tr><td>Vegas Total / Spread</td><td>51.5 / DAL -5.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Flournoy has 4, 6, 8, 5, 4, 9, 4, 4 targets, 5.5 per game, for 30 catches, 342 yards and 2 touchdowns in 8 games.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 4.20, 7.30, 4.20, 7.70, 12.00, 17.00, 11.00, 13.10, a 9.56 average. His last three games are 17.00, 11.00 and 13.10, his best stretch of the year; the first five were 12.00 or lower.</div><div class="str-item"><strong>Matchup: </strong>The Colts have allowed 20.10 DK points per game to wide receivers over their last three, against a league average of 31.22 (6th percentile, red frame). The Colts defense faces 28.8 pass attempts per game (28th), and the Colts allow 27.8 points per game (30th fewest).</div><div class="str-item"><strong>Role: </strong>Dallas passes on 60.3% of plays (6th) and throws 37.8 times per game (7th). Flournoy has 44 targets, third on the team, and 4 or more in all eight games, with 9 in Week 6.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. His only earlier recorded salary is $3,800 in Week 2, and he is $4,800 this week.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 51.5 total with DAL -5.5 at IND on Sunday at 1:00 PM ET, an implied total near 28.5 points for the Cowboys and 23.0 for the Colts.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Brian Schottenheimer is the Cowboys' head coach and Klayton Adams is the offensive coordinator. Lamb (92 targets) and Pickens (62, hamstring, limited) lead the passing game, and Pickens' hamstring is worth watching for extra targets. Indianapolis is coached by Shane Steichen.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Brian Schottenheimer is the Cowboys' head coach and Klayton Adams is the offensive coordinator. Indianapolis is coached by Shane Steichen.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 9.59 floor returns 2.00 points per $1,000. Four or more targets every week and a three-game run of 11 or more give him a usable base at $4,800.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 19.18 ceiling is 4.00 points per $1,000 at 3.5% projected ownership, the lowest in the Dallas stack, and he is the cheap piece of a Prescott-Lamb-Flournoy build.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Strong Play.</strong> Grade B, Signal CEILING, Value 2.85. A third-option role behind Lamb and Pickens caps the floor.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Flournoy's last three games (17.00, 11.00, 13.10) are his best stretch of the season, and at 3.5% he's the lowest-owned piece of the Dallas stack.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the recent targets and the price say Ceiling, and the third-option role says do not expect a spike. Quality Data Leads to Smart Decisions, so Flournoy is a salary-relief piece in a Dallas stack. Numbers Don't Lie.</p></div>`},
+  smithnjigba:{bar:`pos-bar-wr`,pos:`WR`,rec:`Core Play`,recClass:`rec-core`,name:`Jaxon Smith-Njigba`,team:`Seattle Seahawks &middot; HC: Mike Macdonald &middot; OC: Brian Fleury &middot; Week 9 vs ARI`,stats:[{v:`29.83`,k:`Proj. DK Pts`},{v:`$9,300`,k:`DK Salary`},{v:`3.21x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$9,300</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Jaxon Smith-Njigba grades A with a CORE signal in Week 9: 29.83 projected points at $9,300 is a 3.21 Value, 0.71 above the 2.50 WR CORE bar and 13.83 points above the 16.0 Grade A cutoff. Smith-Njigba averages 30.12 DK points per game over 8 games. The matchup frame is yellow: the Cardinals have allowed 27.50 DK points per game to wide receivers over their last three (29th percentile, against a league average of 31.22). The Seahawks are an 8.5-point home favorite in a 39.5-point game, and Smith-Njigba projects at 16.3% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>WR</td></tr><tr><td>Team</td><td>Seattle Seahawks</td></tr><tr><td>Opponent</td><td>ARI</td></tr><tr><td>Salary</td><td>$9,300</td></tr><tr><td>Projection</td><td>29.83</td></tr><tr><td>Value</td><td>3.21</td></tr><tr><td>Floor</td><td>20.88</td></tr><tr><td>Ceiling</td><td>41.77</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CORE</td></tr><tr><td>Vegas Total / Spread</td><td>39.5 / SEA -8.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Smith-Njigba has 11, 11, 14, 6, 8, 16, 12, 11 targets, 11.1 per game, for 64 catches, 985 yards and 9 touchdowns in 8 games.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 29.20, 45.50, 38.36, 12.60, 25.80, 28.40, 34.30, 26.80, a 30.12 average. Week 9 was 6 catches for 118 yards on 11 targets, 26.80; he has topped 100 yards in seven of eight games.</div><div class="str-item"><strong>Matchup: </strong>The Cardinals have allowed 27.50 DK points per game to wide receivers over their last three, against a league average of 31.22 (29th percentile, yellow frame). The Cardinals defense faces 28.8 pass attempts per game (28th), and the Cardinals allow 29.8 points per game, the most in the league.</div><div class="str-item"><strong>Role: </strong>Seattle throws 32.5 times per game (18th) on a 53.6% pass rate (21st). Smith-Njigba has 89 targets, 55 more than any teammate, and 11 or more in six of eight games.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. His salary was $8,100 in Week 2, $8,600 in Week 3, $9,100 in Week 4 and $8,800 in Week 5 and is $9,300 this week, up $500.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 39.5 total with SEA -8.5 at home on Sunday at 4:25 PM ET, an implied total near 24.0 points for the Seahawks and 15.5 for the Cardinals.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Mike Macdonald is the Seahawks' head coach and Brian Fleury is the offensive coordinator. Quarterback Sam Darnold (quadriceps/ribs) is out, so Drew Lock is expected to start. AJ Barner (34 targets) and Rashid Shaheed (30, knee, TBD) trail him. Arizona's defense allows 29.8 points per game, the most in the league.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Mike Macdonald is the Seahawks' head coach and Brian Fleury is the offensive coordinator.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 20.88 floor returns 2.25 points per $1,000. His lowest score is 12.60, and seven of eight games are above 25.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 41.77 ceiling is 4.49 points per $1,000 at 16.3% projected ownership. His 45.50, 38.36 and 34.30 games show the top end, and a backup quarterback may keep ownership below his Value.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Core Play.</strong> Grade A, Signal CORE, Value 3.21. Drew Lock replaces Darnold and the total fell to 39.5, so the price leaves little room for error.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Smith-Njigba has 89 targets this season, 55 more than any teammate &mdash; the single largest target-share gap of any player in this group.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the target share says Core, and the quarterback change is the one variable to price in. Quality Data Leads to Smart Decisions, so Smith-Njigba is the anchor of the slate. Numbers Don't Lie.</p></div>`},
+  lamb:{bar:`pos-bar-wr`,pos:`WR`,rec:`Strong Play`,recClass:`rec-strong`,name:`CeeDee Lamb`,team:`Dallas Cowboys &middot; HC: Brian Schottenheimer &middot; OC: Klayton Adams &middot; Week 9 at IND`,stats:[{v:`17.73`,k:`Proj. DK Pts`},{v:`$8,300`,k:`DK Salary`},{v:`2.14x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$8,300</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">CeeDee Lamb grades A with a CASH-CORE signal in Week 9: 17.73 projected points at $8,300 is a 2.14 Value, 0.36 below the 2.50 WR CORE bar and 0.24 above the 1.90 CASH-CORE bar, with 1.73 points above the 16.0 Grade A cutoff. Lamb averages 22.16 DK points per game over 8 games. The matchup frame is red: the Colts have allowed 20.10 DK points per game to wide receivers over their last three (6th percentile, against a league average of 31.22). The Cowboys are a 5.5-point road favorite in a 51.5-point game, and Lamb projects at 12.8% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>WR</td></tr><tr><td>Team</td><td>Dallas Cowboys</td></tr><tr><td>Opponent</td><td>IND</td></tr><tr><td>Salary</td><td>$8,300</td></tr><tr><td>Projection</td><td>17.73</td></tr><tr><td>Value</td><td>2.14</td></tr><tr><td>Floor</td><td>12.41</td></tr><tr><td>Ceiling</td><td>24.83</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CASH-CORE</td></tr><tr><td>Vegas Total / Spread</td><td>51.5 / DAL -5.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Lamb has 8, 9, 8, 21, 5, 18, 12, 11 targets, 11.5 per game, for 60 catches, 709 yards and 6 touchdowns in 8 games.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 15.40, 38.30, 23.20, 44.30, 2.90, 16.00, 24.40, 12.80, a 22.16 average. Week 9 was 7 catches for 58 yards on 11 targets, 12.80; he scored 44.30 and 38.30 in Weeks 4 and 2 and 2.90 in Week 5.</div><div class="str-item"><strong>Matchup: </strong>The Colts have allowed 20.10 DK points per game to wide receivers over their last three, against a league average of 31.22 (6th percentile, red frame). The Colts defense faces 28.8 pass attempts per game (28th), and the Colts allow 27.8 points per game (30th fewest).</div><div class="str-item"><strong>Role: </strong>Dallas passes on 60.3% of plays (6th) and throws 37.8 times per game (7th). Lamb leads the team with 92 targets, 30 more than Pickens, and has 8 or more in seven of eight games.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. His salary was $7,300 in Week 2, $7,800 in Week 3, $7,800 in Week 4 and $8,100 in Week 9 and is $8,300 this week, up $200 after the 12.80 game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 51.5 total with DAL -5.5 at IND on Sunday at 1:00 PM ET, an implied total near 28.5 points for the Cowboys and 23.0 for the Colts.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Brian Schottenheimer is the Cowboys' head coach and Klayton Adams is the offensive coordinator. George Pickens (62 targets, hamstring, limited) and Ryan Flournoy (44) share the passing game, and tight end Jake Ferguson (ankle) is TBD. Indianapolis is coached by Shane Steichen, and its defense is coordinated by Lou Anarumo.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Brian Schottenheimer is the Cowboys' head coach and Klayton Adams is the offensive coordinator. Indianapolis is coached by Shane Steichen.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 12.41 floor returns 1.50 points per $1,000. The 2.90 in Week 5 and 12.80 in Week 9 show the downside of a high-target, low-yardage role.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 24.83 ceiling is 2.99 points per $1,000 at 12.8% projected ownership, with a stack of Prescott, Lamb and Flournoy as the natural correlation in a 51.5-point game.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Strong Play.</strong> Grade A, Signal CASH-CORE, Value 2.14. His range runs from 2.90 to 44.30, and Pickens takes a share of the targets.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Lamb leads Dallas with 92 targets, 30 more than Pickens &mdash; but his scores have ranged from 2.90 to 44.30 across the season.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the targets say Cash-Core, and the swings say do not treat him as a lock. Quality Data Leads to Smart Decisions, so Lamb is the volume piece of a Dallas stack. Numbers Don't Lie.</p></div>`},
+  dulcich:{bar:`pos-bar-te`,pos:`TE`,rec:`Strong Play`,recClass:`rec-strong`,name:`Greg Dulcich`,team:`Miami Dolphins &middot; HC: Jeff Hafley &middot; OC: Bobby Slowik &middot; Week 9 vs DET`,stats:[{v:`10.95`,k:`Proj. DK Pts`},{v:`$3,100`,k:`DK Salary`},{v:`3.53x`,k:`Value Score`},{v:`B`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$3,100</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">Greg Dulcich grades B with a CEILING signal in Week 9: 10.95 projected points at $3,100 is a 3.53 Value and 0.95 points above the 10.0 Grade B cutoff. The CEILING signal comes from a game total in the top 30% of the pool. Dulcich averages 8.27 DK points per game over 6 games. The matchup frame is green: the Lions have allowed 27.23 DK points per game to tight ends over their last three (100th percentile, against a league average of 14.64). The Dolphins are a 6.5-point home underdog in a 50.5-point game, and Dulcich projects at 4.3% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>TE</td></tr><tr><td>Team</td><td>Miami Dolphins</td></tr><tr><td>Opponent</td><td>DET</td></tr><tr><td>Salary</td><td>$3,100</td></tr><tr><td>Projection</td><td>10.95</td></tr><tr><td>Value</td><td>3.53</td></tr><tr><td>Floor</td><td>7.67</td></tr><tr><td>Ceiling</td><td>15.33</td></tr><tr><td>Grade</td><td>B</td></tr><tr><td>Signal</td><td>CEILING</td></tr><tr><td>Vegas Total / Spread</td><td>50.5 / MIA +6.5</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Volume: </strong>Dulcich has 2, 3, 7, 5, 5, 6 targets, 4.7 per game, for 22 catches, 256 yards and 0 touchdowns in 6 games.</div><div class="str-item"><strong>Recent form: </strong>DK scores of 3.80, 3.70, 10.50, 9.70, 13.60, 8.30, an 8.27 average. Week 7 was 5 catches for 86 yards, 13.60, and Week 9 was 4 catches for 43 yards on 6 targets, 8.30.</div><div class="str-item"><strong>Matchup: </strong>The Lions have allowed 27.23 DK points per game to tight ends over their last three, against a league average of 14.64 (100th percentile, green frame). The Lions defense faces 41.0 pass attempts per game (1st), and the Lions allow 25.7 points per game (23rd fewest).</div><div class="str-item"><strong>Role: </strong>Miami scores 16.7 points per game (31st). Dulcich has 28 targets, second on the team, and 5 or more in four of his last five appearances.</div><div class="str-item"><strong>Price: </strong>He is not listed on the Friday injury report. His salary was $3,200 in Week 4, $3,100 in Week 5, $3,200 in Week 7 and $3,200 in Week 9 and is $3,100 this week, down $100 after the 8.30 game.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 50.5 total with MIA +6.5 at home on Sunday at 1:00 PM ET, an implied total near 22.0 points for the Dolphins and 28.5 for the Lions.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Jeff Hafley is the Dolphins' head coach and Bobby Slowik is the offensive coordinator. Malik Washington (45 targets) and Chris Bell (24) share the passing game. Detroit is coached by Dan Campbell, and its defense is coordinated by Kelvin Sheppard.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Jeff Hafley is the Dolphins' head coach and Bobby Slowik is the offensive coordinator. Detroit is coached by Dan Campbell.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">The 7.67 floor returns 2.47 points per $1,000, and he has scored 9.70 or more in three of his six appearances.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">The 15.33 ceiling is 4.95 points per $1,000 at 4.3% projected ownership. Against the most generous tight end frame in the league, he pairs with Willis in a Miami stack, and the 13.60 in Week 7 shows the range.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Strong Play.</strong> Grade B, Signal CEILING, Value 3.53. He appeared in six of Miami's seven games and his Week 9 was 8.30.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">The Lions have allowed the single most generous tight end matchup in the league over their last three games (27.23 DK points per game), and Dulcich is a direct beneficiary at $3,100.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the frame and the price say Ceiling. Quality Data Leads to Smart Decisions, so Dulcich is a salary-saver with a real target share. Numbers Don't Lie.</p></div>`},
+  dsaints:{bar:`pos-bar-dst`,pos:`DST`,rec:`Strong Play`,recClass:`rec-strong`,name:`New Orleans Saints`,team:`New Orleans Saints &middot; HC: Kellen Moore &middot; Week 9 vs CLE`,stats:[{v:`8.50`,k:`Proj. DK Pts`},{v:`$2,900`,k:`DK Salary`},{v:`2.93x`,k:`Value Score`},{v:`A`,k:`Grade`}],salary:`DK Week 9 Salary: <span>$2,900</span>`,body:`<div class="modal-section"><div class="ms-heading">Summary</div><p class="ms-body">The Saints D/ST grade A with a CASH-CORE signal in Week 9: 8.50 projected points at $2,900 is a 2.93 Value, 0.57 below the 3.50 CORE bar and 0.53 above the 2.40 CASH-CORE bar, with a Grade A projection in the top 20% of defenses. The Saints average 5.00 DK points per game over 7 games, and Cleveland has taken 4.1 sacks per game, the most in the league. The Saints are a 3-point home favorite in a 42.5-point game, and they project at 3.8% ownership.</p></div><div class="modal-section"><div class="ms-heading">Player Snapshot</div><table class="modal-table"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Position</td><td>DST</td></tr><tr><td>Team</td><td>New Orleans Saints</td></tr><tr><td>Opponent</td><td>CLE</td></tr><tr><td>Salary</td><td>$2,900</td></tr><tr><td>Projection</td><td>8.50</td></tr><tr><td>Value</td><td>2.93</td></tr><tr><td>Floor</td><td>5.95</td></tr><tr><td>Ceiling</td><td>11.90</td></tr><tr><td>Grade</td><td>A</td></tr><tr><td>Signal</td><td>CASH-CORE</td></tr><tr><td>Vegas Total / Spread</td><td>42.5 / NO -3</td></tr><tr><td>Slate</td><td>Main Slate (Sunday)</td></tr></tbody></table></div><div class="modal-section"><div class="ms-heading">Opportunity Analysis</div><p class="ms-body"></p><div class="str-grid"><div class="str-item"><strong>Recent form: </strong>DK scores of 2, 6, 1, -3, 12, 13, 4, a 5.00 average. Week 5 was 2 sacks, 2 takeaways and a defensive touchdown in a 12-point game, Week 6 was 5 sacks and 13 points, and Week 7 was 3 sacks and 16 points allowed. New Orleans had a bye in Week 9.</div><div class="str-item"><strong>Pass rush and takeaways: </strong>New Orleans has 18 sacks in seven games (2.6 per game, 11th) and 9 takeaways (1.3 per game, 15th). Cleveland has taken 4.1 sacks per game, the most in the league (league average 2.3), and committed 1.4 turnovers per game (16th).</div><div class="str-item"><strong>Matchup: </strong>Cleveland scores 17.4 points per game (29th). The Browns throw 31.5 times (19th) and run 24.9 times per game (22nd), and quarterback Deshaun Watson (concussion) did not practice.</div><div class="str-item"><strong>Position frames: </strong>New Orleans has allowed 19.05 DK points per game to quarterbacks over its last three (65th percentile), 27.90 to running backs (81st), 31.47 to wide receivers (55th) and 15.77 to tight ends (61st), so it is weakest against running backs.</div><div class="str-item"><strong>Price: </strong>Its salary was $3,300 in Week 3, $2,600 in Week 5 and $2,600 in Week 6 and is $2,900 this week, up $300.</div><div class="str-item"><strong>Game environment: </strong>Vegas has a 42.5 total with NO -3 at home on Sunday at 1:00 PM ET, an implied total near 22.8 points for the Saints and 19.8 for the Browns. The Saints allow 27.7 points per game (29th fewest), and Cleveland is the 29th-ranked scoring offense.</div></div></div><div class="modal-section"><div class="ms-heading">Supporting Cast Analysis</div><p class="ms-body">Kellen Moore is the Saints' head coach. Chris Olave (71 targets), Devaughn Vele (48) and Juwan Johnson (37) lead the offense, and Alvin Kamara (back, limited) is listed as TBD. Cleveland is coached by Todd Monken with Travis Switzer at offensive coordinator, and quarterback Deshaun Watson (concussion) did not practice.</p></div><div class="modal-section"><div class="ms-heading">Coaching Scheme and Analysis</div><p class="ms-body">Kellen Moore is the Saints' head coach. Cleveland is coached by Todd Monken with Travis Switzer at offensive coordinator.</p></div><div class="modal-section"><div class="ms-heading">Cash &amp; GPP Outlook</div><div class="outlook-grid"><div class="outlook-box"><div class="outlook-label cash">Cash Game</div><p class="outlook-body">Cleveland has taken 4.1 sacks per game, the most in the league, which anchors the floor. The risk is points allowed: New Orleans gave up 31, 35 and 45 in three of seven games, including a -3.00 in Week 4.</p></div><div class="outlook-box"><div class="outlook-label gpp">GPP Tournament</div><p class="outlook-body">As a 3-point home favorite against the league's most-sacked offense, the sack count is the ceiling path. The projection does not include defensive or special-teams touchdowns, so the real ceiling runs higher than the raw number; the 12 and 13 in Weeks 5 and 6 show the shape.</p></div></div></div><div class="modal-section"><div class="ms-heading">Slate-IQ Recommendation</div><p class="ms-body"><strong>Strong Play.</strong> Grade A, Signal CASH-CORE, Value 2.93. The Saints allow 27.7 points per game (29th fewest), so the points-allowed tier is the weak spot.</p></div><div class="modal-callout"><div class="callout-label">Numbers Don't Lie</div><p class="callout-body">Cleveland has taken 4.1 sacks per game this season, the most in the league &mdash; the single clearest edge of any defense rostered this week.</p></div><div class="modal-section"><div class="ms-heading">Final Thoughts</div><p class="ms-body">Process over emotion: the sacks matchup and the price say Cash-Core, and the points allowed say do not expect a shutout. Quality Data Leads to Smart Decisions, so the Saints fit when you want a defense that turns on Cleveland's protection. Numbers Don't Lie.</p></div>`},
+};
+
+function openModal(id){
+  const p=D[id];if(!p)return;
+  document.getElementById('m-bar').className='modal-top-bar '+p.bar;
+  document.getElementById('m-badges').innerHTML='<span class="pos-badge pos-badge-'+p.bar.replace('pos-bar-','')+'">'+p.pos+'</span><span class="rec-badge '+p.recClass+'">'+p.rec+'</span><button class="modal-close" onclick="closeModal()">Close \u2715</button>';
+  document.getElementById('m-name').textContent=p.name;
+  document.getElementById('m-team').textContent=p.team;
+  document.getElementById('m-stats').innerHTML=p.stats.map(s=>'<div class="modal-stat-cell"><div class="modal-stat-val">'+s.v+'</div><div class="modal-stat-key">'+s.k+'</div></div>').join('');
+  document.getElementById('m-body').innerHTML=p.body;
+  document.getElementById('m-salary').innerHTML=p.salary;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('overlay').scrollTop=0;
+}
+function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow=''}
+function handleOverlayClick(e){if(e.target===document.getElementById('overlay'))closeModal()}
+function filterCards(f,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.eval-card').forEach(c=>{
+    const cp=c.dataset.pos;
+    const show=(f==='all')||(cp===f);
+    c.style.display=show?'':'none';
+  });
+}
+document.addEventListener('keydown',e=>{if(document.getElementById('overlay').classList.contains('open')&&e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
